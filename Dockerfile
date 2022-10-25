@@ -7,4 +7,9 @@ RUN apt-get update \
     nodejs \
     yarn \
   #イメージファイルの容量を減らす
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \ 
+  && apt-get clean
+
+COPY Gemfile /eatcapsule//Gemfile
+COPY Gemfile.lock /eatcapsule//Gemfile.lock
+RUN bundle install
