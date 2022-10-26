@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  rspec:
+    working_directory: ~/eatcapsule
+    docker:
+      - image: cimg/ruby:2.7.3
+    resource_class: small
+    steps:
+      - checkout
+      # Docker関連コマンドが、この環境で安全に実行できるようにする
+      - setup_remote_docker:
+          version: 20.10.14
+      - run:
+          name: docker-compose up -d
+          command: |
+            docker-compose up -d
+      - run:
+          name: Run rspec
+          command: |
+            docker-compose exec web rspec
+# 実行する順番を記述
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - rspec
