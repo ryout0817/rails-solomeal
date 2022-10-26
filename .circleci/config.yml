@@ -18,3 +18,9 @@ jobs:
           name: Run rspec
           command: |
             docker-compose exec web rspec
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - rspec
