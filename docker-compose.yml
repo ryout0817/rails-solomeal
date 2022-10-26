@@ -5,3 +5,15 @@ services:
     platform: linux/x86_64
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
+  eatcapsule:
+    # Dockerfile のあるディレクトリのパスを指定（imageかbuildを必ず指定する必要がある）
+    build: .
+    # デフォルトのコマンド指定（Rails特有の問題解消とRails立ち上げを指定している）
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # データの永続化（ホスト側のカレントディレクトリにマウントする）
+    volumes:
+      - .:/eatcapsule
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
