@@ -10,3 +10,11 @@ jobs:
       # Docker関連コマンドが、この環境で安全に実行できるようにする
       - setup_remote_docker:
           version: 20.10.14
+      - run:
+          name: docker-compose up -d
+          command: |
+            docker-compose up -d
+      - run:
+          name: Run rspec
+          command: |
+            docker-compose exec web rspec
