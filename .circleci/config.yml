@@ -5,3 +5,8 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.3
     resource_class: small
+    steps:
+      - checkout
+      # Docker関連コマンドが、この環境で安全に実行できるようにする
+      - setup_remote_docker:
+          version: 20.10.14
