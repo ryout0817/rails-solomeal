@@ -18,7 +18,7 @@ jobs:
           name: Run rspec
           command: |
             docker-compose exec web rspec
-
+# 実行する順番を記述
 workflows:
   version: 2.1
   build:
