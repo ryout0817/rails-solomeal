@@ -1,10 +1,14 @@
 <header>
-  <nav>
+  <nav id="menu-list" >
     <div class="header" >
       <div>
-        <%= link_to "/", class: "header-logo" do %>
-          HOME<i class="fa-solid fa-house"></i>
-        <% end %>
+        <ul>
+          <li>
+            <%= link_to "/", class: "list-item-title" do %>
+              HOME<i class="fa-thin fa-house"></i>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
