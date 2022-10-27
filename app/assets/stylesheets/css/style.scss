@@ -2,12 +2,18 @@ body {
   font-size: 12px;
   
 }
+
+ul li {
+  list-style-type: none;
+}
+
 .list-item-title {
   font-size: 1.7em;
   font-weight: bold;
   text-decoration: none;
   font-family: "Caveat",cursive!important;
 }
+
 .fa-solid::before {
   font-size: 1.4rem;
 }
