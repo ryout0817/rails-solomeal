@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-size: 12px;
   
@@ -7,8 +12,14 @@ ul li {
   list-style-type: none;
 }
 
+.nav-list {
+  display: block;
+  width: 90px;
+}
+
 .list-item {
   font-size: 1.7em;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
   font-family: "Caveat",cursive!important;
