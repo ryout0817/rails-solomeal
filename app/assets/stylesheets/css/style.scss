@@ -1,8 +1,13 @@
 body {
   font-size: 12px;
+  
 }
 .header-logo {
-  font-size: 1.4em;
+  font-size: 1.7em;
   font-weight: bold;
   text-decoration: none;
+  font-family: "Caveat",cursive!important;
+}
+.fa-solid::before {
+  font-size: 1.4rem;
 }
