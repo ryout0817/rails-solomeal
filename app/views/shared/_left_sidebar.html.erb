@@ -5,17 +5,23 @@
         <ul class="nav-list">
           <li>
             <%= link_to "/", class: "list-item" do %>
-              Home<i class="fa-solid fa-house"></i>
+              <i class="fa-solid fa-house"></i>Home
             <% end %>
           </li>
           <li>
-            <p class="list-item">About</p>
+            <%= link_to "/", class: "list-item" do %>
+              <i class="fa-solid fa-book"></i>About
+            <% end %>
           </li>
           <li>
-            <p class="list-item">Login</p>
+            <%= link_to "/", class: "list-item" do %>
+              <p class="list-item">Login</p>
+            <% end %>
           </li>
           <li>
-            <p class="list-item">SignUp</p>
+            <%= link_to "/", class: "list-item" do %>
+              <p class="list-item">SignUp</p>
+            <% end %>
           </li>
         </ul>
       </div>
