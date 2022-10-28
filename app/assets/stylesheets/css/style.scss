@@ -12,9 +12,15 @@ ul li {
   list-style-type: none;
 }
 
+.header-logo {
+  text-decoration: none;
+  color: #111111;
+}
+
+// サイドバー
 .nav-list {
   display: block;
-  width: 90px;
+  width: 100px;
 }
 
 .list-item {
@@ -27,4 +33,5 @@ ul li {
 
 .fa-solid::before {
   font-size: 1.4rem;
+  padding-right: 5px;
 }
