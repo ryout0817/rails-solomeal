@@ -15,12 +15,20 @@ ul li {
 .container {
   width: 100%;
 }
-
-.header-logo {
-  text-decoration: none;
-  color: #111111;
+// ヘッダー
+.header {
+  display: flex;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #EEE8AA;
 }
 
+.header-logo {
+  padding-left: 10px;
+  text-decoration: none;
+  color: #FF55FF;
+}
 // サイドバー
 .nav-list {
   display: block;
