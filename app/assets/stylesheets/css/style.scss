@@ -5,7 +5,8 @@
 
 body {
   font-size: 12px;
-  
+  width: 100vw;
+  height: 100vh;
 }
 
 ul li {
@@ -30,6 +31,12 @@ ul li {
   color: #FF55FF;
 }
 // サイドバー
+.side-nav {
+  padding-top: 10px;
+  width: 150px;
+  height: 100%;
+  background-color: #FFFACD;
+}
 .side-list {
   margin-left: 40px;
   display: block;
@@ -37,7 +44,6 @@ ul li {
 }
 
 .menu-list li {
-  margin-top: 10px;
   margin-bottom: 20px;
 }
 
