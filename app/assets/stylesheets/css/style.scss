@@ -30,13 +30,24 @@ ul li {
   color: #FF55FF;
 }
 // サイドバー
-.nav-list {
+
+.side-nav {
+  position: relative;
+}
+
+.side-list {
+  margin-left: 10px;
   display: block;
   width: 100px;
 }
 
+.menu-list li {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .list-item {
-  font-size: 1.7em;
+  font-size: 1.5em;
   color: #000000;
   font-weight: bold;
   text-decoration: none;
