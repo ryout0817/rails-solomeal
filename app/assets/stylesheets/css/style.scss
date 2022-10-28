@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+}
+// ヘッダー
+.header {
+  display: flex;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #444444;
+}
+
+.header-logo {
+  padding-left: 10px;
+  text-decoration: none;
+  color: #EEEEEE;
+}
+// サイドバー
+.side-nav {
+  padding-top: 10px;
+  width: 150px;
+  height: 100%;
+}
+.side-list {
+  margin-left: 40px;
+  display: block;
+  width: 100px;
+}
+
+.menu-list li {
+  margin-bottom: 20px;
+}
+
+.list-item {
+  font-size: 1.5em;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Caveat",cursive!important;
+}
+
+.fa-solid::before {
+  font-size: 1.4rem;
+  padding-right: 5px;
+}
+
+// トップページメイン
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #FF55FF;
+  position: relative;
+}
+
+.content-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+// フッター
+.footer-text {
+  text-align: center;
+  position: relative;
+  height: 30px;
+  color: #EEEEEE;
+  background-color: #444444;
+}
+
+.footer-text p {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
