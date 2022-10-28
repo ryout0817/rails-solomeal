@@ -24,13 +24,13 @@ ul li {
   position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #EEE8AA;
+  background-color: #444444;
 }
 
 .header-logo {
   padding-left: 10px;
   text-decoration: none;
-  color: #FF55FF;
+  color: #EEEEEE;
 }
 // サイドバー
 .side-nav {
@@ -75,12 +75,23 @@ ul li {
   background-color: #FF55FF;
 }
 
-.content-wrapper{
-}
-
-
 .content-title {
   position: absolute;
   top: 50%;
+  left: 50%;
+}
+
+// フッター
+.footer-text {
+  text-align: center;
+  position: relative;
+  height: 30px;
+  color: #EEEEEE;
+  background-color: #444444;
+}
+
+.footer-text p {
+  position: absolute;
+  top: 30%;
   left: 50%;
 }
