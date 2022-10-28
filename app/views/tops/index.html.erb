@@ -1,1 +1,40 @@
 <% provide(:title, 'eatcapsule')%>
+<div class="main">
+  <div class="side-nav">
+    <nav id="nav-list">
+      <div class="side-list">
+        <div>
+          <ul class="menu-list">
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-house"></i>Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-book"></i>About
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-user"></i>Login
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-pen"></i>SignUp
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="content-wrapper">
+      <div class="content-title">
+        <h1>EatCapsule</h1>
+      </div>
+    </div>
+  </div>
+</div>

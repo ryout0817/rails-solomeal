@@ -7,6 +7,8 @@ body {
   font-size: 12px;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ul li {
@@ -35,7 +37,6 @@ ul li {
   padding-top: 10px;
   width: 150px;
   height: 100%;
-  background-color: #FFFACD;
 }
 .side-list {
   margin-left: 40px;
@@ -58,4 +59,28 @@ ul li {
 .fa-solid::before {
   font-size: 1.4rem;
   padding-right: 5px;
+}
+
+// トップページメイン
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #FF55FF;
+}
+
+.content-wrapper{
+}
+
+
+.content-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
