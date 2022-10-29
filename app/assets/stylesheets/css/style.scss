@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  line-height: 50px;
+}
+
 ul li {
   list-style-type: none;
 }
@@ -72,7 +76,7 @@ ul li {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #FF55FF;
+  background-color: #A9A9A9;
   position: relative;
 }
 
@@ -101,7 +105,7 @@ ul li {
 .content-document {
   position: absolute;
   top: 20%;
-  left: 40%;
+  left: 30%;
   background-color: #FAEBD7;
   border: #444444 solid 1px;
   border-radius: 10px;
@@ -112,8 +116,9 @@ ul li {
   text-align: center;
 }
 
-.content-document-inner h1 {
-  
+.content-document-inner p {
+  font-size: 1.2rem;
+  line-height: 50px;
 }
 
 .document-title {
@@ -123,4 +128,5 @@ ul li {
 .document-title::before {
   font-family: "Font Awesome 5 Free";
   content: "\f02d";
+  padding-right: 10px;
 }
