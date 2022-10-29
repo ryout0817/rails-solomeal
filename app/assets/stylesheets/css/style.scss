@@ -104,12 +104,23 @@ ul li {
   left: 40%;
   background-color: #FAEBD7;
   border: #444444 solid 1px;
+  border-radius: 10px;
 }
 
 .content-document-inner {
   padding: 10px 56px 40px;
+  text-align: center;
+}
+
+.content-document-inner h1 {
+  
 }
 
 .document-title {
-  color: 	#DB7093;
+  font-family: "Courier New";
+}
+
+.document-title::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f02d";
 }
