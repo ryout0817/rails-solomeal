@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "Tops", type: :system do
   before do
-    driven_by(:rack_test)
+    visit about_path
   end
-
-  pending "add some scenarios (or delete) #{__FILE__}"
+  it "click About" do
+      expect(page).to have_content('Home')
+  end
 end
