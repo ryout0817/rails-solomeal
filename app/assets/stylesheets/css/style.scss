@@ -32,10 +32,16 @@ ul li {
 }
 
 .header-logo {
-  padding-left: 10px;
   text-decoration: none;
   color: #EEEEEE;
 }
+
+@media (min-width: 768px) {
+  .header-logo {
+    padding-left:50px;
+  }
+}
+
 // サイドバー
 .side-nav {
   padding-top: 10px;
@@ -102,10 +108,17 @@ ul li {
 }
 
 // アバウトページ
+.about-content {
+  width: 80%;
+}
+
 .content-document {
   position: absolute;
-  top: 20%;
-  left: 30%;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
   background-color: #FAEBD7;
   border: #444444 solid 1px;
   border-radius: 10px;
