@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  line-height: 50px;
+}
+
 ul li {
   list-style-type: none;
 }
@@ -28,10 +32,16 @@ ul li {
 }
 
 .header-logo {
-  padding-left: 10px;
   text-decoration: none;
   color: #EEEEEE;
 }
+
+@media (min-width: 768px) {
+  .header-logo {
+    padding-left:50px;
+  }
+}
+
 // サイドバー
 .side-nav {
   padding-top: 10px;
@@ -72,7 +82,7 @@ ul li {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #FF55FF;
+  background-color: #A9A9A9;
   position: relative;
 }
 
@@ -95,4 +105,41 @@ ul li {
   position: absolute;
   top: 30%;
   left: 50%;
+}
+
+// アバウトページ
+.about-content {
+  width: 80%;
+}
+
+.content-document {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  background-color: #FAEBD7;
+  border: #444444 solid 1px;
+  border-radius: 10px;
+}
+
+.content-document-inner {
+  padding: 10px 56px 40px;
+  text-align: center;
+}
+
+.content-document-inner p {
+  font-size: 1.2rem;
+  line-height: 50px;
+}
+
+.document-title {
+  font-family: "Courier New";
+}
+
+.document-title::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f02d";
+  padding-right: 10px;
 }
