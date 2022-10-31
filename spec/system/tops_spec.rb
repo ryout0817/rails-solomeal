@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "Tops", type: :system do
   before do
-    visit about_path
+    visit "/"
   end
+  describe "check Products system" do
   it "click About" do
-      expect(page).to have_content('Home')
+      click_link "About"
+      expect(current_path).to eq about_path
+  end
   end
 end
