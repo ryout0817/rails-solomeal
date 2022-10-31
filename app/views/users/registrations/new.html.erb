@@ -11,13 +11,13 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-user"></i>Login
+              <%= link_to about_path, class: "list-item" do %>
+                <i class="fa-solid fa-book"></i>About
               <% end %>
             </li>
             <li>
               <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-pen"></i>SignUp
+                <i class="fa-solid fa-user"></i>Login
               <% end %>
             </li>
           </ul>
@@ -29,7 +29,7 @@
     <div class="content-wrapper">
       <div class="content-document about-content">
         <div class="content-document-inner">
-          <h1 class="document-title">Sign_Up</h1>
+          <h1 class="document-title">SignUp</h1>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "users/shared/error_messages", resource: resource %>
             <div class="field">
