@@ -167,9 +167,18 @@ ul li {
   background-color: #FFFFFF;
   border-radius: 20px;
   border-color: #FAEBD7;
+  margin-bottom: 2.5rem;
 }
 
-.bace-button {
+.base-btn {
   width: 50%;
   padding: 0.35rem 0.75rem;
+}
+
+.form-login {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: orange;
+  border-radius: 20px;
+  padding: 0.35rem 2.5rem;
 }

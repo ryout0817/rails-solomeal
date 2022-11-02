@@ -51,8 +51,10 @@
             <div class="actions">
               <%= f.submit "アカウント登録", class: "form-submit base-btn" %>
             </div>
+            <div class="actions">
+              <%= link_to  "ログイン", new_user_session_path, class: "form-login" %>
+            </div>
           <% end %> 
-          <%= render "users/shared/links" %>
         </div>
       </div>
     </div>
