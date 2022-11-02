@@ -51,7 +51,7 @@ ul li {
 .side-list {
   margin-left: 40px;
   display: block;
-  width: 100px;
+  width: 110px;
 }
 
 .menu-list li {
@@ -149,6 +149,7 @@ ul li {
   font-family: "Font Awesome 5 Free";
   content: "\f304";
   padding-right: 10px;
+  font-size: 1.5rem;
 }
 
 .user-form {
@@ -172,7 +173,7 @@ ul li {
 
 .base-btn {
   width: 50%;
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .form-login {
@@ -180,5 +181,5 @@ ul li {
   text-decoration: none;
   background-color: orange;
   border-radius: 20px;
-  padding: 0.35rem 2.5rem;
+  padding: 0.5rem 2.5rem;
 }
