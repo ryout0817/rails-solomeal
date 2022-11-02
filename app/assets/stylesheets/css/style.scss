@@ -96,14 +96,14 @@ ul li {
 .footer-text {
   text-align: center;
   position: relative;
-  height: 30px;
+  height: 40px;
   color: #EEEEEE;
   background-color: #444444;
 }
 
 .footer-text p {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
 }
 
@@ -182,4 +182,8 @@ ul li {
   background-color: orange;
   border-radius: 20px;
   padding: 0.5rem 2.5rem;
+}
+
+label {
+  font-weight: 600;
 }
