@@ -145,6 +145,10 @@ ul li {
   padding-right: 10px;
 }
 // サインアップページ
+.actions {
+  margin-bottom: 2.5rem;
+}
+
 .signup-icon::before {
   font-family: "Font Awesome 5 Free";
   content: "\f304";
@@ -168,12 +172,12 @@ ul li {
   background-color: #FFFFFF;
   border-radius: 20px;
   border-color: #FAEBD7;
-  margin-bottom: 2.5rem;
 }
 
 .base-btn {
   width: 50%;
   padding: 0.5rem 0.75rem;
+  border-radius: 20px;
 }
 
 .form-login {
@@ -193,4 +197,17 @@ label {
   content: "\f007";
   padding-right: 10px;
   font-size: 1.5rem;
+}
+
+.form-login {
+  margin-top: 2rem;
+  color: #FFFFFF;
+  background-color: orange;
+  border: 1px solid orange;
+}
+
+.signup-btn {
+  text-decoration: none;
+  color: orange;
+  background-color: #FFFFFF;
 }
