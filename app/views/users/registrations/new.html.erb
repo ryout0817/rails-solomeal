@@ -16,7 +16,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "/", class: "list-item" do %>
+              <%= link_to user_session_path, class: "list-item" do %>
                 <i class="fa-solid fa-user"></i>Login
               <% end %>
             </li>
@@ -52,7 +52,7 @@
               <%= f.submit "アカウント登録", class: "form-submit base-btn" %>
             </div>
             <div class="actions">
-              <%= link_to  "ログイン", new_user_session_path, class: "form-login" %>
+              <%= link_to  "ログイン", new_user_session_path, class: "form-login login-position" %>
             </div>
           <% end %> 
         </div>

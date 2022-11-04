@@ -4,6 +4,9 @@
       <%= link_to "/", class: "header-logo" do%>
         <h1>eat-capsule</h1>
       <% end %>
+      <div class="logout-form">
+        <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn base-btn", method: :delete %>
+      </div>
     </div>
   </div>
 </header>
