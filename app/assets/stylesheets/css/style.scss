@@ -29,6 +29,8 @@ ul li {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #444444;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-logo {
@@ -42,6 +44,11 @@ ul li {
   }
 }
 
+.logout-btn {
+  color: #FFFFFF;
+  background-color: orange;
+  text-decoration: none;
+}
 // サイドバー
 .side-nav {
   padding-top: 10px;
