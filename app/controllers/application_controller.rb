@@ -13,9 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    # 新規登録時にnicknameの取得を許可
+    # 新規登録時にnameの取得を許可
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    # 情報更新時にnicknameの取得を許可
+    # ログイン時にnemeを取得を許可
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+    # 情報更新時にnameの取得許可
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 end
