@@ -10,16 +10,29 @@
                 <i class="fa-solid fa-house"></i>Home
               <% end %>
             </li>
-            <li>
-              <%= link_to user_session_path, class: "list-item" do %>
-                <i class="fa-solid fa-user"></i>Login
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_user_registration_path, class: "list-item" do %>
-                <i class="fa-solid fa-pen"></i>SignUp
-              <% end %>
-            </li>
+            <% if user_signed_in? %>
+              <li>
+                <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+                <i class="fa-solid fa-user"></i>User</button>
+                <nav id="nav-none">
+                  <ul class="user-list">
+                    <li>パスワード変更</li>
+                    <li><%= link_to "ユーザー編集", edit_user_registration_path, class: "list-item" %></li>
+                  </ul>
+                </nav>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to user_session_path, class: "list-item" do %>
+                  <i class="fa-solid fa-user"></i>Login
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path, class: "list-item" do %>
+                  <i class="fa-solid fa-pen"></i>SignUp
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -39,3 +52,5 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'user/application' %>
+

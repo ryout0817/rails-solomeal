@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/45b4a2fcd8.js" crossorigin="anonymous"></script>
   </head>
 
@@ -15,5 +14,6 @@
     <%= render 'shared/header.html.erb' %>
     <%= yield %>
     <%= render 'shared/footer.html.erb' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
