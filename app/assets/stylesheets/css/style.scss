@@ -4,11 +4,15 @@
 }
 
 body {
-  font-size: 12px;
+  font-size: 16px;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  line-height: 50px;
 }
 
 ul li {
@@ -25,12 +29,26 @@ ul li {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #444444;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-logo {
-  padding-left: 10px;
   text-decoration: none;
   color: #EEEEEE;
+}
+
+@media (min-width: 768px) {
+  .header-logo {
+    padding-left:50px;
+  }
+}
+
+.logout-btn {
+  color: #FFFFFF;
+  background-color: orange;
+  text-decoration: none;
+  margin-right: 2rem;
 }
 // サイドバー
 .side-nav {
@@ -41,7 +59,7 @@ ul li {
 .side-list {
   margin-left: 40px;
   display: block;
-  width: 100px;
+  width: 110px;
 }
 
 .menu-list li {
@@ -72,11 +90,11 @@ ul li {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #FF55FF;
+  background-color: #A9A9A9;
   position: relative;
 }
 
-.content-title {
+.content-name {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -86,13 +104,115 @@ ul li {
 .footer-text {
   text-align: center;
   position: relative;
-  height: 30px;
+  height: 40px;
   color: #EEEEEE;
   background-color: #444444;
 }
 
 .footer-text p {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
+}
+
+// アバウトページ
+.about-content {
+  width: 80%;
+}
+
+.container-content {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  background-color: #FAEBD7;
+  border: #444444 solid 1px;
+  border-radius: 10px;
+  border: none;
+}
+
+.content-document-inner {
+  padding: 10px 56px 40px;
+  text-align: center;
+}
+
+.content-document-inner p {
+  font-size: 1.2rem;
+  line-height: 50px;
+}
+
+.title-font {
+  font-family: "Courier New";
+}
+
+.document-icon::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f02d";
+  padding-right: 10px;
+}
+// サインアップページ
+.actions {
+  margin-bottom: 2.5rem;
+}
+
+.signup-icon::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f304";
+  padding-right: 10px;
+  font-size: 1.5rem;
+}
+
+.user-form {
+  width: 50%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.form-submit {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border-color: #FAEBD7;
+}
+
+.base-btn {
+  width: 50%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+}
+
+.form-login {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: orange;
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+}
+
+label {
+  font-weight: 600;
+}
+// ログインページ
+.login-icon::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f007";
+  padding-right: 10px;
+  font-size: 1.5rem;
+}
+
+.login-position {
+  margin-top: 2rem;
+}
+
+.signup-btn {
+  text-decoration: none;
+  color: orange;
+  background-color: #FFFFFF;
 }
