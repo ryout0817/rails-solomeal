@@ -16,8 +16,8 @@
                 <i class="fa-solid fa-user"></i>User</button>
                 <nav id="nav-none">
                   <ul class="user-list">
-                    <li>パスワード変更</li>
-                    <li><%= link_to "ユーザー編集", edit_user_registration_path, class: "list-item" %></li>
+                    <li>プロフィール</li>
+                    <li><%= link_to "アカウント", edit_user_registration_path %></li>
                   </ul>
                 </nav>
               </li>
@@ -52,5 +52,16 @@
     </div>
   </div>
 </div>
-<%= javascript_pack_tag 'user/application' %>
 
+<script>
+document.getElementById("nav-none").style.display = "none";
+function clickBtn1() {
+  const p1 = document.getElementById("nav-none");
+
+  if(p1.style.display == "block") {
+    p1.style.display = "none";
+  }else{
+    p1.style.display = "block"
+  }
+}
+</script>
