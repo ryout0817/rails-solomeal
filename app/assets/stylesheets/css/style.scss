@@ -74,6 +74,10 @@ ul li {
   font-family: "Caveat",cursive!important;
 }
 
+.list-item:hover {
+  color: red;
+}
+
 .fa-solid::before {
   font-size: 1.4rem;
   padding-right: 5px;
@@ -215,4 +219,22 @@ label {
   text-decoration: none;
   color: orange;
   background-color: #FFFFFF;
+}
+
+.btn-menu {
+  border: none;
+  background-color: #FFFFFF;
+}
+
+.user-list {
+  font-size: 0.75rem;
+}
+
+.user-list li {
+  margin-top: 0.3rem;
+  margin-left: 1.6rem;
+}
+
+.user-list li:hover {
+  color: red;
 }

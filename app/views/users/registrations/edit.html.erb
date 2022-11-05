@@ -15,6 +15,17 @@
                 <i class="fa-solid fa-book"></i>About
               <% end %>
             </li>
+            <li>
+              <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+                <i class="fa-solid fa-user"></i>User</button>
+                <nav id="nav-none">
+                  <ul class="user-list">
+                    <li>パスワード変更</li>
+                    <li>ユーザー編集</li>
+                  </ul>
+                </nav>
+              <div>
+            </li>
           </ul>
         </div>
       </div>
@@ -56,3 +67,17 @@
     </div>
   </div>
 </div>
+
+<script>
+document.getElementById("nav-none").style.display = "none";
+
+function clickBtn1() {
+  const p1 = document.getElementById("nav-none");
+
+  if(p1.style.display == "block") {
+    p1.style.display = "none";
+  }else{
+    p1.style.display = "block"
+  }
+}
+</script>
