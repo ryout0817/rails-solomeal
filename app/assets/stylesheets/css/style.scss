@@ -53,11 +53,11 @@ ul li {
 // サイドバー
 .side-nav {
   padding-top: 10px;
-  width: 150px;
+  width: 130px;
   height: 100%;
 }
 .side-list {
-  margin-left: 40px;
+  margin-left: 1rem;
   display: block;
   width: 110px;
 }
@@ -232,8 +232,7 @@ label {
 }
 
 .user-list li {
-  margin-top: 0.3rem;
-  margin-left: 1.6rem;
+  margin-bottom: 0;
 }
 
 .user-list li:hover {
