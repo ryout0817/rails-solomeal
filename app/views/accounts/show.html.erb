@@ -1,2 +1,77 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<% provide(:title, 'eatcapsule | プロフィール')%>
+<div class="main">
+  <div class="side-nav">
+    <nav id="nav-list">
+      <div class="side-list">
+        <div>
+          <ul class="menu-list">
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-house"></i>Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to about_path, class: "list-item" do %>
+                <i class="fa-solid fa-book"></i>About
+              <% end %>
+            </li>
+            <li>
+              <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+              <i class="fa-solid fa-user"></i>User</button>
+              <nav id="nav-none">
+                <ul class="user-list">
+                  <li><%= link_to "プロフィール", account_path %></li>
+                  <li><%= link_to "アカウント", edit_user_registration_path %></li>
+                </ul>
+              </nav>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="content-wrapper">
+      <div class="container-content user-form">
+        <div class="content-document-inner">
+          <h1 class="signup-icon title-font">アカウント編集</h1>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
+            <div class="field">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :パスワード %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :パスワード確認 %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :現在のパスワード %>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "更新", class: "form-submit base-btn" %>
+            </div>
+          <% end %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("nav-none").style.display = "none";
+function clickBtn1() {
+  const p1 = document.getElementById("nav-none");
+
+  if(p1.style.display == "block") {
+    p1.style.display = "none";
+  }else{
+    p1.style.display = "block"
+  }
+}
+</script>
