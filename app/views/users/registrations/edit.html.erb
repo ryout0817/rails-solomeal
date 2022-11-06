@@ -20,8 +20,8 @@
               <i class="fa-solid fa-user"></i>User</button>
               <nav id="nav-none">
                 <ul class="user-list">
-                  <li><%= link_to "プロフィール", account_path(current_user) %></li>
-                  <li><%= link_to "アカウント", edit_user_registration_path %></li>
+                  <li><%= link_to "プロフィール", account_path(current_user), class: "user-list-item" %></li>
+                  <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
                 </ul>
               </nav>
             </li>
