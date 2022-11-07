@@ -227,6 +227,10 @@ ul li {
   resize: none;
 }
 
+.form-control-show {
+  color: #B2ACA2;
+}
+
 .form-submit {
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -315,4 +319,12 @@ label {
   resize: none;
   height: 4em;
   line-height: 1.1rem;
+}
+
+.focus-none {
+  color: #B2ACA2;
+}
+
+.focus-none:focus {
+  outline: none;
 }

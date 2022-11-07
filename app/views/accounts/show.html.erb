@@ -40,19 +40,19 @@
               <div class="user-content">
                 <label class="user-label" for="name">ニックネーム</label>
                 <div class="user-content-item">
-                  <%= f.text_field :name, class: "form-control", readonly: true %>
+                  <%= f.text_field :name, class: "form-control focus-none", readonly: true %>
                 </div>
               </div>
               <div class="user-content">
                 <label class="user-label" for="introduction">自己紹介</label>
                 <div class="user-content-item">
-                  <%= f.text_area :introduction,  rows: 4, class: "form-control", readonly: true %>
+                  <%= f.text_area :introduction,  rows: 4, class: "form-control focus-none", readonly: true %>
                 </div>
               </div>
               <div class="user-content">
                 <label class="user-label" for="specialties">得意料理</label>
                 <div class="user-content-item">
-                  <%= f.text_field :recommended_dishes, class: "form-control" %>
+                  <%= f.text_field :recommended_dishes, class: "form-control focus-none", readonly: true %>
                 </div>
               </div>
             <% end %>
