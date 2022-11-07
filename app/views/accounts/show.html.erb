@@ -20,8 +20,8 @@
               <i class="fa-solid fa-user"></i>User</button>
               <nav id="nav-none">
                 <ul class="user-list">
-                  <li><%= link_to "プロフィール", account_path %></li>
-                  <li><%= link_to "アカウント", edit_user_registration_path %></li>
+                  <li><%= link_to "プロフィール", account_path, class: "user-list-item" %></li>
+                  <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
                 </ul>
               </nav>
             </li>
@@ -38,15 +38,26 @@
             <div class="field">
               <div class="user-content">
                 <label class="user-label" for="name">ニックネーム</label>
+                <div class="user-content-item">
+                  <%= @user.name%>
+                </div>
               </div>
               <div class="user-content">
                 <label class="user-label" for="email">メールアドレス</label>
+                <div class="user-content-item">
+                  <%= @user.email%>
+                </div>
               </div>
               <div class="user-content">
                 <label class="user-label" for="introduction">自己紹介</label>
+                <div class="user-content-item">
+                  <%= @user.introduction%>
+                </div>
               </div>
               <div class="user-content">
                 <label class="user-label" for="specialties">得意料理</label>
+                <div class="user-content-item">
+                </div>
               </div>
             </div>
         </div>
