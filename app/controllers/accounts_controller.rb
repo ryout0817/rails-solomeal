@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(params.require(:user).permit(:name, :introduction))
+    if @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes))
       redirect_to account_path(@user)
     else
       render "edit"    
