@@ -11,6 +11,15 @@ body {
   flex-direction: column;
 }
 
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
 h1 {
   line-height: 50px;
 }
@@ -28,14 +37,14 @@ ul li {
   position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #444444;
+  background-color: #E9E1D1;
   align-items: center;
   justify-content: space-between;
 }
 
 .header-logo {
   text-decoration: none;
-  color: #EEEEEE;
+  color: black;
 }
 
 @media (min-width: 768px) {
@@ -52,7 +61,7 @@ ul li {
 
 .logout-btn {
   color: #FFFFFF;
-  background-color: orange;
+  background-color: #E89A0B;
   text-decoration: none;
   margin-right: 2rem;
 }
@@ -88,7 +97,7 @@ ul li {
 }
 
 .list-item:hover {
-  color: red;
+  color: #E89A0B;
 }
 
 .fa-solid::before {
@@ -101,13 +110,13 @@ ul li {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  background-color: #E9E1D1;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #A9A9A9;
   position: relative;
 }
 
@@ -131,7 +140,7 @@ ul li {
   position: relative;
   height: 40px;
   color: #EEEEEE;
-  background-color: #444444;
+  background-color: #ADA391;
 }
 
 .footer-text p {
@@ -152,7 +161,7 @@ ul li {
   right: 0;
   bottom: 10%;
   margin: auto;
-  background-color: #FAEBD7;
+  background-color: #DBD3C5;
   border: #444444 solid 1px;
   border-radius: 10px;
   border: none;
@@ -228,9 +237,9 @@ ul li {
 .form-submit {
   color: #FFFFFF;
   text-decoration: none;
-  background-color: orange;
+  background-color: #E89A0B;
   border-radius: 20px;
-  border: 1px solid orange;
+  border: 1px solid #E89A0B;
   padding: 0.5rem 2rem;
 }
 
@@ -251,15 +260,14 @@ label {
 
 .signup-btn {
   text-decoration: none;
-  color: orange;
+  color: #E89A0B;
   background-color: #FFFFFF;
 }
 
 .btn-menu {
   border: none;
-  background-color: #FFFFFF;
 }
-
+// アカウントプロフィール編集ページ
 .user-list {
   font-size: 0.75rem;
 }
@@ -275,6 +283,17 @@ label {
 }
 
 .user-list-item:hover {
-  color: red;
-  border-bottom: 1px solid red;
+  color: #E89A0B;
+  border-bottom: 1px solid #E89A0B;
+}
+
+.user-content-item {
+  border-bottom: 1px solid #E89A0B;
+  margin: 0 40px 10px 40px;
+}
+
+.edit-btn {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #E89A0B;
 }
