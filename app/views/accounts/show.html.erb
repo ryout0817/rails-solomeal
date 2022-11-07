@@ -35,31 +35,34 @@
       <div class="container-content user-form">
         <div class="content-document-inner">
           <h1 class="signup-icon title-font">プロフィール</h1>
-            <div class="field">
-              <div class="user-content">
-                <label class="user-label" for="name">ニックネーム</label>
-                <div class="user-content-item">
-                  <%= @user.name%>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="email">メールアドレス</label>
-                <div class="user-content-item">
-                  <%= @user.email%>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="introduction">自己紹介</label>
-                <div class="user-content-item">
-                  <%= @user.introduction%>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="specialties">得意料理</label>
-                <div class="user-content-item">
-                </div>
+          <div class="field">
+            <div class="user-content">
+              <label class="user-label" for="name">ニックネーム</label>
+              <div class="user-content-item">
+                <%= @user.name%>
               </div>
             </div>
+            <div class="user-content">
+              <label class="user-label" for="email">メールアドレス</label>
+              <div class="user-content-item">
+                <%= @user.email%>
+              </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="introduction">自己紹介</label>
+              <div class="user-content-item">
+                <%= @user.introduction%>
+              </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="specialties">得意料理</label>
+              <div class="user-content-item">
+              </div>
+            </div>
+          </div>
+          <div class="user-content-link">
+              <%= link_to "プロフィール編集", "/", class: "edit-btn base-btn" %>
+          </div>
         </div>
       </div>
     </div>
