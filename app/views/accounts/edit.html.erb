@@ -1,0 +1,83 @@
+<% provide(:title, 'eatcapsule | プロフィール')%>
+<div class="main">
+  <div class="side-nav">
+    <nav id="nav-list">
+      <div class="side-list">
+        <div>
+          <ul class="menu-list">
+            <li>
+              <%= link_to "/", class: "list-item" do %>
+                <i class="fa-solid fa-house"></i>Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to about_path, class: "list-item" do %>
+                <i class="fa-solid fa-book"></i>About
+              <% end %>
+            </li>
+            <li>
+              <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+              <i class="fa-solid fa-user"></i>User</button>
+              <nav id="nav-none">
+                <ul class="user-list">
+                  <li><%= link_to "プロフィール", account_path, class: "user-list-item" %></li>
+                  <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
+                </ul>
+              </nav>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="content-wrapper">
+      <div class="container-content user-form">
+        <div class="content-document-inner">
+          <h1 class="signup-icon title-font">プロフィール</h1>
+          <div class="field">
+            <div class="user-content">
+              <label class="user-label" for="name">ニックネーム</label>
+              <div class="user-content-item">
+                <%= @user.name%>
+              </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="email">メールアドレス</label>
+              <div class="user-content-item">
+                <%= @user.email%>
+              </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="introduction">自己紹介</label>
+              <div class="user-content-item">
+                <%= @user.introduction%>
+              </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="specialties">得意料理</label>
+              <div class="user-content-item">
+              </div>
+            </div>
+          </div>
+          <div class="user-content-link">
+              <%= link_to "プロフィール編集", "/", class: "edit-btn base-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("nav-none").style.display = "none";
+function clickBtn1() {
+  const p1 = document.getElementById("nav-none");
+
+  if(p1.style.display == "block") {
+    p1.style.display = "none";
+  }else{
+    p1.style.display = "block"
+  }
+}
+</script>
