@@ -43,12 +43,6 @@
               </div>
             </div>
             <div class="user-content">
-              <label class="user-label" for="email">メールアドレス</label>
-              <div class="user-content-item">
-                <%= @user.email%>
-              </div>
-            </div>
-            <div class="user-content">
               <label class="user-label" for="introduction">自己紹介</label>
               <div class="user-content-item">
                 <%= @user.introduction%>
@@ -61,7 +55,7 @@
             </div>
           </div>
           <div class="user-content-link">
-              <%= link_to "プロフィール編集", "/", class: "edit-btn base-btn" %>
+              <%= link_to "戻る", account_path, class: "return-link base-btn" %>
           </div>
         </div>
       </div>
