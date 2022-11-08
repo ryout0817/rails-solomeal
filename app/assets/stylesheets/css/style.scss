@@ -20,6 +20,10 @@ button{
   appearance: none;
 }
 
+p {
+  white-space: pre-wrap;
+}
+
 h1 {
   line-height: 50px;
 }
@@ -327,4 +331,8 @@ label {
 
 .focus-none:focus {
   outline: none;
+}
+
+.col-border {
+  border-bottom: 1px solid #E89A0B;
 }

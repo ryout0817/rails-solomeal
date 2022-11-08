@@ -36,26 +36,24 @@
         <div class="content-document-inner">
           <h1 class="signup-icon title-font">プロフィール</h1>
           <div class="field">
-            <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
-              <div class="user-content">
-                <label class="user-label" for="name">ニックネーム</label>
-                <div class="user-content-item">
-                  <%= f.text_field :name, class: "form-control focus-none", readonly: true %>
-                </div>
+            <div class="user-content">
+              <label class="user-label" for="name">ニックネーム</label>
+              <div class="user-content-item col-border">
+                <%= @user.name%>
               </div>
-              <div class="user-content">
-                <label class="user-label" for="introduction">自己紹介</label>
-                <div class="user-content-item">
-                  <%= f.text_area :introduction,  rows: 4, class: "form-control focus-none", readonly: true %>
-                </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="introduction">自己紹介</label>
+              <div class="user-content-item col-border">
+                <%= @user.introduction%>
               </div>
-              <div class="user-content">
-                <label class="user-label" for="specialties">得意料理</label>
-                <div class="user-content-item">
-                  <%= f.text_field :recommended_dishes, class: "form-control focus-none", readonly: true %>
-                </div>
+            </div>
+            <div class="user-content">
+              <label class="user-label" for="specialties">得意料理</label>
+              <div class="user-content-item col-border">
+                <%= @user.recommended_dishes%>
               </div>
-            <% end %>
+            </div>
           </div>
           <div class="user-content-link">
               <%= link_to "プロフィール編集", edit_account_path, class: "edit-btn base-btn" %>
