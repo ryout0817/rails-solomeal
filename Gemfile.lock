@@ -277,8 +277,10 @@ DEPENDENCIES
   carrierwave
   devise
   factory_bot_rails
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  mini_magick
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
