@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes))
+    if @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar))
       redirect_to account_path(@user)
     else
       render "edit"    
