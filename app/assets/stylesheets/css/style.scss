@@ -159,12 +159,7 @@ ul li {
 }
 
 .container-content {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  bottom: 10%;
-  margin: auto;
+  margin: 20px auto;
   border: #444444 solid 1px;
   border-radius: 10px;
   border: none;
@@ -335,4 +330,32 @@ label {
 
 .col-border {
   border-bottom: 1px solid #E89A0B;
+}
+
+.user-icon-size {
+  font-size: 3rem !important;
+}
+
+.user-icon-img {
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user-icon-font::before {
+  font-size: 3rem;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.no-edit-form {
+  background-color: #f8f1e5;
+  border: none;
+  resize: none;
+  text-align: center;
+}
+
+.no-edit-form:focus {
+  outline: none;
 }

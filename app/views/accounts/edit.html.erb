@@ -37,7 +37,11 @@
           <h1 class="signup-icon title-font">プロフィール</h1>
           <div class="field">
           <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
-            <div class="user-icon">
+            <div class="user-content">
+              <label class="user-label" for="name">プロフィール写真</label>
+              <div class="user-content-item">
+                <%= f.file_field :avatar %>
+              </div>
             </div>
             <div class="user-content">
               <label class="user-label" for="name">ニックネーム</label>
