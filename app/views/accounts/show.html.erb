@@ -56,7 +56,11 @@
               <div class="user-content">
                 <label class="user-label" for="introduction">自己紹介</label>
                 <div class="user-content-item col-border">
-                  <%= f.text_area :introduction, rows: 4, class: "no-edit-form", readonly: true %>
+                  <% if @user.introduction? %>
+                    <%= @user.introduction%>
+                  <% else %>
+                      <%= f.text_area :introduction, rows: 4, class: "no-edit-form", readonly: true %>
+                  <% end %>
                 </div>
               </div>
               <div class="user-content">

@@ -74,6 +74,8 @@ ul li {
   padding-top: 10px;
   width: 130px;
   height: 100%;
+  background-color: #f8f1e5;
+  border-right: 2px solid #A09A8E;
 }
 
 @media (max-width: 767px) {
@@ -114,7 +116,7 @@ ul li {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  background-color: #F4ECDC;
+  background-color: #F8F1ED;
 }
 
 .content {
