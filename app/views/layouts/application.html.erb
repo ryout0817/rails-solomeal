@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/45b4a2fcd8.js" crossorigin="anonymous"></script>
   </head>
@@ -15,5 +14,16 @@
     <%= yield %>
     <%= render 'shared/footer.html.erb' %>
     <%= javascript_pack_tag 'application' %>
+    <script>
+      document.getElementById("nav-none").style.display = "none";
+      function clickBtn1() {
+        const p1 = document.getElementById("nav-none");
+        if(p1.style.display == "block") {
+          p1.style.display = "none";
+        }else{
+          p1.style.display = "block"
+        }
+      }
+    </script>
   </body>
 </html>
