@@ -35,55 +35,42 @@
       <div class="container-content user-form">
         <div class="content-document-inner">
           <h1 class="signup-icon title-font">プロフィール</h1>
-          <div class="field">
           <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
-            <div class="user-content">
-              <label class="user-label" for="name">プロフィール写真</label>
-              <div class="user-content-item">
-                <%= f.file_field :avatar %>
+            <div class="field">
+              <div class="user-content">
+                <label class="user-label" for="name">プロフィール写真</label>
+                <div class="user-content-item">
+                  <%= f.file_field :avatar %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="name">ニックネーム</label>
+                <div class="user-content-item">
+                  <%= f.text_field :name, class: "form-control" %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="introduction">自己紹介</label>
+                <div class="user-content-item">
+                  <%= f.text_area :introduction, rows: 4, class: "form-control" %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="specialties">旬のおすすめ料理</label>
+                <div class="user-content-item">
+                  <%= f.text_field :recommended_dishes, class: "form-control" %>
+                </div>
               </div>
             </div>
-            <div class="user-content">
-              <label class="user-label" for="name">ニックネーム</label>
-              <div class="user-content-item">
-                <%= f.text_field :name, class: "form-control" %>
-              </div>
+            <div class="actions">
+              <%= f.submit "更新", class: "edit-btn base-btn" %>
             </div>
-            <div class="user-content">
-              <label class="user-label" for="introduction">自己紹介</label>
-              <div class="user-content-item">
-                <%= f.text_area :introduction, rows: 4, class: "form-control" %>
-              </div>
-            </div>
-            <div class="user-content">
-              <label class="user-label" for="specialties">旬のおすすめ料理</label>
-              <div class="user-content-item">
-                <%= f.text_field :recommended_dishes, class: "form-control" %>
-              </div>
-            </div>
-          </div>
-          <div class="actions">
-            <%= f.submit "更新", class: "edit-btn base-btn" %>
-          </div>
-          <% end %>
-          <div class="actions">
+            <div class="actions">
               <%= link_to "戻る", account_path, class: "return-link base-btn" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-document.getElementById("nav-none").style.display = "none";
-function clickBtn1() {
-  const p1 = document.getElementById("nav-none");
-
-  if(p1.style.display == "block") {
-    p1.style.display = "none";
-  }else{
-    p1.style.display = "block"
-  }
-}
-</script>
