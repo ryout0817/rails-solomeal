@@ -5,8 +5,12 @@
         <h1>eat-capsule</h1>
       <% end %>
       <% if user_signed_in? %>
-        <div class="logout-form">
+        <div class="header-form">
           <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn base-btn", method: :delete %>
+        </div>
+        <% else %>
+        <div class = "header-form">
+          <%= link_to "ゲストログイン", tops_guest_sign_in_path, class: "guest-login base-btn", method: :post %>
         </div>
       <% end %>
     </div>

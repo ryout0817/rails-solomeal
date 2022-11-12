@@ -32,6 +32,12 @@ ul li {
   list-style-type: none;
 }
 
+.flash {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #F2B33E;
+}
+
 .container {
   width: 100%;
 }
@@ -64,6 +70,14 @@ ul li {
 }
 
 .logout-btn {
+  color: #FFFFFF;
+  background-color: #F2B33E;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.guest-login {
+  font-size: 0.75rem;
   color: #FFFFFF;
   background-color: #F2B33E;
   text-decoration: none;
@@ -270,7 +284,7 @@ label {
 
 .signup-btn {
   text-decoration: none;
-  color: #E89A0B;
+  color: #F2B33E;
   background-color: #FFFFFF;
 }
 
@@ -293,8 +307,8 @@ label {
 }
 
 .user-list-item:hover {
-  color: #E89A0B;
-  border-bottom: 1px solid #E89A0B;
+  color: #F2B33E;
+  border-bottom: 1px solid #F2B33E;
 }
 
 .user-content-item {
@@ -304,14 +318,14 @@ label {
 .edit-btn {
   text-decoration: none;
   color: #FFFFFF;
-  background-color: #E89A0B;
+  background-color: #F2B33E;
   border: none;
 }
 
 .return-link {
-  color: #E89A0B;
+  color: #F2B33E;
   text-decoration: none;
-  border: 1px solid #E89A0B;
+  border: 1px solid #F2B33E;
   background-color: #FFFFFF;
   padding: 0.5rem 5rem;
 }
@@ -331,7 +345,7 @@ label {
 }
 
 .col-border {
-  border-bottom: 1px solid #E89A0B;
+  border-bottom: 1px solid #F2B33E;
 }
 
 .user-icon-size {
