@@ -281,12 +281,6 @@ a {
   color: #B2ACA2;
 }
 
-.form-submit {
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  border-color: #FAEBD7;
-}
-
 .registration-btn {
   padding: 0.5rem 0.1rem !important;
 }
@@ -301,8 +295,14 @@ a {
   color: #FFFFFF;
   background-color: #F2B33E;
   border-radius: 20px;
-  border: 1px solid #F2B33E;
+  border: none;
   padding: 0.5rem 2rem;
+}
+
+.form-submit:hover {
+  background-color: #FFFFFF;
+  color: #F2B33E;
+  border: none;
 }
 
 label {
@@ -323,6 +323,11 @@ label {
 .link-btn {
   color: #F2B33E;
   background-color: #FFFFFF;
+}
+
+.link-btn:hover {
+  color: #FFFFFF;
+  background-color: #F2B33E;
 }
 
 .btn-menu {
@@ -351,17 +356,11 @@ label {
   margin: 0 40px 10px 40px;
 }
 
-.edit-btn {
-  color: #FFFFFF;
-  background-color: #F2B33E;
-  border: none;
-}
-
 .return-link {
   color: #F2B33E;
   border: 1px solid #F2B33E;
+  padding: 0.25rem 0;
   background-color: #FFFFFF;
-  padding: 0.5rem 5rem;
 }
 
 .row-4 {
