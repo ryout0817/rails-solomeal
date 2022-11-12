@@ -39,6 +39,10 @@ a {
   text-decoration: none;
 }
 
+:hover {
+  transition: 0.3s;
+}
+
 .flash {
   text-align: center;
   color: #FFFFFF;
@@ -82,11 +86,19 @@ a {
 }
 
 .guest-login {
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
   font-size: 0.75rem;
   color: #FFFFFF;
   background-color: #F2B33E;
   margin-right: 2rem;
 }
+
+.guest-login:hover {
+  color: #F2B33E;
+  background-color: #FFFFFF;
+}
+
 // サイドバー
 .side-nav {
   padding-top: 10px;
