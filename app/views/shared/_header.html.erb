@@ -6,11 +6,11 @@
       <% end %>
       <% if user_signed_in? %>
         <div class="header-form">
-          <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn base-btn", method: :delete %>
+          <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
         </div>
         <% else %>
         <div class = "header-form">
-          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login", method: :post %>
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
         </div>
       <% end %>
     </div>
