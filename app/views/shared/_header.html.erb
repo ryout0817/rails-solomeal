@@ -1,35 +1,45 @@
 <header>
-  <div class="container">
-    <div class="header">
-      <%= link_to "/", class: "header-logo" do%>
-        <h1>eat-capsule</h1>
-      <% end %>
-      <nav id="nav-header-none">
-        <% if user_signed_in? %>
-          <div class="header-form">
-            <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
+  <nav class="navbar">
+    <div class="container">
+      <div class="header-items">
+        <div class="header-left">
+          <%= link_to "/", class: "header-logo" do%>
+            <h1>eat-capsule</h1>
+          <% end %>
+        </div>
+        <div class="header-right">
+          <nav class="nav-header-form-none">
+            <% if user_signed_in? %>
+              <div class="header-form">
+                <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
+              </div>
+              <% else %>
+              <div class = "header-form">
+                <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
+              </div>
+            <% end %>
           </div>
-          <% else %>
-          <div class = "header-form">
-            <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
-          </div>
-        <% end %>
-      </nav>
-      <nav class="header-nav nav" id="js-nav">
-        <ul class="nav-items nav-items">
-          <li class="nav-items_item"><a href="">メニュー</a></li>
-          <li class="nav-items_item"><a href="">メニュー</a></li>
-          <li class="nav-items_item"><a href="">メニュー</a></li>
-          <li class="nav-items_item"><a href="">メニュー</a></li>
-        </ul>
-      </nav>
-      <button class="header-hamburger hamburger" id="js-hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+          <nav class="nav-hamburger">
+            <button class="header__hamburger hamburger" id="js-hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav class="header__nav nav" id="js-nav">
+              <ul class="nav__items nav-items">
+                <li class="nav-items__item">
+                  <%= link_to "Home", "/" %>
+                </li>
+                <li class="nav-items__item"><a href="">メニュー</a></li>
+                <li class="nav-items__item"><a href="">メニュー</a></li>
+                <li class="nav-items__item"><a href="">メニュー</a></li>
+              </ul>
+            </nav>
+          </nav>
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>
 
 <script>
