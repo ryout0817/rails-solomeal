@@ -336,18 +336,12 @@ a {
 }
 
 // フッター
-.footer-text {
-    position: relative;
+.footer-item {
     height: 40px;
     background-color: #ada391;
     color: #f4ecdc;
     text-align: center;
-}
-
-.footer-text p {
-    position: absolute;
-    top: 20%;
-    left: 50%;
+    line-height: 40px;
 }
 
 // アバウトページ
