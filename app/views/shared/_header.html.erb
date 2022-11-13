@@ -4,15 +4,40 @@
       <%= link_to "/", class: "header-logo" do%>
         <h1>eat-capsule</h1>
       <% end %>
-      <% if user_signed_in? %>
-        <div class="header-form">
-          <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
-        </div>
-        <% else %>
-        <div class = "header-form">
-          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
-        </div>
-      <% end %>
+      <nav id="nav-header-none">
+        <% if user_signed_in? %>
+          <div class="header-form">
+            <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
+          </div>
+          <% else %>
+          <div class = "header-form">
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
+          </div>
+        <% end %>
+      </nav>
+      <nav class="header-nav nav" id="js-nav">
+        <ul class="nav-items nav-items">
+          <li class="nav-items_item"><a href="">メニュー</a></li>
+          <li class="nav-items_item"><a href="">メニュー</a></li>
+          <li class="nav-items_item"><a href="">メニュー</a></li>
+          <li class="nav-items_item"><a href="">メニュー</a></li>
+        </ul>
+      </nav>
+      <button class="header-hamburger hamburger" id="js-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<script>
+  const ham = document.querySelector('#js-hamburger');
+  const nav = document.querySelector('#js-nav');
+
+  ham.addEventListener('click', function () {
+    ham.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+</script>
