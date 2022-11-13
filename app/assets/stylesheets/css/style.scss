@@ -117,6 +117,7 @@ a {
     z-index: 999;
     border-color: transparent;
     background-color: transparent;
+    margin-right: 1rem;
 }
 
 .hamburger span {
@@ -180,16 +181,6 @@ a {
 
 .nav-items-item:last-child a {
   margin-bottom: 0;
-}
-
-/* ヘッダーのロゴ部分 */
-.header-title {
-  width: 80px;
-}
-@media screen and (min-width: 767px) {
-  .header-title {
-    width: 120px;
-  }
 }
 
 /* ヘッダーのナビ部分 */
