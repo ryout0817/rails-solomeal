@@ -321,11 +321,29 @@ a {
     background-color: #f8f1ed;
 }
 
-.content-wrapper{
+.content-wrapper {
     width: 100%;
-    display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    border: 2px solid #a09a8e;
+    border-radius: 20px;
+    background-color: #f8f1e5;
+}
+
+@media (max-width:767px) {
+    .content {
+        width: 90%;
+    }
+}
+
+@media (min-width:1000px) {
+    .content {
+        width: 70%;
+    }
 }
 
 // フッター
@@ -333,8 +351,8 @@ a {
     height: 40px;
     background-color: #ada391;
     color: #f4ecdc;
-    text-align: center;
     line-height: 40px;
+    text-align: center;
 }
 
 // アバウトページ
@@ -344,9 +362,7 @@ a {
 
 .container-content {
     margin: 20px auto;
-    border: #444444 solid 1px;
     border: none;
-    border-radius: 10px;
 }
 
 .content-document-inner {
@@ -368,6 +384,17 @@ a {
     font-family: "Font Awesome 5 Free";
     content: "\f02d";
 }
+@media (max-width:767px) {
+  #about h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width:767px) {
+  #about p {
+    font-size: 1rem;
+  }
+}
 // サインアップページ
 .actions {
     margin-bottom: 2.5rem;
@@ -378,11 +405,6 @@ a {
     font-size: 1.5rem;
     font-family: "Font Awesome 5 Free";
     content: "\f304";
-}
-
-.container-content {
-    border: 2px solid #a09a8e;
-    background-color: #f8f1e5;
 }
 
 .user-form {
