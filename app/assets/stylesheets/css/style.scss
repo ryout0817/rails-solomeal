@@ -257,7 +257,7 @@ a {
     }
 }
 // サイドバー
-.side-nav {
+.side-wrapper {
     width: 130px;
     height: 100%;
     padding-top: 10px;
@@ -266,7 +266,7 @@ a {
 }
 
 @media (max-width: 767px) {
-    .side-nav {
+    .nav-side-list {
         display: none;
     }
 }
@@ -321,18 +321,11 @@ a {
     background-color: #f8f1ed;
 }
 
-.content-name {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-}
-
-@media (max-width: 767px) {
-    .content-name {
-        position: absolute;
-        top: 40%;
-        left: 40%;
-    }
+.content-wrapper{
+    width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // フッター
