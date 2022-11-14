@@ -325,7 +325,7 @@ a {
     width: 100%;
 }
 
-.content {
+.content-about {
     width: 80%;
     margin: 0 auto;
     margin-top: 4rem;
@@ -335,13 +335,13 @@ a {
 }
 
 @media (max-width:767px) {
-    .content {
+    .content-about {
         width: 90%;
     }
 }
 
 @media (min-width:1000px) {
-    .content {
+    .content-about {
         width: 70%;
     }
 }
@@ -366,7 +366,6 @@ a {
 }
 
 .content-document-inner {
-    padding: 10px 56px 40px;
     text-align: center;
 }
 
@@ -468,6 +467,27 @@ label {
     font-weight: 600;
 }
 // ログインページ
+.content-user {
+  width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    border: 2px solid #a09a8e;
+    border-radius: 20px;
+    background-color: #f8f1e5;
+}
+
+@media (min-width: 576px) {
+  .content-user {
+    width: 540px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .content-user {
+    width: 700px;
+  }
+}
+
 .login-icon::before {
     padding-right: 10px;
     font-size: 1.5rem;

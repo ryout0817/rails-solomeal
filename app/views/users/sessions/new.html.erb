@@ -1,32 +1,47 @@
 <% provide(:title, 'eatcapsule | Sign_Up')%>
 <div class="main">
-  <div class="side-nav">
-    <nav id="nav-list">
-      <div class="side-list">
-        <div>
-          <ul class="menu-list">
-            <li>
-              <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
-              <% end %>
-            </li>
-            <li>
+  <nav class="nav-side-list">
+    <div class="side-wrapper">
+      <nav id="nav-list">
+        <div class="side-list">
+          <div>
+            <ul class="menu-list">
+              <li>
+                <%= link_to "/", class: "list-item" do %>
+                  <i class="fa-solid fa-house"></i>Home
+                <% end %>
+              </li>
+              <li>
               <%= link_to about_path, class: "list-item" do %>
                 <i class="fa-solid fa-book"></i>About
               <% end %>
             </li>
-            <li>
-              <%= link_to new_user_registration_path, class: "list-item" do %>
-                <i class="fa-solid fa-user"></i>SignUp
+              <% if user_signed_in? %>
+                <li>
+                  <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+                  <i class="fa-solid fa-user"></i>User</button>
+                  <nav id="nav-none">
+                    <ul class="user-list">
+                    <li><%= link_to "プロフィール", account_path(@user), class: "user-list-item" %></li>
+                    <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
+                    </ul>
+                  </nav>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to new_user_registration_path, class: "list-item" do %>
+                    <i class="fa-solid fa-pen"></i>SignUp
+                  <% end %>
+                </li>
               <% end %>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <div class="content">
-    <div class="content-wrapper">
+      </nav>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="content-user">
       <div class="container-content user-form">
         <div class="content-document-inner">
           <h1 class="login-icon title-font">Login</h1>
