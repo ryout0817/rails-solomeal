@@ -375,6 +375,7 @@ a {
 }
 
 .title-font {
+    margin-bottom: 1.5rem;
     font-family: "Courier New";
 }
 
@@ -396,7 +397,7 @@ a {
 }
 // サインアップページ
 .actions {
-    margin-bottom: 2.5rem;
+    margin: 2.5rem 0;
 }
 
 .signup-icon::before {
@@ -407,12 +408,12 @@ a {
 }
 
 .user-form {
-    width: 50%;
+    width: 60%;
 }
 
 @media  (max-width: 1020px) and (min-width: 768px) {
     .user-form {
-        width: 60%;
+        width: 70%;
     }
 }
 
@@ -423,12 +424,19 @@ a {
 }
 
 .form-control {
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 90%;
     padding: .75rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     resize: none;
+}
+
+.login-form {
+    margin-bottom: 3rem;
+}
+
+.sign-up-form {
+    margin-bottom: 1rem;
 }
 
 .form-control:focus {
@@ -449,8 +457,21 @@ a {
     border-radius: 20px;
 }
 
+.form-space {
+    letter-spacing: 1px;
+}
+
+.pass-space {
+    letter-spacing: 5px;
+}
+
+@media (max-width: 576px) {
+    .base-btn {
+        width: 65%;
+    }
+}
+
 .form-submit {
-    padding: .5rem 2rem;
     border: none;
     border-radius: 20px;
     background-color: #f2b33e;
@@ -468,7 +489,7 @@ label {
 }
 // ログインページ
 .content-user {
-  width: 80%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 4rem;
     border: 2px solid #a09a8e;
@@ -477,15 +498,15 @@ label {
 }
 
 @media (min-width: 576px) {
-  .content-user {
-    width: 540px;
-  }
+    .content-user {
+        width: 540px;
+    }
 }
 
 @media (min-width: 1000px) {
-  .content-user {
-    width: 700px;
-  }
+    .content-user {
+        width: 700px;
+    }
 }
 
 .login-icon::before {
