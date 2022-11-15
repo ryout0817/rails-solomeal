@@ -44,19 +44,19 @@
               </div>
             <div class="field">
               <%= f.label :メールアドレス %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-space" %>
             </div>
             <div class="field">
               <%= f.label :パスワード %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control pass-space" %>
             </div>
             <div class="field">
               <%= f.label :パスワード確認 %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control pass-space" %>
             </div>
             <div class="field">
               <%= f.label :現在のパスワード %>
-              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control pass-space" %>
             </div>
             <div class="actions">
               <%= f.submit "更新", class: "form-submit base-btn" %>
