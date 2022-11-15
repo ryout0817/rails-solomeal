@@ -1,37 +1,40 @@
 <% provide(:title, 'eatcapsule | プロフィール')%>
 <div class="main">
-  <div class="side-nav">
-    <nav id="nav-list">
-      <div class="side-list">
-        <div>
-          <ul class="menu-list">
-            <li>
-              <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
-              <% end %>
-            </li>
-            <li>
-              <%= link_to about_path, class: "list-item" do %>
-                <i class="fa-solid fa-book"></i>About
-              <% end %>
-            </li>
-            <li>
-              <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-              <i class="fa-solid fa-user"></i>User</button>
-              <nav id="nav-none">
-                <ul class="user-list">
-                  <li><%= link_to "プロフィール", account_path, class: "user-list-item" %></li>
-                  <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
-                </ul>
-              </nav>
-            </li>
-          </ul>
+  <nav class="nav-side-list">
+    <div class="side-wrapper">
+      <nav id="nav-list">
+        <div class="side-list">
+          <div>
+            <ul class="menu-list">
+              <li>
+                <%= link_to "/", class: "list-item" do %>
+                  <i class="fa-solid fa-house"></i>Home
+                <% end %>
+              </li>
+              <li>
+                <%= link_to about_path, class: "list-item" do %>
+                  <i class="fa-solid fa-book"></i>About
+                <% end %>
+              </li>
+              <li>
+                <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+                  <i class="fa-solid fa-user"></i>User
+                </button>
+                <nav id="nav-none">
+                  <ul class="user-list">
+                    <li><%= link_to "プロフィール", account_path(@user), class: "user-list-item" %></li>
+                    <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <div class="content">
-    <div class="content-wrapper">
+      </nav>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="content-user">
       <div class="container-content user-form">
         <div class="content-document-inner">
           <h1 class="signup-icon title-font">プロフィール</h1>
@@ -72,7 +75,7 @@
             <% end %>
           </div>
           <div class="user-content-link">
-              <%= link_to "プロフィール編集", edit_account_path, class: "form-submit" %>
+              <%= link_to "プロフィール編集", edit_account_path, class: "form-submit base-btn" %>
           </div>
         </div>
       </div>
