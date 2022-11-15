@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = User.find(params[:id])
   end
@@ -12,7 +14,7 @@ class AccountsController < ApplicationController
     if @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar))
       redirect_to account_path(@user)
     else
-      render "edit"    
+      render "edit"
     end
   end
 end
