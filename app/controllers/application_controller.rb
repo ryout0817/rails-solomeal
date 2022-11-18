@@ -23,4 +23,11 @@ class ApplicationController < ActionController::Base
     # 情報更新時にnameの取得許可
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
   end
+
+  def check_guest
+    email = resource&.email || params[:user][:email].downcase
+    if email == 'guest@example.com'
+      redirect_to "/", alert: "ゲストユーザーの編集・削除はできません。"
+    end
+  end
 end
