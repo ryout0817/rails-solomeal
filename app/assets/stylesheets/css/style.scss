@@ -44,8 +44,8 @@ a {
 }
 
 .alert {
-    background-color: #FF3300;
-    color: #FFFFFF;
+    background-color: #ff3300;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -102,6 +102,12 @@ a {
     background-color: #f2b33e;
     color: #ffffff;
     font-size: .75rem;
+}
+
+.logout-btn:hover {
+    border: none;
+    background-color: #ffffff;
+    color: #f2b33e;
 }
 
 .guest-login {
@@ -368,6 +374,7 @@ a {
 
 .container-content {
     margin: 20px auto;
+    padding: 50px;
     border: none;
 }
 
@@ -624,4 +631,18 @@ label {
 
 #error_explanation {
     color: red;
+}
+
+.withdrawal-btn {
+    background-color: #ff3300;
+    color: #ffffff;
+    text-align: center;
+}
+
+.withdrawal-btn:hover {
+    background-color: #ffffff;
+    color: #ff3300;
+    outline-color: #ff3300;
+    outline-style: solid;
+    outline-width: 1px;
 }

@@ -17,4 +17,8 @@ class AccountsController < ApplicationController
       render "edit"
     end
   end
+
+  def withdrawal
+    @user = current_user
+  end
 end

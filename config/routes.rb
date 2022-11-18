@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
   get '/', to: 'tops#index'
   get 'about', to: 'tops#about'
-  resources :accounts, :only => [:show, :edit, :update]
+  resources :accounts, :only => [:show, :edit, :update] do
+    collection do
+      get 'withdrawal'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

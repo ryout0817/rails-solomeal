@@ -1,0 +1,64 @@
+<% provide(:title, 'eatcapsule')%>
+<p class="flash" ><%= flash[:info]%></p>
+<div class="main">
+  <nav class="nav-side-list">
+    <div class="side-wrapper">
+      <nav id="nav-list">
+        <div class="side-list">
+          <div>
+            <ul class="menu-list">
+              <li>
+                <%= link_to "/", class: "list-item" do %>
+                  <i class="fa-solid fa-house"></i>Home
+                <% end %>
+              </li>
+              <li>
+                <%= link_to about_path, class: "list-item" do %>
+                  <i class="fa-solid fa-book"></i>About
+                <% end %>
+              </li>
+              <% if user_signed_in? %>
+                <li>
+                  <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
+                  <i class="fa-solid fa-user"></i>User</button>
+                  <nav id="nav-none">
+                    <ul class="user-list">
+                    <li><%= link_to "プロフィール", account_path(@user), class: "user-list-item" %></li>
+                    <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
+                    <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
+                    </ul>
+                  </nav>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to user_session_path, class: "list-item" do %>
+                    <i class="fa-solid fa-user"></i>Login
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path, class: "list-item" do %>
+                    <i class="fa-solid fa-pen"></i>SignUp
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="content-about">
+      <div class="container-content">
+        <div class="content-document-inner", id="about">
+          <h1 class="title-font">退会お手続き</h1>
+          <p>退会手続きをされますと、全てのサービスがご利用いただけなくなります。再度ご利用をいただく場合には、新規登録のお手続きが必要になります.本当に退会してよろしいですか？
+          </p>
+          <div class="withdrawal-btn-wrapper">
+            <%= link_to '退会する', user_registration_path,class: "withdrawal-btn base-btn", method: :delete, data: { confirm: "アカウントを削除してもよろしいですか？" } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
