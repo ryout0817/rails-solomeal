@@ -12,7 +12,6 @@
             <% if user_signed_in? %>
               <div class="header-form">
                 <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn header-btn", method: :delete %>
-                <%= link_to '退会', user_registration_path, method: :delete, data: { confirm: "アカウントを削除してもよろしいですか？" } %>
               </div>
               <% else %>
               <div class = "header-form">
