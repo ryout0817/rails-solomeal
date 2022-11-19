@@ -23,8 +23,8 @@
                   <i class="fa-solid fa-user"></i>User</button>
                   <nav id="nav-none">
                     <ul class="user-list">
-                    <li><%= link_to "プロフィール", account_path(@user), class: "user-list-item" %></li>
-                    <li><%= link_to "アカウント", edit_user_registration_path, class: "user-list-item" %></li>
+                    <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
+                    <li><%= link_to "メール・パスワード編集", edit_user_registration_path, class: "user-list-item" %></li>
                     <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
                     </ul>
                   </nav>
