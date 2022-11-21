@@ -356,6 +356,19 @@ a {
     background-color: #ffffff;
 }
 
+@media (max-width: 767px) {
+    .top-title {
+        left: 35%;
+    }
+}
+
+@media (max-width:576px) {
+    .top-title {
+        left: 40%;
+        padding: .8rem;
+    }
+}
+
 .content-about {
     width: 80%;
     margin: 0 auto;
