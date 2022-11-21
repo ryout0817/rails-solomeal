@@ -45,8 +45,8 @@
               <div class="user-content">
                 <label class="user-label" for="name">プロフィール写真</label>
                 <div class="user-content-item col-border">
-                  <% if@user.avatar? %>
-                    <%=image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
+                  <% if @user.avatar? %>
+                    <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
                   <% else %>
                     <i class="fa-solid fa-user-gear user-icon-font"></i>
                   <% end %>
