@@ -337,6 +337,25 @@ a {
     width: 100%;
 }
 
+.top-background-image {
+    width: 100%;
+    background-image: url(24835789_m.jpg);
+    background-size: cover;
+}
+
+.title-container {
+    text-align: center;
+}
+
+.top-title {
+    opacity: .7;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    padding: 1rem 5rem;
+    background-color: #ffffff;
+}
+
 .content-about {
     width: 80%;
     margin: 0 auto;
@@ -547,14 +566,29 @@ label {
 }
 // アカウント、プロフィール編集ページ
 .user-list {
-    font-size: .75rem;
     position: absolute;
     top: 215px;
     left: 140px;
+    padding: 15px;
     border: 2px solid #a09a8e;
     border-radius: 10px;
-    padding: 15px;
     background-color: #f8f1e5;
+    font-size: .75rem;
+}
+
+.about-user-list {
+    position: absolute;
+    top: 155px;
+    left: 140px;
+    padding: 15px;
+    border: 2px solid #a09a8e;
+    border-radius: 10px;
+    background-color: #f8f1e5;
+    font-size: .75rem;
+}
+
+.about-user-list li {
+    margin-bottom: 0;
 }
 
 .user-list li {

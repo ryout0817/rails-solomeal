@@ -24,10 +24,10 @@
                   <i class="fa-solid fa-user"></i>User</button>
                   <nav id="nav-none">
                     <ul class="user-list">
-                    <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
-                    <li><%= link_to "メール・パスワード変更", edit_user_registration_path, class: "user-list-item" %></li>
-                    <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
-                    <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
+                      <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
+                      <li><%= link_to "メール・パスワード変更", edit_user_registration_path, class: "user-list-item" %></li>
+                      <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
+                      <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
                     </ul>
                   </nav>
                 </li>
@@ -49,9 +49,11 @@
       </nav>
     </div>
   </nav>
-  <div class="content-wrapper">
-    <div class="content">
-      <h1 class="title-font">EatCapsule</h1>
+    <div class="top-background-image">
+      <div class="content">
+        <div class="title-container">
+          <h1 class="top-title">ソロメシ</h1>
+        </div>
     </div>
   </div>
 </div>
