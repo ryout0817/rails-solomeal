@@ -22,6 +22,12 @@
           p1.style.display = "none";
         }else{
           p1.style.display = "block"
+          document.addEventListener('click', (e) => {
+            if(!e.target.closest('.menu-list')) {
+              p1.style.display = "none";
+            }
+          }
+          )
         }
       }
     </script>
