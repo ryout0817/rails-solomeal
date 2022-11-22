@@ -11,10 +11,10 @@ class AccountsController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar))
+    if !(@user.name == "ゲスト") && @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar))
       redirect_to account_path(@user)
     else
-      render "edit"
+      redirect_to "/", flash: { info: "ゲストユーザーは編集することができません。"}
     end
   end
 
