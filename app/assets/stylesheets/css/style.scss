@@ -274,7 +274,7 @@ a {
 
 // サイドバー
 .side-wrapper {
-    width: 115px;
+    width: 130px;
     height: 100%;
     padding-top: 10px;
     border-right: 2px solid #a09a8e;
@@ -305,7 +305,7 @@ a {
 }
 
 .js-list-item {
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -370,6 +370,7 @@ a {
 .top-background-image {
     width: 100%;
     background-image: url(24835789_m.jpg);
+    background-position: center;
     background-size: cover;
 }
 
@@ -395,6 +396,13 @@ a {
 @media (max-width:576px) {
     .top-title {
         left: 40%;
+        padding: .8rem;
+    }
+}
+
+@media (max-width:400px) {
+    .top-title {
+        left: 30%;
         padding: .8rem;
     }
 }
@@ -611,7 +619,7 @@ label {
 .user-list {
     position: absolute;
     top: 215px;
-    left: 120px;
+    left: 135px;
     padding: 15px;
     border: 2px solid #a09a8e;
     border-radius: 10px;
@@ -622,7 +630,7 @@ label {
 .about-user-list {
     position: absolute;
     top: 155px;
-    left: 120px;
+    left: 135px;
     padding: 15px;
     border: 2px solid #a09a8e;
     border-radius: 10px;
