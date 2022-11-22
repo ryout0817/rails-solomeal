@@ -12,43 +12,10 @@
             <div class="header-form">
               <% if @user.avatar? %>
                 <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "header-user-icon-img" %>
+                <%= render 'shared/hamburger_menu.html.erb' %>
               <% else %>
-                <button type="button" class="menu-btn">
-                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                </button>
-                <div class="menu">
-                  <div class="menu__item">
-                    <%= link_to "/", class: "js-list-item" do %>
-                      ホーム
-                    <% end %>
-                  </div>
-                  <div class="menu__item">
-                    <%= link_to about_path, class: "js-list-item" do %>
-                      コンセプト
-                    <% end %>
-                  </div>
-                  <% if user_signed_in? %>
-                    <div class="menu__item">
-                      <%= link_to "プロフィール編集", account_path(@user), class: "js-list-item" %>
-                    </div>
-                    <div class="menu__item">
-                      <%= link_to "メール・パスワード変更", edit_user_registration_path, class: "js-list-item" %>
-                    </div>
-                    <div class="menu__item">
-                      <%= link_to '退会手続き', withdrawal_accounts_path, class: "js-list-item" %>
-                    </div>
-                    <div class="menu__item">
-                      <%= link_to  "ログアウト", destroy_user_session_path,class: "js-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %>
-                    </div>
-                  <% else %>
-                    <%= link_to user_session_path, class: "js-list-item" do %>
-                      Login
-                    <% end %>
-                      <%= link_to new_user_registration_path, class: "js-list-item" do %>
-                        SignUp
-                      <% end %>
-                  <% end %>
-                </div>
+                <i class="fa-solid fa-user-gear header-user-icon-font"></i>
+                <%= render 'shared/hamburger_menu.html.erb' %>
               <% end %>
             </div>
           <% else %>
@@ -56,34 +23,7 @@
               <div class = "header-form">
                 <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
               </div>
-              <button type="button" class="menu-btn">
-                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                </button>
-                <div class="menu">
-                  <div class="menu__item">
-                    <%= link_to "/", class: "js-list-item" do %>
-                      ホーム
-                    <% end %>
-                  </div>
-                  <div class="menu__item">
-                    <%= link_to about_path, class: "js-list-item" do %>
-                      コンセプト
-                    <% end %>
-                  </div>
-                  <div class="menu__item">
-                    <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "js-list-item", method: :post %>
-                  </div>
-                  <div class="menu__item">
-                    <%= link_to user_session_path, class: "js-list-item" do %>
-                      Login
-                    <% end %>
-                  </div>
-                  <div class="menu__item">
-                    <%= link_to new_user_registration_path, class: "js-list-item" do %>
-                      SignUp
-                    <% end %>
-                  </div>
-                </div>
+              <%= render 'shared/hamburger_menu.html.erb' %>
             </nav>
           <% end %>
         </div>
