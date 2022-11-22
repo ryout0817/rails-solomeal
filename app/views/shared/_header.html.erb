@@ -4,7 +4,7 @@
       <div class="header-items">
         <div class="header-left">
           <%= link_to "/", class: "header-logo" do%>
-            <h1>eat-capsule</h1>
+            <h1 class="title-icon">ひとり飯</h1>
           <% end %>
         </div>
         <div class="header-right">
@@ -24,7 +24,7 @@
                   </div>
                   <div class="menu__item">
                     <%= link_to about_path, class: "js-list-item" do %>
-                      ひとりごはん
+                      ひとり飯
                     <% end %>
                   </div>
                   <% if user_signed_in? %>
