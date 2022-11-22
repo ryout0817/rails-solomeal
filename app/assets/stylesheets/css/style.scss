@@ -412,7 +412,6 @@ a {
     margin: 0 auto;
     border: 2px solid #a09a8e;
     border-radius: 20px;
-    background-color: #f8f1e5;
 }
 
 @media (max-width:767px) {
@@ -443,6 +442,7 @@ a {
 
 .title-font {
     margin-top: 20px;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -460,7 +460,7 @@ a {
 }
 .container-content {
     margin: 20px auto;
-    padding: 50px;
+    padding: 30px;
     border: none;
 }
 
@@ -469,13 +469,15 @@ a {
 }
 
 .content-document-inner p {
-    font-size: 1.2rem;
+    font-weight: bold;
     line-height: 50px;
 }
 
-.title-font {
-    margin-bottom: 1.5rem;
-    font-family: "Courier New";
+.content-document-inner h4 {
+    color: #f2b33e;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    margin-bottom: 1rem;
 }
 
 .document-icon::before {
@@ -589,10 +591,9 @@ label {
 // ログインページ
 .content-user {
     width: 90%;
-    margin: 3rem auto;
+    margin: 2rem auto;
     border: 2px solid #a09a8e;
     border-radius: 20px;
-    background-color: #f8f1e5;
 }
 
 @media (min-width: 576px) {
@@ -656,6 +657,10 @@ label {
 
 .about-user-list li {
     margin-bottom: 0;
+}
+
+.field {
+    margin-bottom: 1rem;
 }
 
 .user-list li {
