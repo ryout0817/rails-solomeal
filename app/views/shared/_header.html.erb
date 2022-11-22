@@ -8,34 +8,56 @@
           <% end %>
         </div>
         <div class="header-right">
-          <nav class="nav-header-form-none">
-            <% if user_signed_in? %>
-              <div class="header-form">
-                
-              </div>
+          <% if user_signed_in? %>
+            <div class="header-form">
+              <% if @user.avatar? %>
+                <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "header-user-icon-img" %>
               <% else %>
+                <button type="button" class="menu-btn">
+                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                </button>
+                <div class="menu">
+                  <div class="menu__item">
+                    <%= link_to "/", class: "js-list-item" do %>
+                      ホーム
+                    <% end %>
+                  </div>
+                  <div class="menu__item">
+                    <%= link_to about_path, class: "js-list-item" do %>
+                      ひとりごはん
+                    <% end %>
+                  </div>
+                  <% if user_signed_in? %>
+                    <div class="menu__item">
+                      <%= link_to "プロフィール編集", account_path(@user), class: "js-list-item" %>
+                    </div>
+                    <div class="menu__item">
+                      <%= link_to "メール・パスワード変更", edit_user_registration_path, class: "js-list-item" %>
+                    </div>
+                    <div class="menu__item">
+                      <%= link_to '退会手続き', withdrawal_accounts_path, class: "js-list-item" %>
+                    </div>
+                    <div class="menu__item">
+                      <%= link_to  "ログアウト", destroy_user_session_path,class: "js-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %>
+                    </div>
+                  <% else %>
+                    <%= link_to user_session_path, class: "js-list-item" do %>
+                      Login
+                    <% end %>
+                      <%= link_to new_user_registration_path, class: "js-list-item" do %>
+                        SignUp
+                      <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <nav class="nav-header-login-none">
               <div class = "header-form">
                 <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
               </div>
-            <% end %>
-          </div>
-          <nav class="nav-hamburger">
-            <button class="header__hamburger hamburger" id="js-hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <nav class="header__nav nav" id="js-nav">
-              <ul class="nav__items nav-items">
-                <li class="nav-items__item">
-                  <%= link_to "Home", "/" %>
-                </li>
-                <li class="nav-items__item"><a href="">メニュー</a></li>
-                <li class="nav-items__item"><a href="">メニュー</a></li>
-                <li class="nav-items__item"><a href="">メニュー</a></li>
-              </ul>
             </nav>
-          </nav>
+          <% end %>
         </div>
       </div>
     </div>
@@ -43,11 +65,7 @@
 </header>
 
 <script>
-  const ham = document.querySelector('#js-hamburger');
-  const nav = document.querySelector('#js-nav');
-
-  ham.addEventListener('click', function () {
-    ham.classList.toggle('active');
-    nav.classList.toggle('active');
-  });
+document.querySelector('.menu-btn').addEventListener('click', function(){
+    document.querySelector('.menu').classList.toggle('is-active');
+});
 </script>
