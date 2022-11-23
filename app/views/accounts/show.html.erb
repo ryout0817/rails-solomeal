@@ -1,40 +1,6 @@
 <% provide(:title, 'eatcapsule | プロフィール')%>
 <div class="main">
-  <nav class="nav-side-list">
-    <div class="side-wrapper">
-      <nav id="nav-list">
-        <div class="side-list">
-          <div>
-            <ul class="menu-list">
-              <li>
-                <%= link_to "/", class: "list-item" do %>
-                  <i class="fa-solid fa-house"></i>Home
-                <% end %>
-              </li>
-              <li>
-                <%= link_to about_path, class: "list-item" do %>
-                  <i class="fa-solid fa-book"></i>Concept
-                <% end %>
-              </li>
-              <li>
-                <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-                  <i class="fa-solid fa-user"></i>User
-                </button>
-                <nav id="nav-none">
-                  <ul class="user-list">
-                    <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
-                    <li><%= link_to "メール・パスワード変更", edit_user_registration_path, class: "user-list-item" %></li>
-                    <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
-                    <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </nav>
+  <%= render 'shared/in_sidebar.html.erb'%>
   <div class="content-wrapper">
     <div class="page-title">
       <h1 class="signup-icon title-font">プロフィール</h1>
