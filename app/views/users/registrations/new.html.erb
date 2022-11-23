@@ -2,10 +2,12 @@
 <div class="main">
   <%= render 'shared/out_sidebar.html.erb'%>
   <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="signup-icon title-font">SignUp</h1>
+    </div>
     <div class="content-user">
       <div class="container-content user-form">
         <div class="content-document-inner">
-          <h1 class="signup-icon title-font">SignUp</h1>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "users/shared/error_messages", resource: resource %>
             <div class="field">
@@ -14,15 +16,15 @@
             </div>
             <div class="field">
               <%= f.label :メールアドレス %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-space" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control sign-up-form form-space" %>
             </div>
             <div class="field">
               <%= f.label :パスワード %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "form-control pass-space" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control sign-up-form pass-space" %>
             </div>
             <div class="field">
               <%= f.label :パスワード確認 %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control pass-space" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control sign-up-form pass-space" %>
             </div>
             <div class="actions">
               <%= f.submit "アカウント登録", class: "form-submit base-btn" %>
