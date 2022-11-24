@@ -1,38 +1,11 @@
 <p class="flash" ><%= flash[:info]%></p>
 <p class="alert"><%= alert%></p>
 <div class="main">
-  <div class="side-nav">
-    <nav id="nav-list">
-      <div class="side-list">
-        <div>
-          <ul class="menu-list">
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to "/", class: "list-item" do %>
-                  <i class="fa-solid fa-book"></i>About
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to user_session_path, class: "list-item" do %>
-                  <i class="fa-solid fa-user"></i>Login
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_registration_path, class: "list-item" do %>
-                  <i class="fa-solid fa-pen"></i>SignUp
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="content">
-    <div class="content-wrapper">
-      <div class="content-name">
-        <h1 class="title-font">EatCapsule</h1>
+  <%= render 'shared/out_sidebar.html.erb'%>
+  <div class="top-background-image">
+    <div class="content">
+      <div class="title-container">
+        <h1 class="top-title title-font">ひとり飯</h1>
       </div>
     </div>
   </div>
