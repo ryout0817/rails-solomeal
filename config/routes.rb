@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'recipes/index'
+  get 'recipes/new'
+  get 'recipes/create'
+  get 'recipes/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
