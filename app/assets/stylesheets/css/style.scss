@@ -492,6 +492,17 @@ a {
     letter-spacing: .3rem;
 }
 
+@media (max-width:767px) {
+    .content-document-inner h4 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .content-document-inner h4 {
+        font-size: 1rem;
+    }
+}
 .document-icon::before {
     padding-right: 10px;
     font-family: "Font Awesome 5 Free";
