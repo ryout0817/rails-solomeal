@@ -4,11 +4,11 @@
 }
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 header {
@@ -460,6 +460,7 @@ a {
 .title-font {
     margin-top: 20px;
     margin-bottom: 1.5rem;
+    letter-spacing: .2rem;
     text-align: center;
 }
 
