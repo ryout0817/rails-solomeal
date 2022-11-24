@@ -1,43 +1,21 @@
-<% provide(:title, 'eatcapsule | Sign_Up')%>
+<% provide(:title, 'Login')%>
 <div class="main">
-  <div class="side-nav">
-    <nav id="nav-list">
-      <div class="side-list">
-        <div>
-          <ul class="menu-list">
-            <li>
-              <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
-              <% end %>
-            </li>
-            <li>
-              <%= link_to about_path, class: "list-item" do %>
-                <i class="fa-solid fa-book"></i>About
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_user_registration_path, class: "list-item" do %>
-                <i class="fa-solid fa-user"></i>SignUp
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="content">
-    <div class="content-wrapper">
+  <%= render 'shared/out_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="title-font">Login</h1>
+    </div>
+    <div class="content-user">
       <div class="container-content user-form">
         <div class="content-document-inner">
-          <h1 class="login-icon title-font">Login</h1>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
               <%= f.label :メールアドレス %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control login-form form-space" %>
             </div>
             <div class="field">
               <%= f.label :パスワード %><br />
-              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control login-form pass-space" %>
             </div>
           <% if devise_mapping.rememberable? %>
             <div class="field">
@@ -46,10 +24,10 @@
             </div>
           <% end %>
             <div class="actions">
-              <%= f.submit "ログイン", class: "form-login base-btn" %>
+              <%= f.submit "ログイン", class: "form-submit base-btn" %>
             </div>
             <div class="actions">
-              <%= link_to "アカウント登録", new_user_registration_path, class: "signup-btn base-btn" %>
+              <%= link_to "アカウント登録", new_user_registration_path, class: "registration-btn link-btn base-btn" %>
             </div>
           <% end %>
         </div>

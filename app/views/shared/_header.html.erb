@@ -1,14 +1,39 @@
 <header>
-  <div class="container">
-    <div class="header">
-      <%= link_to "/", class: "header-logo" do%>
-        <h1>eat-capsule</h1>
-      <% end %>
-      <% if user_signed_in? %>
-        <div class="logout-form">
-          <%= link_to  "ログアウト", destroy_user_session_path,class: "logout-btn base-btn", method: :delete %>
+  <nav class="navbar">
+    <div class="container">
+      <div class="header-items">
+        <div class="header-left">
+          <%= link_to "/", class: "header-logo" do%>
+            <h1 class="title-icon">ひとり飯</h1>
+          <% end %>
         </div>
-      <% end %>
+        <div class="header-right">
+          <% if user_signed_in? %>
+            <div class="header-form">
+              <% if @user.avatar? %>
+                <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "header-user-icon-img" %>
+                <%= render 'shared/hamburger_menu.html.erb' %>
+              <% else %>
+                <i class="fa-solid fa-user-gear header-user-icon-font"></i>
+                <%= render 'shared/hamburger_menu.html.erb' %>
+              <% end %>
+            </div>
+          <% else %>
+            <nav class="nav-header-login-none">
+              <div class = "header-form">
+                <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login header-btn", method: :post %>
+              </div>
+              <%= render 'shared/hamburger_menu.html.erb' %>
+            </nav>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
 </header>
+
+<script>
+document.querySelector('.menu-btn').addEventListener('click', function(){
+    document.querySelector('.menu').classList.toggle('is-active');
+});
+</script>

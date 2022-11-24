@@ -1,0 +1,43 @@
+<button type="button" class="menu-btn">
+  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+</button>
+<div class="menu">
+  <div class="menu__item">
+    <%= link_to "/", class: "js-list-item" do %>
+      ホーム
+    <% end %>
+  </div>
+  <div class="menu__item">
+    <%= link_to about_path, class: "js-list-item" do %>
+      コンセプト
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="menu__item">
+      <%= link_to "プロフィール編集", account_path(@user), class: "js-list-item" %>
+    </div>
+    <div class="menu__item">
+      <%= link_to "メール・パスワード変更", edit_user_registration_path, class: "js-list-item" %>
+    </div>
+    <div class="menu__item">
+      <%= link_to '退会手続き', withdrawal_accounts_path, class: "js-list-item" %>
+    </div>
+    <div class="menu__item">
+      <%= link_to  "ログアウト", destroy_user_session_path,class: "js-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %>
+    </div>
+  <% else %>
+    <div class="menu__item">
+      <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "js-list-item", method: :post %>
+    </div>
+    <div class="menu__item">
+      <%= link_to user_session_path, class: "js-list-item" do %>
+        ログイン
+      <% end %>
+    </div>
+    <div class="menu__item">
+      <%= link_to new_user_registration_path, class: "js-list-item" do %>
+        新規登録
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,49 @@
+<% provide(:title, 'プロフィール編集')%>
+<div class="main">
+  <%= render 'shared/in_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="signup-icon title-font">プロフィール編集</h1>
+    </div>
+    <div class="content-user">
+      <div class="container-content user-form">
+        <div class="content-document-inner">
+          <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
+            <div class="field">
+              <div class="user-content">
+                <label class="user-label" for="name">プロフィール写真</label>
+                <div class="user-content-item">
+                  <%= f.file_field :avatar %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="name">ニックネーム</label>
+                <div class="user-content-item">
+                  <%= f.text_field :name, class: "form-control form-space" %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="introduction">自己紹介</label>
+                <div class="user-content-item">
+                  <%= f.text_area :introduction, rows: 4, class: "form-control form-space" %>
+                </div>
+              </div>
+              <div class="user-content">
+                <label class="user-label" for="specialties">旬のおすすめ料理</label>
+                <div class="user-content-item">
+                  <%= f.text_field :recommended_dishes, class: "form-control form-space" %>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <%= f.submit "更新", class: "form-submit base-btn" %>
+            </div>
+            <div class="actions">
+              <%= link_to "戻る", account_path, class: "return-link base-btn" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

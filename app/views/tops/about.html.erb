@@ -1,39 +1,17 @@
-<% provide(:title, 'eatcapsule | about')%>
+<% provide(:title, 'コンセプト')%>
+<p class="flash" ><%= flash[:info]%></p>
 <div class="main">
-  <div class="side-nav">
-    <nav id="nav-list">
-      <div class="side-list">
-        <div>
-          <ul class="menu-list">
-            <li>
-              <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
-              <% end %>
-            </li>
-            <li>
-              <%= link_to user_session_path, class: "list-item" do %>
-                <i class="fa-solid fa-user"></i>Login
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_user_registration_path, class: "list-item" do %>
-                <i class="fa-solid fa-pen"></i>SignUp
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="content">
-    <div class="content-wrapper">
-      <div class="container-content about-content">
-        <div class="content-document-inner">
-          <h1 class="document-icon title-font">About</h1>
-          <h1>EatCapsuleとは？？</h1>
-          <p>仕事の終わり、1日の終わりの際に<br>
-          今日何を作ろうかと悩んだことはありませんか？<br>
-          そんな時にEatCapsuleを使用してみてください!!</p>
+  <%= render 'shared/out_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="about-page-title">
+      <h1 class="document-icon title-font">Concept</h1>
+    </div>
+    <div class="content-about">
+      <div class="container-content">
+        <div class="content-document-inner", id="about">
+          <h4>こんな悩みありませんか？</h4>
+          <p>今日何を作ろうか、簡単に作れるものはないかな？<br>このようなことは日々の生活の中で<br>必ずというほど悩まされることではありませんか？<br>そんな時に他の人がおすすめした簡単な料理を<br>ランダムで検索して作ってみましょう！
+          </p>
         </div>
       </div>
     </div>
