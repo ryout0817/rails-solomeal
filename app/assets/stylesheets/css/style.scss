@@ -88,16 +88,15 @@ header {
 
 
 .header-logo {
-    color: #FFFFFF;
+    color: #ffffff;
     font-family: Londrina Shadow,cursive;
-    text-shadow:
-		0 0.01em 0 #999,
-		0 0.02em 0 #888,
-		0 0.03em 0 #777,
-		0 0.04em 0 #666,
-		0 0.05em 0 #555,
-		0 0.06em 0 #444,
-		0 0.08em 0 #000;
+    text-shadow: 0 .01em 0 #999999,
+    0 .02em 0 #888888,
+    0 .03em 0 #777777,
+    0 .04em 0 #666666,
+    0 .05em 0 #555555,
+    0 .06em 0 #444444,
+    0 .08em 0 #000000;
 }
 
 
@@ -124,9 +123,9 @@ header {
 }
 
 .guest-login {
-    background-color: #dc954e;;
+    background-color: #dc954e;
     color: #ffffff;
-    font-size: .75rem;
+    font-size: .75rem;;
 }
 
 .guest-login:hover {
@@ -140,11 +139,11 @@ header {
 }
 
 .recipe-btn {
-    color: #FFFFFF;
-    font-weight: bold;
-    background-color: #dc954e;
     padding: 10px;
     border-radius: 4px;
+    background-color: #dc954e;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .recipe-btn:hover {
@@ -297,20 +296,19 @@ header {
     width: 160px;
     height: 100%;
     padding-top: 10px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .side-logo {
     color: #dc954e;
     font-family: Londrina Shadow,cursive;
-    text-shadow:
-		0 0.01em 0 #999,
-		0 0.02em 0 #888,
-		0 0.03em 0 #777,
-		0 0.04em 0 #666,
-		0 0.05em 0 #555,
-		0 0.06em 0 #444,
-		0 0.08em 0 #000;
+    text-shadow: 0 .01em 0 #999999,
+    0 .02em 0 #888888,
+    0 .03em 0 #777777,
+    0 .04em 0 #666666,
+    0 .05em 0 #555555,
+    0 .06em 0 #444444,
+    0 .08em 0 #000000;
 }
 
 .side-title {
@@ -329,13 +327,13 @@ header {
 }
 
 .menu-list li {
-    border-bottom: 1px dotted #a09a8e;
     padding: 1rem 0;
     padding-left: 1.25rem;
+    border-bottom: 1px dotted #a09a8e;
 }
 
 .menu-list li:hover {
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
 }
 
 .push-right {
@@ -349,6 +347,35 @@ header {
     letter-spacing: .5px;
 }
 
+.user-list {
+    top: 215px;
+    left: 135px;
+    padding: 10px 0;
+    font-size: .75rem;
+}
+
+.user-list li {
+    padding: 5px 0;
+    border-bottom: none;
+}
+
+.user-list li:hover {
+    background-color: #eeeeee;
+}
+
+.user-list-item {
+    color: black;
+    font-size: 1rem;
+}
+
+.user-list-item:hover {
+    border-bottom: 1px solid #f2b33e;
+    color: #f2b33e;
+}
+
+.logout-color:hover {
+    color: red;
+}
 // .js-list-item {
 //     color: #ffffff;
 //     font-weight: bold;
@@ -425,11 +452,11 @@ header {
 }
 
 .top-btn {
-    color: #FFFFFF;
     float: right;
-    font-size: 1rem;
     padding: 1rem 1rem;
     border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
 }
 
 .top-title {
@@ -699,23 +726,6 @@ label {
     border: none;
 }
 // アカウント、プロフィール編集ページ
-.user-list {
-    top: 215px;
-    left: 135px;
-    padding: 15px;
-    font-size: .75rem;
-}
-
-.user-list li {
-    border-bottom: none;
-    font-weight: 600;
-    padding: 5px 0;
-}
-
-.user-list li:hover {
-    background-color: #EEEEEE;
-}
-
 .about-user-list {
     position: absolute;
     top: 155px;
@@ -733,16 +743,6 @@ label {
 
 .field {
     margin-bottom: .5rem;
-}
-
-.user-list-item {
-    color: black;
-    font-size: 1rem;
-}
-
-.user-list-item:hover {
-    border-bottom: 1px solid #f2b33e;
-    color: #f2b33e;
 }
 
 .user-content-item {
