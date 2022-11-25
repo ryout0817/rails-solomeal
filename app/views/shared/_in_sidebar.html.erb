@@ -31,6 +31,11 @@
                   <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item logout-color", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
                 </ul>
               </nav>
+              <li>
+                <%= link_to new_recipe_path(@user), class: "list-item" do %>
+                  <i class="fa-solid fa-pen push-right"></i>Recipe
+                <% end %>
+              </li>
             </li>
           </ul>
         </div>
