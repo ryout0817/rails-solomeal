@@ -1,2 +1,10 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<% provide(:title, 'レシピ作成')%>
+<p class="flash" ><%= flash[:info]%></p>
+<div class="main">
+  <%= render 'shared/in_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="title-font">レシピを書く</h1>
+    </div>
+  </div>
+</div>
