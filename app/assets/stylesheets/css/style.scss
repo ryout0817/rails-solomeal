@@ -374,6 +374,7 @@ header {
 }
 
 .logout-color:hover {
+    border-bottom: 1px solid red;
     color: red;
 }
 // .js-list-item {
@@ -489,8 +490,8 @@ header {
 .content-about {
     width: 80%;
     margin: 0 auto;
-    border: 2px solid #a09a8e;
     border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
 @media (max-width:767px) {
@@ -685,8 +686,16 @@ label {
 .content-user {
     width: 90%;
     margin: 2rem auto;
-    border: 2px solid #a09a8e;
     border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+
+.page-title {
+    border-bottom: 2px solid #ffffff;
+}
+
+.merge-4 {
+    margin-top: 4rem;
 }
 
 @media (min-width: 576px) {

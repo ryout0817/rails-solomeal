@@ -22,7 +22,7 @@
             <% if user_signed_in? %>
               <li>
                 <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-                <i class="fa-solid fa-user"></i>User</button>
+                <i class="fa-solid fa-user push-right"></i>User</button>
                 <nav id="nav-none">
                   <ul class="user-list">
                     <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
