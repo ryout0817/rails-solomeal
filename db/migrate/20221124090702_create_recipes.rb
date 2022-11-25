@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.text      :trick
       t.text      :recipe_introduction
       t.integer   :price
+      t.integer   :time
       t.integer   :people
       t.timestamps
     end

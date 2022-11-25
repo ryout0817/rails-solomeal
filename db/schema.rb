@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_11_24_090702) do
     t.text "trick"
     t.text "recipe_introduction"
     t.integer "price"
+    t.integer "time"
     t.integer "people"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
