@@ -34,18 +34,18 @@
               </li>
             <% else %>
               <% unless current_page?(user_session_path)%>
-              <li>
-                <%= link_to user_session_path, class: "list-item" do %>
-                  <i class="fa-solid fa-right-to-bracket push-right"></i>Login
+                <li>
+                  <%= link_to user_session_path, class: "list-item" do %>
+                    <i class="fa-solid fa-right-to-bracket push-right"></i>Login
+                  <% end %>
+                </li>
                 <% end %>
-              </li>
-              <% end %>
-              <% unless current_page?(new_user_registration_path)%>
-              <li>
-                <%= link_to new_user_registration_path, class: "list-item" do %>
-                  <i class="fa-solid fa-pen push-right"></i>SignUp
-                <% end %>
-              </li>
+                <% unless current_page?(new_user_registration_path)%>
+                <li>
+                  <%= link_to new_user_registration_path, class: "list-item" do %>
+                    <i class="fa-solid fa-pen push-right"></i>SignUp
+                  <% end %>
+                </li>
               <% end %>
             <% end %>
           </ul>
