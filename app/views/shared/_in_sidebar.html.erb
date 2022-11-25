@@ -1,27 +1,32 @@
 <nav class="nav-side-list">
   <div class="side-wrapper">
+    <div class="side-title">
+      <%= link_to "/", class: "side-logo" do%>
+        <h1 class="title-icon">ひとり飯</h1>
+      <% end %>
+    </div>
     <nav id="nav-list">
       <div class="side-list">
         <div>
           <ul class="menu-list">
-            <li>
+            <li class="memu1">
               <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
+                <i class="fa-solid fa-house push-right"></i>Home
               <% end %>
             </li>
             <li>
               <%= link_to about_path, class: "list-item" do %>
-                <i class="fa-solid fa-book"></i>Concept
+                <i class="fa-solid fa-book push-right"></i>Concept
               <% end %>
             </li>
             <li>
               <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-                <i class="fa-solid fa-user"></i>User
+                <i class="fa-solid fa-user push-right"></i>User
               </button>
               <nav id="nav-none">
                 <ul class="user-list">
                   <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
-                  <li><%= link_to "メール・パスワード変更", edit_user_registration_path, class: "user-list-item" %></li>
+                  <li><%= link_to "アカウント編集", edit_user_registration_path, class: "user-list-item" %></li>
                   <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
                   <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
                 </ul>

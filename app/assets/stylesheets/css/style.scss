@@ -11,10 +11,6 @@ body {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-header {
-    background-color: #a09a8e;
-}
-
 button {
     padding: 0;
     border: none;
@@ -56,6 +52,16 @@ a {
     text-align: center;
 }
 // ヘッダー
+header {
+    background-color: #a09a8e;
+}
+
+@media (min-width:767px) {
+    header {
+        display: none;
+    }
+}
+
 .navbar {
     padding: .5rem 1rem;
 }
@@ -80,18 +86,24 @@ a {
     float: left;
 }
 
-.header-right {
-    float: right;
-}
 
 .header-logo {
-    color: #f4ecdc;
+    color: #FFFFFF;
+    font-family: Londrina Shadow,cursive;
+    text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
 }
 
-@media (min-width: 767px) {
-    .header-logo {
-        padding-left: 20px;
-    }
+
+
+.header-right {
+    float: right;
 }
 
 .header-btn {
@@ -112,20 +124,41 @@ a {
 }
 
 .guest-login {
-    background-color: #f2b33e;
+    background-color: #dc954e;;
     color: #ffffff;
     font-size: .75rem;
 }
 
 .guest-login:hover {
-    background-color: #ffffff;
-    color: #f2b33e;
+    background-color: #d5802b;
 }
 
 @media (max-width:767px) {
     .guest-login {
         display: none;
     }
+}
+
+.recipe-btn {
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #dc954e;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.recipe-btn:hover {
+    background-color: #d5802b;
+}
+
+.recipe-btn::before {
+    padding-right: 5px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f304";
+}
+
+.size {
+    font-size: .75rem;
 }
 
 @media (max-width:767px) {
@@ -208,28 +241,6 @@ a {
         margin-bottom: 0;
     }
 }
-.header-user-icon-img {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-
-    object-fit: cover;
-}
-
-@media (max-width:767px) {
-    .header-user-icon-img {
-        display: none;
-    }
-}
-
-@media (max-width:767px) {
-    .header-user-icon-font::before {
-        display: none;
-    }
-}
 
 .menu-btn {
     display: flex;
@@ -283,11 +294,28 @@ a {
 
 // サイドバー
 .side-wrapper {
-    width: 130px;
+    width: 160px;
     height: 100%;
     padding-top: 10px;
-    border-right: 2px solid #a09a8e;
-    background-color: #f8f1e5;
+    background-color: #FFFFFF;
+}
+
+.side-logo {
+    color: #dc954e;
+    font-family: Londrina Shadow,cursive;
+    text-shadow:
+		0 0.01em 0 #999,
+		0 0.02em 0 #888,
+		0 0.03em 0 #777,
+		0 0.04em 0 #666,
+		0 0.05em 0 #555,
+		0 0.06em 0 #444,
+		0 0.08em 0 #000;
+}
+
+.side-title {
+    margin: 2rem 0;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -298,25 +326,34 @@ a {
 
 .side-list {
     display: block;
-    width: 110px;
-    margin-left: 1rem;
 }
 
 .menu-list li {
-    margin-bottom: 20px;
+    border-bottom: 1px dotted #a09a8e;
+    padding: 1rem 0;
+    padding-left: 1.25rem;
+}
+
+.menu-list li:hover {
+    background-color: #EEEEEE;
+}
+
+.push-right {
+    padding-right: 5px;
 }
 
 .list-item {
     color: #000000;
     font-weight: bold;
     font-size: 1.5em;
+    letter-spacing: .5px;
 }
 
-.js-list-item {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
+// .js-list-item {
+//     color: #ffffff;
+//     font-weight: bold;
+//     font-size: 1.5rem;
+// }
 
 .list-item:after {
     position: absolute;
@@ -336,6 +373,10 @@ a {
 
 .list-item:hover {
     color: #f2b33e;
+}
+
+.menu1 {
+    border-top: 1px dotted #a09a8e;
 }
 
 .js-list-item:after {
@@ -358,14 +399,6 @@ a {
     color: #f2b33e;
 }
 
-.fa-solid::before {
-    padding-right: 5px;
-}
-
-.header-user-icon-font {
-    font-size: 2rem !important;
-}
-
 // トップページメイン
 .main {
     display: flex;
@@ -385,16 +418,24 @@ a {
     background-size: cover;
 }
 
-.title-container {
-    text-align: center;
+.main-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+.top-btn {
+    color: #FFFFFF;
+    float: right;
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 4px;
 }
 
 .top-title {
     position: absolute;
     top: 40%;
     left: 50%;
-    padding: 1rem 5rem;
-    background-color: #ada391;
     color: #f4ecdc;
 }
 
@@ -659,14 +700,20 @@ label {
 }
 // アカウント、プロフィール編集ページ
 .user-list {
-    position: absolute;
     top: 215px;
     left: 135px;
     padding: 15px;
-    border: 2px solid #a09a8e;
-    border-radius: 10px;
-    background-color: #f8f1e5;
     font-size: .75rem;
+}
+
+.user-list li {
+    border-bottom: none;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+.user-list li:hover {
+    background-color: #EEEEEE;
 }
 
 .about-user-list {
@@ -686,11 +733,6 @@ label {
 
 .field {
     margin-bottom: .5rem;
-}
-
-.user-list li {
-    margin-bottom: 0;
-    font-weight: 600;
 }
 
 .user-list-item {
@@ -784,3 +826,4 @@ label {
     outline-style: solid;
     outline-width: 1px;
 }
+// レシピ作成ページ
