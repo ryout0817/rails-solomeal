@@ -27,9 +27,6 @@
     </div>
   <% else %>
     <div class="menu__item">
-      <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "js-list-item", method: :post %>
-    </div>
-    <div class="menu__item">
       <%= link_to user_session_path, class: "js-list-item" do %>
         ログイン
       <% end %>
