@@ -5,9 +5,9 @@
   <div class="top-background-image">
     <div class="content">
       <% if user_signed_in? %>
-            <div class="main-btn">
-              <%= link_to "レシピ作成", new_recipe_path(@user), class: "guest-login top-btn"%>
-            </div>
+        <div class="main-btn">
+          <%= link_to "レシピ作成", new_recipe_path(@user), class: "guest-login top-btn recipe-font"%>
+        </div>
       <% else %>
       <div class="main-btn">
         <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "guest-login top-btn", method: :post %>

@@ -125,7 +125,7 @@ header {
 .guest-login {
     background-color: #dc954e;
     color: #ffffff;
-    font-size: .75rem;;
+    font-size: .75rem;
 }
 
 .guest-login:hover {
@@ -144,6 +144,14 @@ header {
     background-color: #dc954e;
     color: #ffffff;
     font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .recipe-btn {
+        position: absolute;
+        top: 10px;
+        right: 70px;
+    }
 }
 
 .recipe-btn:hover {
@@ -504,6 +512,13 @@ header {
     .content-about {
         width: 70%;
     }
+}
+
+.recipe-font::before {
+    padding-right: 5px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    content: "\f304";
 }
 
 // フッター
