@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def new
     @user = current_user
     @recipe = Recipe.new
+    @private = Recipe.order(created_at: :desc).first
   end
 
   def create
