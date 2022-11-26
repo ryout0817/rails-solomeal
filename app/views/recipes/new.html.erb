@@ -42,6 +42,7 @@
               </nav>
             </div>
           </div>
+          <%= f.hidden_field :user_id, value:@user.id %>
           <div class="submit center">
             <%= f.submit "レシピの工程を作成する", class: "create-recipe-submit" %>
           </div>
