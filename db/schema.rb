@@ -41,13 +41,14 @@ ActiveRecord::Schema.define(version: 2022_11_24_090702) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.integer "user_id"
     t.string "recipe_name"
+    t.string "food"
     t.text "trick"
     t.text "recipe_introduction"
     t.integer "price"
     t.integer "time"
     t.integer "people"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
