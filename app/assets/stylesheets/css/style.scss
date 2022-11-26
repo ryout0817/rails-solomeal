@@ -883,6 +883,17 @@ label {
     text-align: center;
 }
 
+@media (max-width:700px) {
+    .recipe-title-font {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:700px) {
+    .recipe-title-font {
+        font-size: 1.2rem;
+    }
+}
 .gray-color {
     color: rgba(0, 0, 0, .7);
 }
@@ -896,23 +907,52 @@ label {
     background-color: #ffffff;
 }
 
+@media (max-width:850px) {
+    .recipe-wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width:400px) {
+    .recipe-wrapper {
+        width: 90%;
+    }
+}
 .recipe-container {
     width: 100%;
 }
 
-.recipe-label-container {
+.recipe-label1 {
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
     padding-left: .5rem;
-    border-bottom: 1px solid #ced4da;
+}
+
+.recipe-label2 {
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-left: .5rem;
+}
+
+.recipe-label3 {
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-left: .5rem;
+    border-top: 1px solid #ced4da;
 }
 
 .recipe-label {
     font-size: 1.1rem;;
 }
 
+@media (max-width:700px) {
+    .recipe-label {
+        font-size: 1rem;
+    }
+}
 .recipe-form {
     margin-bottom: 2rem;
-    padding-left: 5px;
+    padding-left: .5rem;
 }
 
 .recipe-form-ctrl {
@@ -924,17 +964,45 @@ label {
     font-size: 1.5rem;
 }
 
+@media (max-width:700px) {
+    .recipe-form-ctrl {
+        width: 90%;
+        padding: .25rem .75rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:500px) {
+    .recipe-form-ctrl {
+        width: 95%;
+    }
+}
+
 .recipe-form-ctrl:focus {
     outline: 3px solid #c1e0ff;
 }
 
 .recipe-intro-form-ctrl {
-    width: 90%;
+    width: 72%;
     padding: .5rem 1rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     font-size: 1.1rem;
     resize: none;
+}
+
+@media (max-width:700px) {
+    .recipe-intro-form-ctrl {
+        width: 95%;
+        padding: .25rem .75rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:500px) {
+    .recipe-intro-form-ctrl {
+        width: 100%;
+    }
 }
 
 .recipe-intro-form-ctrl:focus {
@@ -949,6 +1017,85 @@ label {
     display: flex;
 }
 
+.recipe-introduction {
+    margin-right: 1rem;
+}
+
+
+.create-recipe-submit {
+    margin-bottom: 2rem;
+    padding: .75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc954e;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+@media (max-width:700px) {
+    .create-recipe-submit {
+        font-size: .75rem;
+    }
+}
+
+.create-recipe-submit:hover {
+    background-color: #d5802b;
+}
+
+.center {
+    text-align: center;
+}
+
+.private-recipe-box {
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-left: .5rem;
+    border-top: 1px solid #ced4da;
+}
+
+.private-recipe-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.private-recipe {
+    padding-left: .5rem;
+    color: #f2b33e;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.private-recipe-btn {
+    padding: .75rem 1.5rem;
+    border-radius: 4px;
+    background-color: #b2aca2;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+@media (max-width:700px) {
+    .private-recipe-btn {
+        font-size: .75rem;
+    }
+}
+
+.private-recipe-btn:hover {
+    background-color: #a09a8e;
+}
+
+// 料理時間よう
+.recipe-time {
+    border-top: 1px solid #ced4da;
+}
+
+.minute {
+    margin-top: 3px;
+    margin-left: 5px;
+    color: rgba(0, 0, 0, .7);
+    font-weight: bold;
+}
+
 .recipe-time-form-ctrl {
     width: 3rem;
     padding: .4rem;
@@ -959,38 +1106,4 @@ label {
 
 .recipe-time-form-ctrl:focus {
     outline: 3px solid #c1e0ff;
-}
-
-
-.recipe-introduction {
-    width: 65%;
-    margin-right: 1rem;
-}
-
-.recipe-time {
-    width: 20%;
-}
-
-.minute {
-    margin-top: 3px;
-    margin-left: 5px;
-    color: rgba(0, 0, 0, .7);
-    font-weight: bold;
-}
-
-.create-recipe-submit {
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #dc954e;
-    color: #ffffff;
-}
-
-.create-recipe-submit:hover {
-    background-color: #d5802b;
-}
-
-.center {
-    text-align: center;
 }

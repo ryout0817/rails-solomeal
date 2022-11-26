@@ -6,47 +6,31 @@
     <div class="page-title">
       <h1 class="recipe-title-font gray-color">レシピの基本情報入力</h1>
     </div>
-    <div class="recipe-wrapper">
+    <div class="recipe-wrapper center">
       <div class="recipe-container">
         <%= form_with model: @recipe, local: true do |f| %>
-          <div class="recipe-content">
-            <div class="recipe-box">
-              <div class="recipe-label-container">
-                <label class="recipe-label gray-color" for="recipe_name">レシピの名前（２０文字以内）</label>
+          <div class="recipe-box">
+            <div class="recipe-label1">
+              <label class="recipe-label gray-color" for="recipe_name">レシピの名前（２０文字以内）</label>
+            </div>
+            <div class="recipe-form">
+              <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
+            </div>
+          </div>
+          <div class="recipe-box">
+            <nav class="recipe-introduction">
+              <div class="recipe-label2">
+                <label class="recipe-label gray-color" for="recipe_introduction">レシピ紹介（１００文字以内）</label>
               </div>
               <div class="recipe-form">
-                <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
+                <%= f.text_area :recipe_introduction, placeholder: "例：最速20分で簡単にできます！",rows: 4, class: "recipe-intro-form-ctrl form-space" %>
               </div>
-            </div>
-            <div class="recipe-box flex">
-              <nav class="recipe-introduction">
-                <div class="recipe-label-container">
-                  <label class="recipe-label gray-color" for="recipe_introduction">レシピ紹介（100文字以内）</label>
-                </div>
-                <div class="recipe-form">
-                  <%= f.text_area :recipe_introduction, placeholder: "例：最速20分で簡単にできます！",rows: 4, class: "recipe-intro-form-ctrl form-space" %>
-                </div>
-              </nav>
-              <nav class="recipe-time">
-                <div class="recipe-label-container">
-                  <label class="recipe-label gray-color" for="recipe_introduction">料理時間</label>
-                </div>
-                <div class="recipe-form flex">
-                  <div>
-                    <%= f.number_field :time, min: "1", class: "recipe-time-form-ctrl form-space" %>
-                  </div>
-                  <div class="minute">
-                    <p>分</p>
-                  </div>
-                </div>
-              </nav>
-            </div>
+            </nav>
+            <%= f.hidden_field :user_id, value:@user.id %>
           </div>
-          <%= f.hidden_field :user_id, value:@user.id %>
           <div class="submit center">
-            <%= f.submit "レシピの工程を作成する", class: "create-recipe-submit" %>
+            <%= f.submit "作り方の入力へ", class: "create-recipe-submit" %>
           </div>
-        <% end %>
       </div>
     </div>
   </div>
