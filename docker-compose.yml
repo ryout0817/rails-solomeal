@@ -18,6 +18,8 @@ services:
     environment:
       SELENIUM_REMOTE_URL: http://webdriver_chrome:4444/wd/hub
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - mysql
+    tty: true
+    stdin_open: true
