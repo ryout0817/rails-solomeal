@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_11_24_090702) do
   end
 
   create_table "recipes", force: :cascade do |t|
+    t.integer "user_id"
     t.string "recipe_name"
     t.text "trick"
     t.text "recipe_introduction"
