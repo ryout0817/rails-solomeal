@@ -12,9 +12,9 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(params.require(:recipe).permit(:recipe_name, :recipe_introduction, :time, :user_id))
     if @recipe.save
-      redirect_to edit_recipe_path(@recipe.id)
+      redirect_to edit_recipe_path(@recipe)
     else
-      render "new"
+      redirect_to new_recipe_path
     end
   end
 
