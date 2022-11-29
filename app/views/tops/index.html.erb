@@ -6,7 +6,7 @@
     <div class="content">
       <% if user_signed_in? %>
         <div class="main-btn">
-          <%= link_to "レシピ作成", new_recipe_path(@user), class: "top-none top-btn recipe-font"%>
+          <%= link_to "レシピ作成", new_recipe_path, class: "top-none top-btn recipe-font"%>
         </div>
       <% else %>
       <div class="main-btn">
