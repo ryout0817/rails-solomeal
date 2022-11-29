@@ -31,18 +31,7 @@
           <div class="submit center">
             <%= f.submit "作り方の入力へ", class: "create-recipe-submit" %>
           </div>
-          <div class="private-recipe-box flex">
-            <div>
-              <p class="private-recipe-title gray-color">最近作成したレシピ：</p>
-            </div>
-            <div class="private-recipe">
-              <%= @private.recipe_name%>
-            </div>
-          </div>
         <% end %>
-        <div class="private-recipe-edit">
-          <%= link_to "#{@private.recipe_name}の編集へ", edit_recipe_path(@private.id), class: "private-recipe-btn"%>
-        </div>
       </div>
     </div>
   </div>
