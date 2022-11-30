@@ -4,9 +4,9 @@
   <%= render 'shared/in_sidebar.html.erb'%>
   <div class="content-wrapper">
     <div class="page-title">
-      <h1 class="recipe-title-font gray-color">レシピの基本情報入力</h1>
+      <h1 class="recipe-title-font gray-color">簡単料理を投稿してみよう！</h1>
     </div>
-    <div class="recipe-wrapper center">
+    <div class="recipe-wrapper">
       <div class="recipe-container">
         <%= form_with model: @recipe, local: true do |f| %>
           <div class="recipe-box">
@@ -17,7 +17,34 @@
               <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
             </div>
           </div>
-          <div class="recipe-box">
+          <div class="recipe-col-3">
+            <%= f.label :food, id: "food", class: "fa-2x recipe-label gray-color fa-solid fa-camera center", onChange: "uploadFile1()" do %>
+              <div class="recipe-label3">
+                <p>料理の写真</p>
+              </div>
+              <div class="recipe-form">
+                <%= f.file_field :food %>
+              </div>
+            <% end %>
+            <div class="recipe-number-wrapper">
+              <div class="recipe-number-wrapper-col">
+                <%= f.label :何人前, class: "recipe-label gray-color recipe-people"%>
+              </div>
+              <div class="field-wrapper flex">
+                <%= f.number_field :people, min: 1, class: "recipe-form-ctrl2 gray-color" %>
+                <div class="font-people">
+                人前</div>
+              </div>
+              <div class="recipe-number-wrapper-col">
+                <%= f.label :値段, class: "recipe-label gray-color recipe-price"%>
+              </div>
+              <div class="field-wrapper flex">
+                <%= f.number_field :price, min: 1, class: "recipe-form-ctrl2 gray-color" %>
+                <div class="font-price">円</div>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-sentence-box">
             <nav class="recipe-introduction">
               <div class="recipe-label2">
                 <label class="recipe-label gray-color" for="recipe_introduction">レシピ紹介（１００文字以内）</label>
@@ -26,8 +53,16 @@
                 <%= f.text_area :recipe_introduction, placeholder: "例：最速20分で簡単にできます！",rows: 4, class: "recipe-intro-form-ctrl form-space" %>
               </div>
             </nav>
-            <%= f.hidden_field :user_id, value:@user.id %>
+            <nav class="recipe-trick">
+              <div class="recipe-label2">
+                <%= f.label :調理のポイント, class: "recipe-label gray-color" %>
+              </div>
+              <div class="recipe-form">
+                <%= f.text_area :trick, placeholder: "例：豚肉への味付けが大事！",rows: 4, class: "recipe-intro-form-ctrl form-space" %>
+              </div>
+            </nav>
           </div>
+          <%= f.hidden_field :user_id, value:@user.id %>
           <div class="submit center">
             <%= f.submit "作り方の入力へ", class: "create-recipe-submit" %>
           </div>

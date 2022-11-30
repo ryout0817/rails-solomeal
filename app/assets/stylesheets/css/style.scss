@@ -935,10 +935,9 @@ label {
 }
 
 .recipe-label3 {
-    margin-bottom: 1.5rem;
-    padding-top: 1rem;
-    padding-left: .5rem;
-    border-top: 1px solid #ced4da;
+    margin: 1rem;
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
 .recipe-label {
@@ -952,7 +951,6 @@ label {
 }
 .recipe-form {
     margin-bottom: 2rem;
-    padding-left: .5rem;
 }
 
 .recipe-form-ctrl {
@@ -983,7 +981,7 @@ label {
 }
 
 .recipe-intro-form-ctrl {
-    width: 72%;
+    width: 100%;
     padding: .5rem 1rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
@@ -1016,11 +1014,6 @@ label {
 .flex {
     display: flex;
 }
-
-.recipe-introduction {
-    margin-right: 1rem;
-}
-
 
 .create-recipe-submit {
     margin-bottom: 2rem;
@@ -1106,4 +1099,99 @@ label {
 
 .recipe-time-form-ctrl:focus {
     outline: 3px solid #c1e0ff;
+}
+
+.recipe-number-wrapper {
+    width: 100%;
+    margin-top: 3rem;
+    margin-left: 4rem;
+    font-size: 1.1rem;
+}
+
+.recipe-make-wrapper {
+    width: 70%;
+    margin: 2rem auto;
+    padding: .75rem auto;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.none {
+    display: none;
+}
+
+#food {
+    margin-left: 2rem;
+    padding: 6rem 0;
+    padding-left: .75rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #f8f1ed;
+    cursor: pointer;
+}
+
+.recipe-form-ctrl2 {
+    width: 30%;
+    padding: .25rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+.recipe-form-ctrl2:focus {
+    outline: 3px solid #c1e0ff;
+}
+
+.font-people {
+    padding-left: .5rem;
+}
+
+.font-price {
+    padding-left: .5rem;
+}
+
+.recipe-number-wrapper-col {
+    margin-bottom: .75rem;
+}
+
+.field-wrapper {
+    margin-bottom: 2rem;
+}
+
+.recipe-col-3 {
+    display: flex;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+}
+
+
+@media (max-width:576px) {
+    .recipe-col-3 {
+        display: block;
+    }
+}
+
+.recipe-sentence-box {
+    display: flex;
+    margin: 0 2rem;
+}
+
+@media (max-width:576px) {
+    .recipe-sentence-box {
+        display: block;
+    }
+}
+
+.recipe-introduction {
+    margin-right: 4rem;
+}
+
+@media (max-width:576px) {
+    .recipe-introduction {
+        margin-right: 0;
+    }
 }
