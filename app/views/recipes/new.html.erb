@@ -32,12 +32,11 @@
             <% end %>
             <div class="recipe-number-wrapper">
               <div class="recipe-number-wrapper-col">
-                <%= f.label :何人前, class: "recipe-label gray-color recipe-people"%>
+                <%= f.label :調理時間, class: "recipe-label gray-color recipe-people"%>
               </div>
               <div class="field-wrapper flex">
-                <%= f.number_field :people, min: 1, class: "recipe-form-ctrl2 gray-color" %>
-                <div class="font-people">
-                人前</div>
+                <%= f.number_field :time, min: 1, class: "recipe-form-ctrl2 gray-color" %>
+                <div class="font-people">分</div>
               </div>
               <div class="recipe-number-wrapper-col">
                 <%= f.label :値段, class: "recipe-label gray-color recipe-price"%>
