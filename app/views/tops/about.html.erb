@@ -1,7 +1,11 @@
 <% provide(:title, 'コンセプト')%>
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
-  <%= render 'shared/out_sidebar.html.erb'%>
+  <% if user_signed_in? %>
+    <%= render 'shared/in_sidebar.html.erb'%>
+  <% else %>
+    <%= render 'shared/out_sidebar.html.erb'%>
+  <% end %>
   <div class="content-wrapper">
     <div class="page-title">
       <h1 class="document-icon title-font">Concept</h1>

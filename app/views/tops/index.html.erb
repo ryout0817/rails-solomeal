@@ -1,7 +1,11 @@
 <p class="flash" ><%= flash[:info]%></p>
 <p class="alert"><%= alert%></p>
 <div class="main">
-  <%= render 'shared/out_sidebar.html.erb'%>
+  <% if user_signed_in? %>
+    <%= render 'shared/in_sidebar.html.erb'%>
+  <% else %>
+    <%= render 'shared/out_sidebar.html.erb'%>
+  <% end %>
   <div class="top-background-image">
     <div class="content">
       <% if user_signed_in? %>
