@@ -2,9 +2,61 @@
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
   <%= render 'shared/in_sidebar.html.erb'%>
-  <div class="container">
-    <table>
-      <>
-    </table>
+  <div class="preview-page-wrapper">
+    <div class="order-title-wrap">
+      <h2 class="order-title gray-color center">新着順</h2>
+      <p class="order-title-comment center">すぐにご飯をたべるため最近投稿されたレシピを試してみよう！</p>
+    </div>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-preview">
+        <% if recipe.food? %>
+          <%= link_to recipe_path(recipe.id) do %>
+            <%= image_tag recipe.food.url, alt: "レシピ写真", class: "food-preview-img" %>
+          <% end %>
+        <% else %>
+          <div class="not-food-img-box">
+            <div class="not-food-img-posi">
+              <div>
+                <i class="not-food-img fa-solid fa-utensils"></i>
+              </div>
+              <div class="not-found">
+                <p>not-image</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="recipe-preview-wrapp">
+          <div class="preview-name">
+            <%= link_to recipe_path(recipe.id), class: "preview-name-path" do %>
+              <%= recipe.recipe_name %>
+            <% end %>
+          </div>
+          <div class="preview-item-wrap">
+            <div class="preview-price-title">
+              <p>調理の費用</p>
+            </div>
+            <div class="preview-price right">
+              <%= recipe.price%>円
+            </div>
+          </div>
+          <div class="preview-item-wrap">
+            <div class="preview-time-title">
+              <p>調理にかかる時間</p>
+            </div>
+            <div class="preview-time right">
+              <%= recipe.time%>分
+            </div>
+          </div>
+          <div class="preview-item-wrap">
+            <div class="preview-user-title">
+              <p>作成者</p>
+            </div>
+            <div class="preview-user right">
+              <%= recipe.user.name %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

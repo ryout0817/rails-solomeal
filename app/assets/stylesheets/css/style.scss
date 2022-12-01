@@ -902,9 +902,7 @@ label {
     width: 650px;
     margin: 2rem auto;
     padding: .75rem 1rem;
-    border: 1px solid #ced4da;
     border-radius: 4px;
-    background-color: #ffffff;
 }
 
 @media (max-width:850px) {
@@ -1197,13 +1195,13 @@ label {
 }
 
 .main-food-col {
-    color: #666666;
     margin-right: 1rem;
+    color: #666666;
 }
 
 .main-food-box {
-    align-items: center;
     display: flex;
+    align-items: center;
 }
 
 @media (max-width:850px) {
@@ -1213,11 +1211,11 @@ label {
 }
 
 .main-food {
+    width: 180px;
+    padding: .5rem 0 .5rem .5rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     font-size: 1.1rem;
-    width: 180px;
-    padding: .5rem 0 .5rem .5rem;
 }
 
 @media (max-width:850px) {
@@ -1231,6 +1229,42 @@ label {
 }
 
 // 新着順投稿ページ
+.preview-page-wrapper {
+    width: 650px;
+    margin: 2rem auto;
+    padding: .75rem 1rem;
+    border-radius: 4px;
+}
+
+@media (max-width:850px) {
+    .preview-page-wrapper {
+        padding: .75rem 0;
+    }
+}
+
+@media (max-width:576px) {
+    .preview-page-wrapper {
+        width: 90%;
+    }
+}
+
+.recipe-preview {
+    display: flex;
+    margin: 0 2rem 1rem 2rem;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+@media (max-width:576px) {
+    .recipe-preview {
+        display: block;
+        margin: 0 .5rem 1rem .5rem;
+        text-align: center;
+    }
+}
+
 .order-title::before {
     padding-right: .5rem;
     font-family: "Font Awesome 5 Free";
@@ -1238,16 +1272,114 @@ label {
 }
 
 .order-title-comment {
-    margin: .5rem 0;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
     color: #666666;
 }
 
-.preview-name-box {
-    color: #006edb;
+.recipe-preview-wrapp {
+    width: 300px;
+    padding: 1rem;
     font-weight: bold;
+}
+
+@media (max-width:576px) {
+    .recipe-preview-wrapp {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+.preview-name {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.preview-name-path {
+    color: #1e8eff;
+}
+
+.preview-name-path:hover {
+    color: #0074e8;
 }
 
 .food-preview-img {
     width: 200px;
     height: 200px;
+
+    object-fit: cover;
+}
+
+@media (max-width:576px) {
+    .food-preview-img {
+        width: 100%;
+    }
+}
+
+.not-food-img-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #ced4da;
+    text-align: center;
+}
+
+@media (max-width:576px) {
+    .not-food-img-box {
+        width: 270px;
+        margin: 0 auto;
+    }
+}
+
+.not-food-img-posi {
+    position: absolute;
+    top: 30%;
+    left: 22%;
+}
+
+@media (max-width:576px) {
+    .not-food-img-posi {
+        left: 30%;
+    }
+}
+
+.not-food-img {
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+
+.not-found {
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.preview-item-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ced4da;
+    font-weight: 400;
+}
+
+.preview-price {
+    font-size: 1.2rem;
+}
+
+.preview-price {
+    padding-right: .5rem;
+    letter-spacing: 2px;
+}
+
+.preview-time {
+    padding-right: .5rem;
+    letter-spacing: 2px;
+}
+
+.preview-user {
+    color: #dc954e;
+    font-weight: bold;
+}
+
+.preview-user:hover {
+    color: #d5802b;
 }
