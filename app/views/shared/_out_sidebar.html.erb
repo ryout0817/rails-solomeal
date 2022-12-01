@@ -19,34 +19,19 @@
                 <i class="fa-solid fa-book push-right"></i>Concept
               <% end %>
             </li>
-            <% if user_signed_in? %>
+            <% unless current_page?(user_session_path)%>
               <li>
-                <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-                <i class="fa-solid fa-user push-right"></i>User</button>
-                <nav id="nav-none">
-                  <ul class="user-list">
-                    <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
-                    <li><%= link_to "アカウント編集", edit_user_registration_path, class: "user-list-item" %></li>
-                    <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
-                    <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item logout-color", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
-                  </ul>
-                </nav>
-              </li>
-            <% else %>
-              <% unless current_page?(user_session_path)%>
-                <li>
-                  <%= link_to user_session_path, class: "list-item" do %>
-                    <i class="fa-solid fa-right-to-bracket push-right"></i>Login
-                  <% end %>
-                </li>
+                <%= link_to user_session_path, class: "list-item" do %>
+                  <i class="fa-solid fa-right-to-bracket push-right"></i>Login
                 <% end %>
-                <% unless current_page?(new_user_registration_path)%>
-                <li>
-                  <%= link_to new_user_registration_path, class: "list-item" do %>
-                    <i class="fa-solid fa-pen push-right"></i>SignUp
-                  <% end %>
-                </li>
-              <% end %>
+              </li>
+            <% end %>
+            <% unless current_page?(new_user_registration_path)%>
+              <li>
+                <%= link_to new_user_registration_path, class: "list-item" do %>
+                  <i class="fa-solid fa-pen push-right"></i>SignUp
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </div>
