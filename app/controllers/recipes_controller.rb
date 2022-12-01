@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
-    @user = User.all
-    @recipe = Recipe.all
+    @user = current_user
+    @recipes = Recipe.all.order(created_at: :desc).includes(:user)
   end
 
   def new
