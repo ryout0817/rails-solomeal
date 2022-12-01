@@ -16,9 +16,13 @@
             <div class="recipe-form">
               <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
             </div>
+            <div class="main-food-box">
+              <p class="main-food-col">※メインの材料を記入しましよう！</p>
+              <%= f.text_field :main_food, placeholder: "例：豚肉", class:"main-food" %>
+            </div>
           </div>
           <div class="recipe-col-3">
-            <%= f.label :food, id: "food", class: "fa-2x recipe-label gray-color fa-solid fa-camera center", onChange: "uploadFile1()" do %>
+            <%= f.label :food, id: "food", class: "fa-2x recipe-label gray-color fa-solid fa-camera center" do %>
               <div class="recipe-label3">
                 <p>料理の写真</p>
               </div>
