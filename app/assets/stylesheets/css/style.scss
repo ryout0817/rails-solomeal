@@ -1317,7 +1317,7 @@ label {
 
 @media (max-width:576px) {
     .food-preview-img {
-        width: 100%;
+        width: 270px;
     }
 }
 
@@ -1401,12 +1401,14 @@ label {
 @media (max-width:850px) {
     .show-recipe-wrapper {
         width: 80%;
+        margin: 2.5rem auto;
     }
 }
 
 @media (max-width:400px) {
     .show-recipe-wrapper {
         width: 90%;
+        margin: 1.5rem auto;
     }
 }
 
@@ -1564,4 +1566,19 @@ label {
 
 .sentence-form:focus {
     outline: none;
+}
+
+.btn-wrap {
+    text-align: center;
+}
+
+.return-recipe-list-btn {
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    background-color: #dc954e;
+    color: #ffffff;
+}
+
+.return-recipe-list-btn:hover {
+    background-color: #d5802b;
 }
