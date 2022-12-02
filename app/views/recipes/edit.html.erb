@@ -1,0 +1,75 @@
+<% provide(:title, 'レシピ編集')%>
+<p class="flash" ><%= flash[:info]%></p>
+<div class="main">
+  <%= render 'shared/in_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="recipe-title-font gray-color">レシピ編集</h1>
+    </div>
+    <div class="recipe-wrapper">
+      <div class="recipe-container">
+        <%= form_with model: @recipe, local: true do |f| %>
+          <div class="recipe-box">
+            <div class="recipe-label1">
+              <label class="recipe-label gray-color" for="recipe_name">レシピの名前</label>
+            </div>
+            <div class="recipe-form">
+              <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
+            </div>
+            <div class="main-food-box">
+              <p class="main-food-col">※メインの材料</p>
+              <%= f.text_field :main_food, placeholder: "例：豚肉", class:"main-food" %>
+            </div>
+          </div>
+          <div class="recipe-col-3">
+            <%= f.label :food, id: "food", class: "fa-2x recipe-label gray-color fa-solid fa-camera center" do %>
+              <div class="recipe-label3">
+                <p>料理の写真</p>
+              </div>
+              <div class="recipe-form">
+                <%= f.file_field :food %>
+              </div>
+            <% end %>
+            <div class="recipe-number-wrapper">
+              <div class="recipe-number-wrapper-col">
+                <%= f.label :調理時間, class: "recipe-label gray-color recipe-people"%>
+              </div>
+              <div class="field-wrapper flex">
+                <%= f.number_field :time, min: 1, class: "recipe-form-ctrl2 gray-color" %>
+                <div class="font-people">分</div>
+              </div>
+              <div class="recipe-number-wrapper-col">
+                <%= f.label :値段, class: "recipe-label gray-color recipe-price"%>
+              </div>
+              <div class="field-wrapper flex">
+                <%= f.number_field :price, min: 1, class: "recipe-form-ctrl2 gray-color" %>
+                <div class="font-price">円</div>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-sentence-box">
+            <nav class="recipe-introduction">
+              <div class="recipe-label2">
+                <label class="recipe-label gray-color" for="recipe_introduction">作り方</label>
+              </div>
+              <div class="recipe-form">
+                <%= f.text_area :recipe_how, placeholder: placeholder_method,rows: 4, class: "recipe-intro-form-ctrl form-space" %>
+              </div>
+            </nav>
+            <nav class="recipe-trick">
+              <div class="recipe-label2">
+                <%= f.label :材料・分量, class: "recipe-label gray-color" %>
+              </div>
+              <div class="recipe-form">
+                <%= f.text_area :material, placeholder: placeholder_material,rows: 4, class: "recipe-intro-form-ctrl form-space" %>
+              </div>
+            </nav>
+          </div>
+          <div class="submit center">
+            <%= f.submit "更新", class: "create-recipe-submit" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
