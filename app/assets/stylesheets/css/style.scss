@@ -848,8 +848,11 @@ label {
 }
 
 .no-edit-form {
-    border: none;
-    background-color: #f8f1e5;
+    width: 90%;
+    padding: .5rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1.1rem;
     text-align: center;
     resize: none;
 }
