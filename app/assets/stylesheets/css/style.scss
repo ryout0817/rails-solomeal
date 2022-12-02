@@ -775,6 +775,99 @@ label {
     border: none;
 }
 // アカウント、プロフィール編集ページ
+// マイページ
+.mypage-container-wrap {
+    width: 70%;
+    margin: 2rem auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    background-color: #ffffff;
+}
+
+.mypage-content {
+    padding: 2.5rem 4rem;
+}
+
+.data-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ced4da;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: #f5f5f5;
+}
+
+.show-user-icon {
+    margin: .3rem 0 0 .2rem;
+    font-size: 2.5rem;
+}
+
+.user-name {
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.user-introduction-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    border-bottom: 1px solid #ced4da;
+}
+
+.introduction-label {
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.no-edit-form {
+    width: 300px;
+    padding: .5rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    resize: none;
+}
+
+.myrecipe-list-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid #ced4da;
+}
+
+.myrecipe-label {
+    font-weight: bold;
+}
+
+.myrecipe-name-wrap {
+    margin-right: 3rem;
+}
+
+.myrecipe-name {
+    border-bottom: 1px solid #1e8eff;
+    color: #1e8eff;
+    font-weight: bold;
+}
+
+.myrecipe-name:hover {
+    border-bottom: 1px solid #0074e8;
+    color: #0074e8;
+}
+
+
+
+
 .about-user-list {
     position: absolute;
     top: 155px;
@@ -845,16 +938,6 @@ label {
     margin-bottom: 10px;
     border-radius: 50%;
     font-size: 3rem;
-}
-
-.no-edit-form {
-    width: 90%;
-    padding: .5rem .75rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    text-align: center;
-    resize: none;
 }
 
 .no-edit-form:focus {

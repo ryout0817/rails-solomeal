@@ -3,45 +3,42 @@
   <%= render 'shared/in_sidebar.html.erb'%>
   <div class="content-wrapper">
     <div class="page-title">
-      <h1 class="signup-icon title-font">プロフィール</h1>
+      <h1 class="signup-icon title-font">マイページ</h1>
     </div>
-    <div class="content-user">
-      <div class="container-content user-form">
-        <div class="content-document-inner">
-          <div class="field">
-            <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
-              <div class="user-content">
-                <label class="user-label" for="name">プロフィール写真</label>
-                <div class="user-content-item col-border">
-                  <% if @user.avatar? %>
-                    <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
-                  <% else %>
-                    <i class="fa-solid fa-user-gear user-icon-font"></i>
-                  <% end %>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="name">ニックネーム</label>
-                <div class="user-content-item col-border">
-                  <%= f.text_field :name, class: "no-edit-form", readonly: true %>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="introduction">自己紹介</label>
-                <div class="user-content-item col-border">
-                  <%= f.text_area :introduction, rows: 3, class: "no-edit-form", readonly: true %>
-                </div>
-              </div>
-              <div class="user-content">
-                <label class="user-label" for="specialties">得意料理</label>
-                <div class="user-content-item col-border">
-                  <%= f.text_field :recommended_dishes, class: "no-edit-form", readonly: true %>
-                </div>
-              </div>
+    <div class="mypage-container-wrap">
+      <div class="mypage-content">
+        <div class="data-user">
+          <div class="user-icon">
+            <% if @user.avatar? %>
+              <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
+            <% else %>
+              <i class="fa-solid fa-user-gear show-user-icon gray-color"></i>
             <% end %>
           </div>
-          <div class="user-content-link">
-              <%= link_to "プロフィール編集", edit_account_path, class: "form-submit base-btn" %>
+          <div class="user-content">
+            <div class="user-name">
+              <%= @user.name%>
+            </div>
+          </div>
+        </div>
+        <div class="user-introduction-wrap">
+          <div class="introduction-label">自己紹介</div>
+          <div class="user-content-item">
+            <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
+              <%= f.text_area :introduction, rows: 2, class: "no-edit-form", readonly: true %>
+            <% end %>
+          </div>
+        </div>
+        <div class="myrecipe-list-wrap">
+          <div class="myrecipe-label">マイレシピ</div>
+          <div class="myrecipe-name-wrap">
+            <% @recipes.each do |recipe| %>
+              <div>
+                <%= link_to recipe_path(recipe.id), class: "myrecipe-name" do %>
+                  <%= recipe.recipe_name%>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
