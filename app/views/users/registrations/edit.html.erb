@@ -12,15 +12,15 @@
             <%= render "users/shared/error_messages", resource: resource %>
             <div class="user-content">
               <div class="field">
-                <%= f.label :メールアドレス %>
+                <%= f.label :新しいメールアドレス %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-space" %>
               </div>
               <div class="field">
-                <%= f.label :パスワード %>
+                <%= f.label :新しいパスワード %>
                 <%= f.password_field :password, autocomplete: "new-password", class: "form-control pass-space" %>
               </div>
               <div class="field">
-                <%= f.label :パスワード確認 %><br />
+                <%= f.label :新しいパスワード確認 %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control pass-space" %>
               </div>
               <div class="field">
