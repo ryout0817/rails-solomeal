@@ -8,6 +8,12 @@ ja:
       not_locked: "は凍結されていません"
 #      not_locked: "was not locked"
 
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m月%d日"
+
   devise:
     failure:
       unauthenticated: 'ログインしてください。'
