@@ -37,4 +37,7 @@ class RecipesController < ApplicationController
       render 'edit'
     end
   end
+
+  def release
+  end
 end

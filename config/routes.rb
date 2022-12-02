@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, only: [:index, :new, :create, :show, :edit]
+  resources :recipes, only: [:index, :new, :create, :show, :edit, :update] do
+    member do
+      get 'release'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
