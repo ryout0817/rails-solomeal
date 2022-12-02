@@ -30,6 +30,22 @@
           )
         }
       }
+
+      document.getElementById("nav-none2").style.display = "none";
+      function clickBtn2() {
+        const p1 = document.getElementById("nav-none2");
+        if(p1.style.display == "block") {
+          p1.style.display = "none";
+        }else{
+          p1.style.display = "block"
+          document.addEventListener('click', (e) => {
+            if(!e.target.closest('.menu-list')) {
+              p1.style.display = "none";
+            }
+          }
+          )
+        }
+      }
     </script>
   </body>
 </html>

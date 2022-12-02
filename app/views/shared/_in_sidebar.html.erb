@@ -31,11 +31,17 @@
                   <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item logout-color", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
                 </ul>
               </nav>
-              <li>
-                <%= link_to recipes_path, class: "list-item" do %>
-                  <i class="fa-solid fa-pen push-right"></i>Recipe
-                <% end %>
-              </li>
+            </li>
+            <li>
+              <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn2()">
+                <i class="fa-solid fa-user push-right"></i>Recipe
+              </button>
+              <nav id="nav-none2">
+                <ul class="user-list">
+                  <li><%= link_to "新規レシピ一覧", recipes_path, class: "user-list-item" %></li>
+                  <li><%= link_to "レシピ作成", new_recipe_path, class: "user-list-item" %></li>
+                </ul>
+              </nav>
             </li>
           </ul>
         </div>
