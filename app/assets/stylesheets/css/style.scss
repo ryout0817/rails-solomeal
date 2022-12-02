@@ -107,7 +107,7 @@ header {
 
 .header-btn {
     padding: .5rem .75rem;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .logout-btn {
@@ -157,6 +157,15 @@ header {
         position: absolute;
         top: 10px;
         right: 70px;
+        z-index: 2;
+    }
+}
+
+@media (max-width:480px) {
+    .recipe-btn {
+        position: absolute;
+        top: 70px;
+        right: 15px;
         z-index: 2;
     }
 }
@@ -508,7 +517,7 @@ header {
 .content-about {
     width: 80%;
     margin: 0 auto;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
@@ -739,7 +748,7 @@ label {
 .content-user {
     width: 90%;
     margin: 2rem auto;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
@@ -1464,6 +1473,7 @@ label {
 @media (max-width:576px) {
     .preview-page-wrapper {
         width: 90%;
+        margin: 0 auto;
     }
 }
 
@@ -1595,12 +1605,12 @@ label {
 }
 
 .preview-user {
-    color: #dc954e;
+    color: #1e8eff;
     font-weight: bold;
 }
 
 .preview-user:hover {
-    color: #d5802b;
+    color: #0074e8;
 }
 // レシピ詳細ページ
 .show-recipe-wrapper {
@@ -1787,7 +1797,7 @@ label {
 }
 
 .return-recipe-list-btn {
-    padding: .5rem 1rem;
+    padding: .5rem 2rem;
     border-radius: 5px;
     background-color: #dc954e;
     color: #ffffff;

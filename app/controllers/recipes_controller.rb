@@ -39,5 +39,7 @@ class RecipesController < ApplicationController
   end
 
   def release
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
   end
 end

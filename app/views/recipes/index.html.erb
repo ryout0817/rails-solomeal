@@ -10,7 +10,7 @@
     <% @recipes.each do |recipe| %>
       <div class="recipe-preview">
         <% if recipe.food? %>
-          <%= link_to recipe_path(recipe.id) do %>
+          <%= link_to release_recipe_path(recipe.id) do %>
             <%= image_tag recipe.food.url, alt: "レシピ写真", class: "food-preview-img" %>
           <% end %>
         <% else %>
@@ -27,7 +27,7 @@
         <% end %>
         <div class="recipe-preview-wrapp">
           <div class="preview-name">
-            <%= link_to recipe_path(recipe.id), class: "preview-name-path" do %>
+            <%= link_to release_recipe_path(recipe.id), class: "preview-name-path" do %>
               <%= recipe.recipe_name %>
             <% end %>
           </div>
