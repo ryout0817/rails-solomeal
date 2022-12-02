@@ -596,6 +596,12 @@ footer {
     line-height: 50px;
 }
 
+@media (max-width:576px) {
+    .content-document-inner p {
+        line-height: 30px;
+    }
+}
+
 .content-document-inner h4 {
     margin-bottom: 1rem;
     color: #f2b33e;
@@ -627,7 +633,7 @@ footer {
 
 @media (max-width:767px) {
     #about p {
-        font-size: 1rem;
+        font-size: .9rem;
     }
 }
 // サインアップページ
@@ -696,7 +702,7 @@ footer {
 .base-btn {
     width: 50%;
     padding: .5rem .75rem;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .form-space {
@@ -715,7 +721,7 @@ footer {
 
 .form-submit {
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: #f2b33e;
     color: #ffffff;
 }
@@ -1050,6 +1056,13 @@ label {
     border-radius: 50px;
 
     object-fit: cover;
+}
+
+@media (max-width:767px) {
+    .user-icon-img {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 .user-icon-font::before {

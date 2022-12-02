@@ -8,11 +8,13 @@
     <div class="mypage-container-wrap">
       <div class="mypage-content">
         <div class="data-user">
-          <div class="user-icon">
+          <div class="user-icon-wrap">
             <% if @user.avatar? %>
               <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
             <% else %>
-              <i class="fa-solid fa-user-gear show-user-icon gray-color"></i>
+              <div class="user-icon">
+                <i class="fa-solid fa-user-gear show-user-icon gray-color"></i>
+              </div>
             <% end %>
           </div>
           <div class="user-content">
