@@ -14,13 +14,10 @@
   </div>
   <% if user_signed_in? %>
     <div class="menu__item">
-      <%= link_to "プロフィール編集", account_path(@user), class: "js-list-item" %>
+      <%= link_to "マイページ", account_path(@user), class: "js-list-item" %>
     </div>
     <div class="menu__item">
-      <%= link_to "メール・パスワード変更", edit_user_registration_path, class: "js-list-item" %>
-    </div>
-    <div class="menu__item">
-      <%= link_to '退会手続き', withdrawal_accounts_path, class: "js-list-item" %>
+      <%= link_to 'レシピ一覧', recipes_path, class: "js-list-item" %>
     </div>
     <div class="menu__item">
       <%= link_to  "ログアウト", destroy_user_session_path,class: "js-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %>
