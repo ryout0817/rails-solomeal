@@ -7,8 +7,8 @@
       <div class="recipe-container">
         <%= form_with model: @recipe, local: true do |f| %>
           <div class="show-recipe-col">
-            <div class="show-recipe-form">
-              <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "show-recipe-form-ctrl form-space", readonly: true %>
+            <div class="show-recipe-name">
+              <%= @recipe.recipe_name %>
             </div>
             <div class="recipe-right-box">
               <div class="recipe-right-item m-bottom05">
