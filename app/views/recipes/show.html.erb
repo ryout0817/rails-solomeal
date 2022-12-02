@@ -1,2 +1,61 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<% provide(:title, 'レシピ作成')%>
+<p class="flash" ><%= flash[:info]%></p>
+<div class="main">
+  <%= render 'shared/in_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="show-recipe-wrapper">
+      <div class="recipe-container">
+        <%= form_with model: @recipe, local: true do |f| %>
+          <div class="show-recipe-col">
+            <div class="show-recipe-form">
+              <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "show-recipe-form-ctrl form-space", readonly: true %>
+            </div>
+            <div class="recipe-right-box">
+              <div class="recipe-right-item m-bottom05">
+                <div>
+                  調理時間
+                </div>
+                <div>
+                  <%= @recipe.time%> 分
+                </div>
+              </div>
+              <div class="recipe-right-item">
+                <div>
+                  費用
+                </div>
+                <div>
+                  <%= @recipe.price%> 円
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="show-recipe-col2">
+            <% if @recipe.food.present? %>
+              <%= image_tag @recipe.food.url, alt: "レシピ写真", class: "show-food" %>
+            <% else %>
+              <%= f.label :food, id: "no-food", class: "fa-2x recipe-label gray-color fa-solid fa-camera center" do %>
+                <div class="recipe-label3">
+                  <p>写真が登録されていません</p>
+                </div>
+              <% end %>
+            <% end %>
+            <div class="show-recipe-sentence-wrap">
+              <div class="show-recipe-label">
+                <label class="recipe-label gray-color" for="recipe_introduction">作り方</label>
+              </div>
+              <div class="show-recipe-form">
+                <%= f.text_area :recipe_how, placeholder: placeholder_method,rows: 4, class: "sentence-form form-space", readonly: true %>
+              </div>
+              <div class="show-recipe-label">
+                <%= f.label :材料・分量, class: "recipe-label gray-color" %>
+              </div>
+              <div class="show-recipe-form">
+                <%= f.text_area :material, placeholder: placeholder_material,rows: 4, class: "sentence-form form-space", readonly: true %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
