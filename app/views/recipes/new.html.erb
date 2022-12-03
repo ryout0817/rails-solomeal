@@ -11,13 +11,13 @@
         <%= form_with model: @recipe, local: true do |f| %>
           <div class="recipe-box">
             <div class="recipe-label1">
-              <label class="recipe-label gray-color" for="recipe_name">レシピの名前（２０文字以内）</label>
+              <label class="recipe-label gray-color required" for="recipe_name">レシピの名前（２０文字以内）</label>
             </div>
             <div class="recipe-form">
               <%= f.text_field :recipe_name, placeholder: "例：ニラと豚肉のスタミナ丼", class: "recipe-form-ctrl form-space" %>
             </div>
             <div class="main-food-box">
-              <p class="main-food-col">※メインの材料を記入しましよう！</p>
+              <p class="main-food-col required">※メインの材料を記入しましよう！</p>
               <%= f.text_field :main_food, placeholder: "例：豚肉", class:"main-food" %>
             </div>
           </div>
@@ -32,14 +32,14 @@
             <% end %>
             <div class="recipe-number-wrapper">
               <div class="recipe-number-wrapper-col">
-                <%= f.label :調理時間, class: "recipe-label gray-color recipe-people"%>
+                <%= f.label :調理時間, class: "recipe-label gray-color recipe-people required"%>
               </div>
               <div class="field-wrapper flex">
                 <%= f.number_field :time, min: 1, class: "recipe-form-ctrl2 gray-color" %>
                 <div class="font-people">分</div>
               </div>
               <div class="recipe-number-wrapper-col">
-                <%= f.label :値段, class: "recipe-label gray-color recipe-price"%>
+                <%= f.label :値段, class: "recipe-label gray-color recipe-price required"%>
               </div>
               <div class="field-wrapper flex">
                 <%= f.number_field :price, min: 1, class: "recipe-form-ctrl2 gray-color" %>

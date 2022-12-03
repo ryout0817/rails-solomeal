@@ -2023,3 +2023,18 @@ label {
         height: 350px;
     }
 }
+
+.required::after {
+    display: inline-block;
+    min-width: 10px;
+    margin: 0 5px;
+    padding: .1rem .3rem;
+    border-radius: 10px;
+    background-color: #ff3300;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+    vertical-align: middle;
+    content: "必須";
+}
