@@ -1,7 +1,11 @@
 <% provide(:title, '公開レシピの詳細')%>
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
-  <%= render 'shared/in_sidebar.html.erb'%>
+  <% if user_signed_in? %>
+    <%= render 'shared/in_sidebar.html.erb'%>
+  <% else %>
+    <%= render 'shared/out_sidebar.html.erb'%>
+  <% end %>
   <div class="content-wrapper">
     <div class="show-recipe-wrapper">
       <div class="recipe-container">

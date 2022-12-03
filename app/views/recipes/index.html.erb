@@ -1,7 +1,11 @@
 <% provide(:title, 'レシピ新着一覧')%>
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
-  <%= render 'shared/in_sidebar.html.erb'%>
+  <% if user_signed_in? %>
+    <%= render 'shared/in_sidebar.html.erb'%>
+  <% else %>
+    <%= render 'shared/out_sidebar.html.erb'%>
+  <% end %>
   <div class="preview-page-wrapper">
     <div class="order-title-wrap">
       <h2 class="order-title gray-color center">新着順</h2>
