@@ -1,4 +1,6 @@
 <% provide(:title, 'マイページ')%>
+<p class="flash" ><%= flash[:info]%></p>
+<p class="alert"><%= alert%></p>
 <div class="main">
   <%= render 'shared/in_sidebar.html.erb'%>
   <div class="content-wrapper">

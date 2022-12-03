@@ -68,6 +68,9 @@
           <div class="submit center">
             <%= f.submit "更新", class: "create-recipe-submit" %>
           </div>
+          <div class="destroy-submit center">
+            <%= link_to 'レシピを削除する', recipe_path,class: "destroy-recipe-btn", data: {confirm: "削除しますか？"}, method: :delete %>
+          </div>
         <% end %>
       </div>
     </div>

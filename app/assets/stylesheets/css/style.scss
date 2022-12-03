@@ -1424,7 +1424,7 @@ label {
 
 .create-recipe-submit {
     margin-bottom: 2rem;
-    padding: .75rem 1.5rem;
+    padding: .5rem 2.1rem;
     border: none;
     border-radius: 5px;
     background-color: #dc954e;
@@ -1440,6 +1440,26 @@ label {
 
 .create-recipe-submit:hover {
     background-color: #d5802b;
+}
+
+.destroy-recipe-btn {
+    padding: .5rem .75rem;
+    border-radius: 5px;
+    background-color: #ff3300;
+    color: #ffffff;
+}
+
+@media (max-width:700px) {
+    .destroy-recipe-btn {
+        font-size: .75rem;
+        padding: .5rem .85rem;
+    }
+}
+
+.destroy-recipe-btn:hover {
+    background-color: #ffffff;
+    color: #ff3300;
+    outline: 1px solid #ff3300;
 }
 
 .center {
@@ -1515,6 +1535,12 @@ label {
     font-size: 1.1rem;
 }
 
+@media (min-width:767px) and (max-width:850px) {
+    .recipe-number-wrapper {
+        margin-left: 2rem;
+    }
+}
+
 .recipe-make-wrapper {
     width: 70%;
     margin: 2rem auto;
@@ -1545,6 +1571,18 @@ label {
     border-radius: 5px;
     font-size: 1.3rem;
     text-align: right;
+}
+
+@media (max-width:850px) {
+    .recipe-form-ctrl2 {
+        width: 40%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 850px) {
+    .recipe-form-ctrl2 {
+        width: 80px;
+    }
 }
 
 .recipe-form-ctrl2:focus {

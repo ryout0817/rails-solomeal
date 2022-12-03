@@ -38,6 +38,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to account_path(current_user), flash: { info: "レシピを削除しました。"}
+  end
+
   def release
     @user = current_user
     @recipe = Recipe.find(params[:id])
