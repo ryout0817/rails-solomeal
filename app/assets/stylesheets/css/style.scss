@@ -416,6 +416,12 @@ header {
     border-top: 1px dotted #a09a8e;
 }
 
+.js-list-item {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .js-list-item:after {
     position: absolute;
     bottom: 0;
@@ -487,7 +493,7 @@ article {
     position: absolute;
     top: 40%;
     left: 50%;
-    color: #f4ecdc;
+    color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -503,7 +509,14 @@ article {
     }
 }
 
-@media (max-width:400px) {
+@media (max-width:576px) {
+    .top-title {
+        left: 25%;
+        padding: .8rem;
+    }
+}
+
+@media (max-width:280x) {
     .top-title {
         left: 10%;
         padding: .8rem;
@@ -551,7 +564,7 @@ article {
 .latest-recipe-container {
     width: 350px;
     margin: 2rem auto;
-    padding: .5rem 1rem;
+    padding: 0 .5rem 1rem .5rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     background-color: #ffffff;
@@ -620,7 +633,7 @@ article {
     left: 10%;
     padding: .25rem .4rem;
     border-radius: 5px;
-    background-color: #1e8eff;
+    background-color: #ada391;
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1rem;
@@ -645,7 +658,7 @@ article {
     left: 60%;
     padding: .25rem .4rem;
     border-radius: 5px;
-    background-color: #1e8eff;
+    background-color: #ada391;
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1rem;
@@ -688,7 +701,10 @@ footer {
 }
 
 .title-font {
+    opacity: .8;
     margin: 1rem 0;
+    padding: .5rem;
+    background-color: #ada391;
     letter-spacing: .2rem;
     text-align: center;
 }
@@ -729,7 +745,7 @@ footer {
 
 .content-document-inner h4 {
     margin-bottom: 1rem;
-    color: #f2b33e;
+    color: #a09a8e;
     font-size: 2rem;
     letter-spacing: .3rem;
 }
@@ -847,14 +863,12 @@ footer {
 .form-submit {
     border: none;
     border-radius: 5px;
-    background-color: #f2b33e;
+    background-color: #dc954e;
     color: #ffffff;
 }
 
 .form-submit:hover {
-    border: none;
-    background-color: #ffffff;
-    color: #f2b33e;
+    background-color: #d5802b;
 }
 
 label {
@@ -866,6 +880,7 @@ label {
     margin: 2rem auto;
     border: 1px solid #ced4da;
     border-radius: 5px;
+    background-color: #ffffff;
 }
 
 .page-title {
@@ -1149,7 +1164,7 @@ label {
 }
 
 .field {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .user-content-item {
@@ -1158,13 +1173,13 @@ label {
 
 .return-link {
     padding: .25rem 0;
-    border: 1px solid #f2b33e;
+    border: 1px solid #ada391;
     background-color: #ffffff;
-    color: #f2b33e;
+    color: #ada391;
 }
 
 .return-link:hover {
-    background-color: #f2b33e;
+    background-color: #ada391;
     color: #ffffff;
 }
 
@@ -1233,6 +1248,11 @@ label {
     outline-style: solid;
     outline-width: 1px;
 }
+
+.user-content {
+    margin-top: 1rem;
+}
+
 // レシピ作成ページ
 .recipe-title-font {
     margin-top: 20px;
@@ -1811,6 +1831,7 @@ label {
 .show-recipe-name {
     margin: 2rem 0;
     padding-left: 1rem;
+    color: #dc954e;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -1940,12 +1961,14 @@ label {
 .return-recipe-list-btn {
     padding: .5rem 2rem;
     border-radius: 5px;
-    background-color: #dc954e;
+    background-color: #ada391;
     color: #ffffff;
 }
 
 .return-recipe-list-btn:hover {
-    background-color: #d5802b;
+    border: 1px solid #ada391;
+    background-color: #ffffff;
+    color: #ada391;
 }
 
 .mypage-list {
