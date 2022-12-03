@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, only: [:index, :new, :create, :show, :edit, :update] do
+  resources :recipes, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     member do
       get 'release'
     end
