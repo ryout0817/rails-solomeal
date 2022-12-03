@@ -12,9 +12,6 @@
       コンセプト
     <% end %>
   </div>
-  <div class="menu__item">
-      <%= link_to 'レシピ一覧', recipes_path, class: "js-list-item" %>
-  </div>
   <% if user_signed_in? %>
     <div class="menu__item">
       <%= link_to "マイページ", account_path(@user), class: "js-list-item" %>
@@ -24,14 +21,17 @@
     </div>
   <% else %>
     <div class="menu__item">
-      <%= link_to user_session_path, class: "js-list-item" do %>
-        ログイン
-      <% end %>
-    </div>
-    <div class="menu__item">
       <%= link_to new_user_registration_path, class: "js-list-item" do %>
         新規登録
       <% end %>
     </div>
+    <div class="menu__item">
+      <%= link_to user_session_path, class: "js-list-item" do %>
+        ログイン
+      <% end %>
+    </div>
   <% end %>
+  <div class="menu__item">
+    <%= link_to 'レシピ一覧', recipes_path, class: "js-list-item" %>
+  </div>
 </div>
