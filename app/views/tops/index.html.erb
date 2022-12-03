@@ -32,19 +32,23 @@
             </div>
             <div class="latest-recipe-col2">
               <% if recipe.food? %>
-                <nav class="nav-latest-img">
-                  <%= link_to release_recipe_path(recipe.id) do %>
-                    <%= image_tag recipe.food, alt: "最新のレシピ", class: "latest-recipe-img" %>
-                  <% end %>
-                </nav>
-                <nav class="nav-latest-item">
-                  <div class="latest-item-time">
-                    <h3><%= l recipe.created_at, format: :short %></h3>
-                  </div>
-                  <div class="latest-item-name">
-                    <%= recipe.recipe_name%>
-                  </div>
-                </nav>
+                <%= link_to release_recipe_path(recipe.id) do %>
+                  <nav class="nav-latest-img">
+                    <%= image_tag recipe.food.url, alt: "最新のレシピ", class: "latest-recipe-img" %>
+                    <nav class="nav-latest-time">
+                      <div class="latest-time-wrap">
+                        <h3 class="latest-time"><%= l recipe.created_at, format: :short %></h3>
+                      </div>
+                    </nav>
+                  </nav>
+                  <nav class="nav-latest-item">
+                    <nav class="nav-latest-name">
+                      <div class="latest-name">
+                        <h3><%= recipe.recipe_name%></h3>
+                      </div>
+                    </nav>
+                  </nav>
+                <% end %>
               <% else %>
                 <%= link_to release_recipe_path(recipe.id) do %>
                   <div class="top-not-img-wrap">

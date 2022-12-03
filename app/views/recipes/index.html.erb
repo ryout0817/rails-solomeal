@@ -18,16 +18,18 @@
             <%= image_tag recipe.food.url, alt: "レシピ写真", class: "food-preview-img" %>
           <% end %>
         <% else %>
-          <div class="not-food-img-box">
-            <div class="not-food-img-posi">
-              <div>
-                <i class="not-food-img fa-solid fa-utensils"></i>
-              </div>
-              <div class="not-found">
-                <p>not-image</p>
+          <%= link_to release_recipe_path(recipe.id), class: "preview-name-path" do %>
+            <div class="not-food-img-box">
+              <div class="not-food-img-posi">
+                <div>
+                  <i class="not-food-img fa-solid fa-utensils"></i>
+                </div>
+                <div class="not-found">
+                  <p>not-image</p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
         <div class="recipe-preview-wrapp">
           <div class="preview-name">
