@@ -52,7 +52,9 @@
               <p>作成者</p>
             </div>
             <div class="preview-user right">
-              <%= recipe.user.name %>
+              <%= link_to release_account_path(recipe.user.id), class: "preview-name-path" do %>
+                <%= recipe.user.name %>
+              <% end %>
             </div>
           </div>
         </div>
