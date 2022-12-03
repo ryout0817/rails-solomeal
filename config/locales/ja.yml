@@ -8,11 +8,18 @@ ja:
       not_locked: "は凍結されていません"
 #      not_locked: "was not locked"
 
-ja:
   time:
     formats:
-      default: "%Y/%m/%d %H:%M:%S"
+      default: "%m/%d"
       short: "%m月%d日"
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
 
   devise:
     failure:
@@ -67,12 +74,3 @@ ja:
       unlock_instructions:
         subject: 'アカウントの凍結解除'
 #        subject: 'Unlock Instructions'
-
-ja:
-  views:
-    pagination:
-      first: "&laquo;"
-      last: "&raquo;"
-      previous: "&lsaquo;"
-      next: "&rsaquo;"
-      truncate: "..."
