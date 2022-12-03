@@ -1143,9 +1143,9 @@ label {
 }
 
 .myrecipe-name {
-    border-bottom: 1px solid #1e8eff;
     color: #1e8eff;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 @media (max-width:480px) {
@@ -1451,8 +1451,8 @@ label {
 
 @media (max-width:700px) {
     .destroy-recipe-btn {
-        font-size: .75rem;
         padding: .5rem .85rem;
+        font-size: .75rem;
     }
 }
 
