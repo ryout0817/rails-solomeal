@@ -21,14 +21,14 @@
           </div>
         <% end %>
         <div class="title-container">
-          <h1 class="top-title title-font">なにをつくろうか</h1>
+          <h1 class="top-title title-font fff">なにをつくろうか</h1>
         </div>
       </article>  
       <div class="latest-recipe-wrap">
         <div class="latest-recipe-container">
           <% @recipe.each do |recipe| %>
             <div class="latest-recipe-col">
-              <h2>最新簡単レシピ</h2>
+              <h2 class="gray-color">最新簡単レシピ</h2>
             </div>
             <div class="latest-recipe-col2">
               <% if recipe.food? %>
