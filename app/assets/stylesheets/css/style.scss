@@ -2111,3 +2111,39 @@ label {
     vertical-align: middle;
     content: "必須";
 }
+
+.pagination{
+    margin: 20px auto 0;
+    width: 50%;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    span{
+        text-align: center;
+        width: 50px;
+        border: 1px solid #ada391;
+        :hover{
+            background-color: #fff;
+        }
+        a{
+            display: block;
+            color: #ada391;
+            width: 100%;
+            height: 100%;
+            :hover{
+                background-color: #f3f3f3;
+            }
+        }
+    }
+}
+
+.current{
+    color: #fff;
+    background-color: #ada391;
+}
+
+.gap{
+    background-color: white !important;
+}
