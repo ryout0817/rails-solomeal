@@ -22,4 +22,10 @@ class AccountsController < ApplicationController
   def withdrawal
     @user = current_user
   end
+
+  def release
+    @user = current_user
+    @release_user = User.find(params[:id])
+    @recipes = @release_user.recipes.order(created_at: :desc)
+  end
 end

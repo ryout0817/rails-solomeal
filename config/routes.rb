@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     collection do
       get 'withdrawal'
     end
+
+    member do
+      get 'release'
+    end
   end
 
   resources :recipes, only: [:index, :new, :create, :show, :edit, :update] do

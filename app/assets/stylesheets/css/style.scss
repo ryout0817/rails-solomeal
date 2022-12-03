@@ -490,9 +490,12 @@ article {
 }
 
 .top-title {
+    opacity: .8;
     position: absolute;
     top: 40%;
     left: 50%;
+    padding: .5rem;
+    background-color: #ada391;
     color: #ffffff;
 }
 
@@ -701,10 +704,7 @@ footer {
 }
 
 .title-font {
-    opacity: .8;
     margin: 1rem 0;
-    padding: .5rem;
-    background-color: #ada391;
     letter-spacing: .2rem;
     text-align: center;
 }

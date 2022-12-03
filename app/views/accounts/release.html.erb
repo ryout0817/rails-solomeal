@@ -1,0 +1,59 @@
+<% provide(:title, '公開プロフィール')%>
+<div class="main">
+  <%= render 'shared/in_sidebar.html.erb'%>
+  <div class="content-wrapper">
+    <div class="page-title">
+      <h1 class="signup-icon title-font"><%= @release_user.name%>さんのプロフィール</h1>
+    </div>
+    <div class="mypage-container-wrap">
+      <div class="mypage-content">
+        <div class="data-user">
+          <div class="user-icon-wrap">
+            <% if @release_user.avatar? %>
+              <%= image_tag @release_user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
+            <% else %>
+              <div class="user-icon">
+                <i class="fa-solid fa-user-gear show-user-icon gray-color"></i>
+              </div>
+            <% end %>
+          </div>
+          <div class="user-content">
+            <div class="user-name">
+              <%= @release_user.name%>
+            </div>
+          </div>
+        </div>
+        <div class="user-introduction-wrap">
+          <div class="introduction-label">自己紹介</div>
+          <div class="user-content-item">
+            <%= form_with model: @release_user, url: account_path(@user), local: true do |f| %>
+              <%= f.text_area :introduction, rows: 2, class: "no-edit-form", readonly: true %>
+            <% end %>
+          </div>
+        </div>
+        <div class="myrecipe-list-wrap">
+          <div class="myrecipe-label">公開しているレシピ</div>
+          <div class="myrecipe-name-wrap">
+            <% @recipes.each do |recipe| %>
+              <div>
+                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name" do %>
+                  <%= recipe.recipe_name%>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="edit-mypage-btn-wrap">
+          <%= link_to '一覧ページへ', recipes_path, class: "return-recipe-list-btn" %>
+        </div>
+      </div>
+    </div>
+    <div class="mypage-list">
+      <ul>
+        <li><%= link_to "プロフィール編集", edit_account_path, class: "mypage-list-font" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, class: "mypage-list-font logout-color" %></li>
+        <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "mypage-list-font" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
