@@ -499,16 +499,9 @@ article {
     color: #ffffff;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     .top-title {
         left: 30%;
-    }
-}
-
-@media (max-width:576px) {
-    .top-title {
-        left: 40%;
-        padding: .8rem;
     }
 }
 
@@ -519,7 +512,7 @@ article {
     }
 }
 
-@media (max-width:280x) {
+@media (max-width:300px) {
     .top-title {
         left: 10%;
         padding: .8rem;
@@ -604,8 +597,46 @@ article {
     }
 }
 
-.latest-recipe-col2 {
+.top-not-img-wrap {
     position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #ced4da;
+    text-align: center;
+}
+
+@media (max-width:576px) {
+    .top-not-img-wrap {
+        width: 240px;
+        height: 249px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:300px) {
+    .top-not-img-wrap {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+}
+
+.top-not-food-img-posi {
+    position: absolute;
+    top: 34%;
+    left: 30%;
+}
+
+@media (max-width:576px) {
+    .top-not-food-img-posi {
+        left: 25%;
+    }
+}
+
+@media (max-width:300px) {
+    .top-not-food-img-posi {
+        left: 20%;
+    }
 }
 
 .latest-recipe-img {
@@ -630,53 +661,43 @@ article {
     }
 }
 
-.latest-item-time {
-    position: absolute;
-    bottom: 5%;
-    left: 10%;
-    padding: .25rem .4rem;
+@media (max-width:300px) {
+    .latest-recipe-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.latest-time-wrap {
+    padding: .2rem .3rem;
     border-radius: 5px;
     background-color: #ada391;
     color: #ffffff;
-    font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
 }
 
-@media (max-width:576px) {
-    .latest-item-time {
-        font-size: .9rem;
-    }
-}
-
-@media (max-width:480px) {
-    .latest-item-time {
-        font-size: .75rem;
-    }
-}
-
-.latest-item-name {
+.nav-latest-time {
     position: absolute;
-    bottom: 5%;
-    left: 60%;
-    padding: .25rem .4rem;
-    border-radius: 5px;
-    background-color: #ada391;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.1rem;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.2rem;
 }
 
 @media (max-width:576px) {
-    .latest-item-name {
-        font-size: .9rem;
+    .nav-latest-time {
+        font-size: 1rem;
     }
 }
 
-@media (max-width:480px) {
-    .latest-item-name {
-        font-size: .75rem;
-    }
+.latest-name {
+    margin-top: .5rem;
+    margin-left: 1rem;
+    color: #1e8eff;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.latest-name:hover {
+    color: #0074e8;
 }
 
 // フッター
