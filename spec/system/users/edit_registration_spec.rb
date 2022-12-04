@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Users" do
   context "新規登録" do
-    let(:user) { FactoryBot.create(:user) }
     before do
       visit new_user_registration_path
     end
