@@ -941,13 +941,14 @@ label {
 }
 
 .link-btn {
-    background-color: #ffffff;
-    color: #f2b33e;
+    background-color: #ada391;
+    color: #fff;
 }
 
 .link-btn:hover {
-    background-color: #f2b33e;
-    color: #ffffff;
+    background-color: #fff;
+    color: #ada391;
+    outline: 1px solid #ada391;
 }
 
 .btn-menu {
