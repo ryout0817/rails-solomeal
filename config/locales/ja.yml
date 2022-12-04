@@ -8,6 +8,19 @@ ja:
       not_locked: "は凍結されていません"
 #      not_locked: "was not locked"
 
+  time:
+    formats:
+      default: "%m/%d"
+      short: "%m月%d日"
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
+
   devise:
     failure:
       unauthenticated: 'ログインしてください。'

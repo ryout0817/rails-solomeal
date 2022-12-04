@@ -1,48 +1,43 @@
 <nav class="nav-side-list">
   <div class="side-wrapper">
+    <div class="side-title">
+      <%= link_to "/", class: "side-logo" do%>
+        <h1 class="title-icon">ひとり飯</h1>
+      <% end %>
+    </div>
     <nav id="nav-list">
       <div class="side-list">
         <div>
           <ul class="menu-list">
-            <li>
+            <li class="menu1">
               <%= link_to "/", class: "list-item" do %>
-                <i class="fa-solid fa-house"></i>Home
+                <i class="fa-solid fa-house push-right"></i>Home
               <% end %>
             </li>
             <li>
               <%= link_to about_path, class: "list-item" do %>
-                <i class="fa-solid fa-book"></i>Concept
+                <i class="fa-solid fa-book push-right"></i>Concept
               <% end %>
             </li>
-            <% if user_signed_in? %>
-              <li>
-                <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
-                <i class="fa-solid fa-user"></i>User</button>
-                <nav id="nav-none">
-                  <ul class="user-list">
-                    <li><%= link_to "プロフィール編集", account_path(@user), class: "user-list-item" %></li>
-                    <li><%= link_to "メール・パスワード変更", edit_user_registration_path, class: "user-list-item" %></li>
-                    <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
-                    <li><%= link_to  "ログアウト", destroy_user_session_path,class: "user-list-item", data: {confirm: "ログアウトしますか？"}, method: :delete %></li>
-                  </ul>
-                </nav>
-              </li>
-            <% else %>
-              <% unless current_page?(user_session_path)%>
+            <% unless current_page?(user_session_path)%>
               <li>
                 <%= link_to user_session_path, class: "list-item" do %>
-                  <i class="fa-solid fa-user"></i>Login
+                  <i class="fa-solid fa-right-to-bracket push-right"></i>Login
                 <% end %>
               </li>
-              <% end %>
-              <% unless current_page?(new_user_registration_path)%>
+            <% end %>
+            <% unless current_page?(new_user_registration_path)%>
               <li>
                 <%= link_to new_user_registration_path, class: "list-item" do %>
-                  <i class="fa-solid fa-pen"></i>SignUp
+                  <i class="fa-solid fa-pen push-right"></i>SignUp
                 <% end %>
               </li>
-              <% end %>
             <% end %>
+            <li>
+              <%= link_to recipes_path, class: "list-item" do %>
+                <i class="fa-solid fa-utensils push-right"></i>Recipe
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>

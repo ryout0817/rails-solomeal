@@ -3,7 +3,7 @@
   <%= render 'shared/in_sidebar.html.erb'%>
   <div class="content-wrapper">
     <div class="page-title">
-      <h1 class="signup-icon title-font">プロフィール編集</h1>
+      <h1 class="signup-icon title-font">マイページ編集</h1>
     </div>
     <div class="content-user">
       <div class="container-content user-form">
@@ -11,9 +11,21 @@
           <%= form_with model: @user, url: account_path(@user), local: true do |f| %>
             <div class="field">
               <div class="user-content">
-                <label class="user-label" for="name">プロフィール写真</label>
-                <div class="user-content-item">
-                  <%= f.file_field :avatar %>
+                <div class="data-user">
+                  <div class="user-icon-wrap">
+                    <% if @user.avatar? %>
+                      <%= image_tag @user.avatar.url, alt: "プロフィール写真", class: "user-icon-img" %>
+                    <% else %>
+                      <div class="user-icon">
+                        <i class="fa-solid fa-user-gear show-user-icon gray-color"></i>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="user-content">
+                    <div class="user-name">
+                      <%= f.file_field :avatar %>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="user-content">
@@ -28,21 +40,15 @@
                   <%= f.text_area :introduction, rows: 4, class: "form-control form-space" %>
                 </div>
               </div>
-              <div class="user-content">
-                <label class="user-label" for="specialties">旬のおすすめ料理</label>
-                <div class="user-content-item">
-                  <%= f.text_field :recommended_dishes, class: "form-control form-space" %>
-                </div>
-              </div>
             </div>
             <div class="actions">
               <%= f.submit "更新", class: "form-submit base-btn" %>
             </div>
             <div class="actions">
-              <%= link_to "戻る", account_path, class: "return-link base-btn" %>
+              <%= link_to "戻る", account_path(@user), class: "return-link base-btn" %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

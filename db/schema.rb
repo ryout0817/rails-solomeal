@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_130134) do
+ActiveRecord::Schema.define(version: 2022_11_24_090702) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 2022_11_08_130134) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "recipe_name"
+    t.string "food"
+    t.string "main_food"
+    t.text "material"
+    t.text "recipe_how"
+    t.integer "price"
+    t.integer "time"
+    t.integer "people"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tops", force: :cascade do |t|

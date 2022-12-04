@@ -2,7 +2,8 @@ class AccountsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @recipes = current_user.recipes.order(created_at: :desc)
   end
 
   def edit
@@ -20,5 +21,11 @@ class AccountsController < ApplicationController
 
   def withdrawal
     @user = current_user
+  end
+
+  def release
+    @user = current_user
+    @release_user = User.find(params[:id])
+    @recipes = @release_user.recipes.order(created_at: :desc)
   end
 end
