@@ -24,5 +24,16 @@ RSpec.describe "Users" do
       end
         expect(page).to have_content "テストユーザー"
     end
+
+    it "新規登録失敗" do
+      fill_in "user[name]",	with: ""
+      fill_in "user[email]",	with: ""
+      fill_in "user[password]", with: ""
+      fill_in "user[password_confirmation]", with: ""
+      within (".content-document-inner") do
+        click_button "アカウント登録"
+      end
+      expect(page).to have_content "ニックネームを入力してください"
+    end
   end
 end
