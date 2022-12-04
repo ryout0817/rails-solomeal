@@ -23,6 +23,11 @@ RSpec.describe "Accounts" do
         expect(page).to have_content recipe.recipe_name
       end
 
+      it "マイレシピの遷移の確認" do
+        click_link recipe.recipe_name
+        expect(current_path).to eq recipe_path(recipe.id)
+      end
+
       it "レスポンシブで下の画面に発生するリンクの遷移を確認" do
         within (".mypage-list") do
           click_link "プロフィール編集"
