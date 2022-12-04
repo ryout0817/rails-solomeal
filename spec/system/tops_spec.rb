@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Tops", type: :system do
+RSpec.describe "Tops" do
   describe "check Products system" do
     let!(:user) { FactoryBot.create(:user) }
     let!(:recipe) { FactoryBot.create(:recipe, user: user) }
@@ -85,7 +85,7 @@ RSpec.describe "Tops", type: :system do
         end
       end
 
-      it "ログアウトボタンを押下後、非ログインん状態に戻ること" do
+      it "ログアウトボタンを押下後、非ログイン状態に戻ること" do
         within('.side-list') do
           click_link "ログアウト"
           expect(current_path).to eq "/"
