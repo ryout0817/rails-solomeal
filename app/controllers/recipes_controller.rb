@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :search
   def index
     @user = current_user
     @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(3).includes(:user)
@@ -47,5 +48,14 @@ class RecipesController < ApplicationController
   def release
     @user = current_user
     @recipe = Recipe.find(params[:id])
+  end
+
+  def search
+    # キーワード検索
+    @user = current_user
+    @search = Recipe.ransack(params[:q])
+    @results = @search.result.order("created_at DESC").page(params[:page]).per(5)
+    @counts = @results.count
+    @search = Recipe.ransack
   end
 end
