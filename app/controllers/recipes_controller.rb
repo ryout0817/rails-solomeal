@@ -49,13 +49,4 @@ class RecipesController < ApplicationController
     @user = current_user
     @recipe = Recipe.find(params[:id])
   end
-
-  def search
-    # キーワード検索
-    @user = current_user
-    @search = Recipe.ransack(params[:q])
-    @results = @search.result.order("created_at DESC").page(params[:page]).per(10)
-    @counts = @results.all.count
-    @search = Recipe.ransack
-  end
 end

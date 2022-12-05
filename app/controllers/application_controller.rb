@@ -30,4 +30,13 @@ class ApplicationController < ActionController::Base
       redirect_to "/", alert: "ゲストユーザーの編集・削除はできません。"
     end
   end
+
+  def search
+    # キーワード検索
+    @user = current_user
+    @search = Recipe.ransack(params[:q])
+    @results = @search.result.order("created_at DESC").page(params[:page]).per(10)
+    @counts = @results.all.count
+    @search = Recipe.ransack
+  end
 end

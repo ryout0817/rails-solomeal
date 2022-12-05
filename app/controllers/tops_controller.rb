@@ -8,12 +8,4 @@ class TopsController < ApplicationController
   def about
     @user = current_user
   end
-
-  def search
-    @user = current_user
-    @search = Recipe.ransack(params[:q])
-    @results = @search.result.order("created_at DESC").page(params[:page]).per(10)
-    @counts = @results.all.count
-    @search = Recipe.ransack
-  end
 end
