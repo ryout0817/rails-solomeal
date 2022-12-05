@@ -54,8 +54,8 @@ class RecipesController < ApplicationController
     # キーワード検索
     @user = current_user
     @search = Recipe.ransack(params[:q])
-    @results = @search.result.order("created_at DESC").page(params[:page]).per(5)
-    @counts = @results.count
+    @results = @search.result.order("created_at DESC").page(params[:page]).per(10)
+    @counts = @results.all.count
     @search = Recipe.ransack
   end
 end

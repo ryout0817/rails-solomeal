@@ -10,6 +10,11 @@
         <div class="header-right">
           <% if user_signed_in? %>
             <div class="recipe-create">
+              <nav class="nav-header-top-search">
+                <%= search_form_for @search, url: search_recipes_path do |f| %>
+                  <%= f.search_field :recipe_name_cont, class: 'header-search', placeholder: 'レシピ名で検索' %>
+                <% end %>
+              </nav>
               <%= link_to "レシピ作成", new_recipe_path(@user), class: "size recipe-btn"%>
             </div>
             <%= render 'shared/hamburger_menu.html.erb' %>

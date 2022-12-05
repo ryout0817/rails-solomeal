@@ -13,6 +13,11 @@
         <%= image_tag '24835789_m.jpg', class: "w-100" %>
         <% if user_signed_in? %>
           <div class="main-btn">
+            <nav class="nav-top-search">
+              <%= search_form_for @search, url: search_recipes_path do |f| %>
+                <%= f.search_field :recipe_name_cont, class: 'top-none top-recipe_name-search', placeholder: 'レシピ名で検索' %>
+              <% end %>
+            </nav>
             <%= link_to "レシピ作成", new_recipe_path, class: "top-none top-btn recipe-font"%>
           </div>
         <% else %>
