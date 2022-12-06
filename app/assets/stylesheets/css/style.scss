@@ -570,9 +570,7 @@ article {
 }
 
 .latest-recipe-container {
-    width: 350px;
     margin: 2rem auto;
-    padding: 0 .5rem 0;
     text-align: center;
 }
 
@@ -703,13 +701,13 @@ article {
 
 .latest-name {
     margin-top: .5rem;
-    color: #1e8eff;
+    color: #dc954e;
     font-size: 1.2rem;
     text-align: center;
 }
 
 .latest-name:hover {
-    color: #0074e8;
+    color: #d5802b;
 }
 
 // フッター
@@ -1204,6 +1202,10 @@ label {
 
 .user-content-item {
     margin: 10px 0;
+}
+
+.release-user-introduction {
+    width: 50%;
 }
 
 .return-link {
