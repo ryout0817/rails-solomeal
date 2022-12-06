@@ -30,7 +30,7 @@ RSpec.describe "Accounts" do
 
       it "レスポンシブで下の画面に発生するリンクの遷移を確認" do
         within (".mypage-list") do
-          click_link "プロフィール編集"
+          click_link "マイページ編集"
           expect(current_path).to eq edit_account_path(user.id)
           visit account_path(user.id)
           click_link "退会手続き"
