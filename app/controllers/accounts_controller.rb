@@ -1,6 +1,5 @@
 class AccountsController < ApplicationController
   before_action :authenticate_user!, except: [:release]
-  before_action :search
   def show
     @user = current_user
     @recipes = current_user.recipes.order(created_at: :desc)

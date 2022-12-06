@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  before_action :search
   def index
     @user = current_user
     @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user)

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # deviseのコントローラを使う前に呼ばれるアクション
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :search
   private
   def configure_sign_up_params
     edit_user_registration_path(@user.id)
