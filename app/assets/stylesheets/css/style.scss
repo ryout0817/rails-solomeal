@@ -535,13 +535,13 @@ article {
 
 @media (max-width:767px) {
     .content-about {
-        width: 400px;
+        width: 500px;
     }
 }
 
-@media (max-width:400px) {
+@media (max-width:500px) {
     .content-about {
-        width: 80%;
+        width: 100%;
     }
 }
 
@@ -608,6 +608,7 @@ article {
     position: relative;
     width: 300px;
     height: 300px;
+    margin: 0 auto;
     background-color: #ced4da;
     text-align: center;
 }
@@ -616,7 +617,6 @@ article {
     .top-not-img-wrap {
         width: 240px;
         height: 249px;
-        margin: 0 auto;
     }
 }
 
@@ -624,7 +624,6 @@ article {
     .top-not-img-wrap {
         width: 200px;
         height: 200px;
-        margin: 0 auto;
     }
 }
 
@@ -689,7 +688,7 @@ article {
 .nav-latest-time {
     position: absolute;
     bottom: 15px;
-    left: 35%;
+    left: 33%;
     font-size: 1.2rem;
 }
 
@@ -755,7 +754,6 @@ footer {
 }
 
 .container-content {
-    margin: 20px auto;
     padding: 30px;
     border: none;
 }
@@ -776,8 +774,7 @@ footer {
 }
 
 .content-document-inner h4 {
-    margin-bottom: 1rem;
-    color: #a09a8e;
+    color: #ada391;
     font-size: 2rem;
     letter-spacing: .3rem;
 }
@@ -790,7 +787,7 @@ footer {
 
 @media (max-width: 500px) {
     .content-document-inner h4 {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }
 .document-icon::before {
@@ -806,6 +803,7 @@ footer {
 
 @media (max-width:767px) {
     #about p {
+        margin-top: 1rem;
         font-size: .9rem;
     }
 }
@@ -2259,4 +2257,11 @@ label {
 .return-myrecipe-btn:hover {
     background-color: #ada391;
     color: #ffffff;
+}
+
+span {
+    margin: .5rem;
+    border-bottom: 2px solid #dc954e;
+    color: #dc954e;
+    font-size: 1.3rem;
 }
