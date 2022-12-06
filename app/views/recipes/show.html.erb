@@ -58,6 +58,9 @@
         <div class="btn-wrap">
           <%= link_to '編集する', edit_recipe_path, class: "return-recipe-list-btn" %>
         </div>
+        <div class="show-recipe-btn-wrap">
+          <%= link_to "戻る", account_path(@user.id), class:"return-myrecipe-btn"%>
+        </div>
       </div>
     </div>
   </div>

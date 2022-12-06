@@ -1169,7 +1169,7 @@ label {
 }
 
 .edit-mypage-btn {
-    padding: .5rem .75rem;
+    padding: .5rem 2rem;
     border-radius: 5px;
     background-color: #ada391;
     color: #ffffff;
@@ -2041,14 +2041,13 @@ label {
 .return-recipe-list-btn {
     padding: .5rem 2rem;
     border-radius: 5px;
-    background-color: #ada391;
+    background-color: #dc954e;
     color: #ffffff;
 }
 
 .return-recipe-list-btn:hover {
-    border: 1px solid #ada391;
-    background-color: #ffffff;
-    color: #ada391;
+    background-color: #d5802b;
+    color: #ffffff;
 }
 
 .mypage-list {
@@ -2236,4 +2235,28 @@ label {
     .nav-header-top-search {
         display: none;
     }
+}
+
+.no-search {
+    margin-top: 100px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.show-recipe-btn-wrap {
+    text-align: center;
+}
+
+.return-myrecipe-btn {
+    margin-top: 1rem;
+    padding: .35rem 2.9rem;
+    border: 1px solid #ada391;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #ada391;
+}
+
+.return-myrecipe-btn:hover {
+    background-color: #ada391;
+    color: #ffffff;
 }
