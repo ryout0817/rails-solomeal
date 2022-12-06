@@ -781,6 +781,7 @@ footer {
 
 @media (max-width:767px) {
     .content-document-inner h4 {
+        border-bottom: 2px solid #ada391;
         font-size: 1.7rem;
     }
 }
@@ -1168,15 +1169,15 @@ label {
 
 .edit-mypage-btn {
     padding: .5rem 2rem;
+    border: 1px solid #ada391;
     border-radius: 5px;
-    background-color: #ada391;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #ada391;
 }
 
 .edit-mypage-btn:hover {
-    background-color: #ffffff;
-    color: #ada391;
-    outline: 1px solid #ada391;
+    background-color: #ada391;
+    color: #ffffff;
 }
 
 .about-user-list {
@@ -1271,6 +1272,8 @@ label {
 }
 
 .withdrawal-btn {
+    padding: .25rem 2rem;
+    border-radius: 5px;
     background-color: #ff3300;
     color: #ffffff;
     text-align: center;
@@ -1282,6 +1285,20 @@ label {
     outline-color: #ff3300;
     outline-style: solid;
     outline-width: 1px;
+}
+
+.withdrawal-return-link {
+    margin-top: 1.5rem;
+    padding: .25rem 3rem;
+    border: 1px solid #ada391;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #ada391;
+}
+
+.withdrawal-return-link:hover {
+    background-color: #ada391;
+    color: #ffffff;
 }
 
 .user-content {
