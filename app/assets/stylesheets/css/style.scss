@@ -1060,9 +1060,22 @@ label {
     }
 }
 
+@media (max-width:400px) {
+    .user-introduction-wrap {
+        display: block;
+        text-align: center;
+    }
+}
+
 .introduction-label {
-    padding-left: 2rem;
+    width: 80px;
     font-weight: bold;
+}
+
+@media (max-width:400px) {
+    .introduction-label {
+        width: auto;
+    }
 }
 
 @media (max-width:576px) {
@@ -1079,7 +1092,7 @@ label {
 
 .no-edit-form {
     width: 300px;
-    padding: .5rem .75rem;
+    padding: .5rem .25rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     font-size: 1.1rem;
@@ -1092,17 +1105,14 @@ label {
     }
 }
 
-@media (max-width:576px) {
+@media (max-width:480px) {
     .no-edit-form {
-        width: 200px;
+        font-size: .8rem;
     }
 }
 
-@media (max-width:480px) {
-    .no-edit-form {
-        width: 170px;
-        font-size: .9rem;
-    }
+.no-edit-form:focus {
+    outline: none;
 }
 
 .myrecipe-list-wrap {
@@ -1125,7 +1135,15 @@ label {
     }
 }
 
+@media (max-width:400px) {
+    .myrecipe-list-wrap {
+        display: block;
+        text-align: center;
+    }
+}
+
 .myrecipe-label {
+    width: 80px;
     font-weight: bold;
 }
 
@@ -1135,20 +1153,25 @@ label {
     }
 }
 
-.myrecipe-name-wrap {
-    padding-right: 6rem;
-}
-
-@media (max-width:576px) {
-    .myrecipe-name-wrap {
-        padding-right: 2rem;
+@media (max-width:400px) {
+    .myrecipe-label {
+        width: auto;
+        text-align: center;
     }
 }
 
 .myrecipe-name {
+    width: 300px;
+    padding: .5rem .25rem;
     color: #1e8eff;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+@media (max-width:1000px) {
+    .myrecipe-name {
+        width: 250px;
+    }
 }
 
 @media (max-width:480px) {
@@ -1261,10 +1284,6 @@ label {
     margin-bottom: 10px;
     border-radius: 50%;
     font-size: 3rem;
-}
-
-.no-edit-form:focus {
-    outline: none;
 }
 
 #error_explanation {
