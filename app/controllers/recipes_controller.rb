@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @user = current_user
-    @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user)
+    @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user, :favorite)
   end
 
   def new

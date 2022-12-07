@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
 
   resources :recipes, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+
+    resource :favorite, only: [:create, :destroy]
+
     member do
       get 'release'
     end

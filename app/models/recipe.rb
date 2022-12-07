@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :favorite, dependent: :destroy
   mount_uploader :food, FoodUploader
 
   VALID_PASSWORD_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
