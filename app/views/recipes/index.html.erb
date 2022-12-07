@@ -71,6 +71,14 @@
           </div>
         </div>
       </div>
+      <div>
+    <% if favorite = recipe.favorite.find_by(user_id: current_user.id) %>
+      <%= link_to "いいね済", recipe_favorite_path(recipe.id), method: :delete, style: "color: red;" %>
+    <% else %>
+      <%= link_to "いいね", recipe_favorite_path(recipe), method: :post %>
+    <% end %>
+    <%= recipe.favorite.size %>
+  </div>
     <% end %>
     <div class="pagination-wrapper">
       <%= paginate @recipes %>
