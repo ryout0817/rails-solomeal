@@ -75,5 +75,3 @@ gem 'devise-i18n'
 gem 'kaminari'
 
 gem 'ransack'
-
-gem 'font-awesome-sass'
