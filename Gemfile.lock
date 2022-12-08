@@ -152,6 +152,7 @@ GEM
     nokogiri (1.13.9-arm64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.5)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -310,6 +311,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mini_magick
+  pg
   pry-byebug
   pry-rails
   puma (~> 5.0)
@@ -321,7 +323,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

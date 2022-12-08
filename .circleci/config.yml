@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   rspec:
-    working_directory: ~/eatcapsule
+    working_directory: ~/solomeal
     docker:
       - image: cimg/ruby:2.7.3
     resource_class: small
@@ -11,13 +11,21 @@ jobs:
       - setup_remote_docker:
           version: 20.10.14
       - run:
+          name: Setup environment variable
+          command: |
+            echo "export COMPOSE_FILE=docker-compose.ci.yml" >> $BASH_ENV
+      - run:
           name: docker-compose up -d
           command: |
             docker-compose up -d
       - run:
+          name: Setup database
+          command: |
+            docker-compose exec solomeal bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
+      - run:
           name: Run rspec
           command: |
-            docker-compose exec eatcapsule rspec
+            docker-compose exec solomeal rspec
 # 実行する順番を記述
 workflows:
   version: 2.1
