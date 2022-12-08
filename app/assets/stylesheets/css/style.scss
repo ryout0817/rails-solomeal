@@ -1786,11 +1786,11 @@ label {
 }
 
 .preview-name-path {
-    color: #1e8eff;
+    color: #f2b33e;
 }
 
 .preview-name-path:hover {
-    color: #0074e8;
+    color: #dc954e;
 }
 
 .food-preview-img {
@@ -1908,6 +1908,7 @@ label {
 .show-recipe-col {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 3rem;
 }
 
@@ -1946,6 +1947,7 @@ label {
 }
 
 .show-recipe-name {
+    width: 240px;
     margin: 2rem 0;
     padding-left: 1rem;
     color: #dc954e;
@@ -2074,13 +2076,14 @@ label {
 
 .return-recipe-list-btn {
     padding: .5rem 2rem;
+    border: 1px solid #ada391;
     border-radius: 5px;
-    background-color: #dc954e;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #ada391;
 }
 
 .return-recipe-list-btn:hover {
-    background-color: #d5802b;
+    background-color: #ada391;
     color: #ffffff;
 }
 
@@ -2300,4 +2303,20 @@ span {
     border-bottom: 2px solid #dc954e;
     color: #dc954e;
     font-size: 1.3rem;
+}
+
+.list-favorite {
+    color: #f2b33e;
+}
+
+.release-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.fa-thumbs-up {
+    margin-right: .5rem;
 }

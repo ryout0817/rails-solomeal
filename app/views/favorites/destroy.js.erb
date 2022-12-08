@@ -1,0 +1,1 @@
+$('#favorite_recipe_<%= params[:recipe_id] %>').html('<%= link_to "いいね", recipe_favorite_path(@recipe), method: :post, remote:true %> <%= @recipe.favorites.size %>');

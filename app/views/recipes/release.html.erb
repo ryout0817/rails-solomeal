@@ -59,6 +59,20 @@
             </div>
           </div>
         <% end %>
+        <div class="release-favorite">
+              <% if user_signed_in? %>
+                <% if favorite = @recipe.favorites.find_by(user_id: current_user.id) %>
+                  <%= link_to recipe_favorite_path(@recipe.id), method: :delete, remote:true, style: "color: red;" do %>
+                    いいねしてくれてありがとう！<i class="fas fa-thumbs-up"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to recipe_favorite_path(@recipe), method: :post, remote:true, style: "color: #dc954e;" do %>
+                    レシピがよかったらいいね！<i class="fas fa-thumbs-up"></i>
+                  <% end %>
+                <% end %>
+                <%= @recipe.favorites.size %>
+              <% end %>
+            </div>
         <div class="btn-wrap">
           <%= link_to '戻る', recipes_path, class: "return-recipe-list-btn" %>
         </div>
