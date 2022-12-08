@@ -15,10 +15,6 @@ jobs:
           command: |
             docker-compose up -d
       - run:
-          name: Setup database
-          command: |
-            docker-compose exec solomeal bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
-      - run:
           name: Run rspec
           command: |
             docker-compose exec solomeal rspec
