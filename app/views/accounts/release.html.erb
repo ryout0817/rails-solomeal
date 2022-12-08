@@ -29,17 +29,21 @@
         </div>
         <div class="user-introduction-wrap">
           <div class="introduction-label">自己紹介</div>
-          <div class="release-user-introduction">
-            <%= safe_join(@release_user.introduction.split("\n"),tag(:br))%>
-          </div>
+          <% if @release_user.introduction? %>
+            <div class="release-user-introduction">
+              <%= safe_join(@release_user.introduction.split("\n"),tag(:br))%>
+            </div>
+            <% else %>
+            登録されていません。
+          <% end %>
         </div>
         <div class="myrecipe-list-wrap">
           <div class="myrecipe-label">公開しているレシピ</div>
           <div class="myrecipe-name-wrap">
             <% @recipes.each do |recipe| %>
               <div>
-                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name" do %>
-                  <%= recipe.recipe_name%>
+                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name flex" do %>
+                  <p>・</p><%= recipe.recipe_name%>
                 <% end %>
               </div>
             <% end %>

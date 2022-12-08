@@ -1075,6 +1075,7 @@ label {
 @media (max-width:400px) {
     .introduction-label {
         width: auto;
+        margin-bottom: 1rem;
     }
 }
 
@@ -1829,6 +1830,13 @@ label {
     }
 }
 
+@media (max-width:400px) {
+    .not-food-img-box {
+        width: 200px;
+        margin: 0 auto;
+    }
+}
+
 .not-food-img-posi {
     position: absolute;
     top: 30%;
@@ -1838,6 +1846,12 @@ label {
 @media (max-width:576px) {
     .not-food-img-posi {
         left: 30%;
+    }
+}
+
+@media (max-width:400px) {
+    .not-food-img-posi {
+        left: 20%;
     }
 }
 
