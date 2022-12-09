@@ -6,7 +6,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :favorites, dependent: :destroy
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true
