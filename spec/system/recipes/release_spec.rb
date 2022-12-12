@@ -13,6 +13,7 @@ RSpec.describe "Recipes" do
     context "コンテンツ" do
       it "マイレシピの情報を表示する" do
         expect(page).to have_content recipe.recipe_name
+        expect(page).to have_content recipe.main_food
         expect(page).to have_content recipe.time
         expect(page).to have_content recipe.price
         expect(page).to have_content recipe.recipe_how
