@@ -154,12 +154,7 @@ header {
     background-color: #dc954e;
     color: #ffffff;
     font-weight: bold;
-}
-
-@media (max-width:767px) {
-    .recipe-btn {
-        z-index: 2;
-    }
+    z-index: 4;
 }
 
 @media (max-width:300px) {
@@ -290,7 +285,7 @@ header {
     position: fixed;
     top: 40px;
     right: 0;
-    z-index: 1;
+    z-index: 3;
     width: 100vw;
     height: 100vh;
     background: #a09a8e;
@@ -572,11 +567,28 @@ article {
 }
 
 .recipe-rank-wrap {
+    height: 700px;
+}
+
+@media (max-width: 768px) {
+    .recipe-rank-wrap {
+        height: 1700px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-rank-wrap {
+        height: 1000px;
+    }
+}
+
+.recipe-rank-flex {
     display: flex;
+    margin-top: 4rem;
 }
 
 @media (max-width:768px) {
-    .recipe-rank-wrap {
+    .recipe-rank-flex {
         display: block;
         margin: 0 auto;
         text-align: center;
@@ -589,7 +601,6 @@ article {
 
 @media (max-width:576px) {
     .recipe-rank-container {
-        width: 300px;
         margin: 1rem auto;
         padding: 0 .5rem 0;
     }
@@ -597,7 +608,6 @@ article {
 
 @media (max-width:480px) {
     .recipe-rank-container {
-        width: 250px;
         margin: 1rem auto;
         padding: 0 .5rem 0;
     }
@@ -617,7 +627,7 @@ article {
 }
 
 .recipe-rank-col {
-    margin: 2rem auto;
+    margin: 4rem auto 0;
     text-align: center;
 }
 
@@ -627,7 +637,7 @@ article {
     }
 }
 
-.nav-latest-img {
+.nav-rank-img {
     text-align: center;
     position: relative;
 }
@@ -647,6 +657,13 @@ article {
     }
 }
 
+@media (max-width:768px) {
+    .top-not-img-wrap {
+        width: 400px;
+        height: 400px;
+    }
+}
+
 @media (max-width:480px) {
     .top-not-img-wrap {
         width: 200px;
@@ -660,9 +677,17 @@ article {
     left: 30%;
 }
 
-@media (max-width:576px) {
+@media (max-width: 768px) {
     .top-not-food-img-posi {
-        left: 25%;
+        top: 40%;
+        left: 36%;
+    }
+}
+
+@media (max-width:480px) {
+    .top-not-food-img-posi {
+        top: 34%;
+        left: 21%;
     }
 }
 
@@ -688,6 +713,13 @@ article {
     .recipe-rank-img {
         width: 250px;
         height: 250px;
+    }
+}
+
+@media (max-width:768px) {
+    .recipe-rank-img {
+        width: 400px;
+        height: 400px;
     }
 }
 
@@ -719,10 +751,11 @@ article {
 }
 
 .rank-name {
-    margin-top: .5rem;
+    margin: .5rem auto;
     font-size: 1.2rem;
     text-align: center;
     color: #dc954e;
+    width: 80%;
 }
 
 .rank-name:hover {
@@ -794,14 +827,13 @@ footer {
 }
 
 .content-document-inner h4 {
-    color: #ada391;
     font-size: 2rem;
     letter-spacing: .3rem;
 }
 
 @media (max-width:767px) {
     .content-document-inner h4 {
-        border-bottom: 2px solid #ada391;
+        border-bottom: 2px solid #dc954e;
         font-size: 1.7rem;
     }
 }
@@ -940,7 +972,7 @@ label {
 }
 
 .margin-4 {
-    margin: 4rem auto;
+    margin: 4rem auto 6rem;
 }
 
 .margin-top-4 {
@@ -2308,7 +2340,7 @@ label {
 }
 
 .nav-header-top-search {
-    z-index: 2;
+    z-index: 4;
     margin-right: 1rem;
 }
 
@@ -2367,4 +2399,34 @@ span {
 
 .auto-center {
     margin: 0 auto;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 1.75rem;
+    bottom: 4rem;
+    z-index: 1;
+    background-color: #dc954e;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+
+.scroll-top::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f102';
+}
+
+.scroll-top:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+.top-concept-title {
+    border-top: 3px solid #fff;
 }
