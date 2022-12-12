@@ -3,7 +3,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/ruby:2.7.1-node
+      - image: circleci/ruby:2.7.6-node
         environment:
           RAILS_ENV: test
           DATABASE_HOST: 127.0.0.1 
@@ -11,14 +11,13 @@ jobs:
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_ROOT_PASSWORD: ''
-          MYSQL_DATABASE: circleci_parctice_test
-    working_directory: ~/circleci_parctice
+          MYSQL_DATABASE: circleci_practice_test
+    working_directory: ~/circleci_practice
     steps:
       - checkout
       - run:
           name: "bundle install"
           command: bundle install --path vendor/bundle
-      # MySQLと接続できるまで待ちます
       - run:
           name: "waiting DB start"
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
