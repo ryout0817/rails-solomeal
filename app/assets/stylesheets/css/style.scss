@@ -364,7 +364,7 @@ header {
 .menu-list li {
     padding: 1rem 0;
     padding-left: 1.25rem;
-    border-bottom: 1px dotted #a09a8e;
+    border-bottom: 2px dotted #a09a8e;
 }
 
 .menu-list li:hover {
@@ -447,7 +447,7 @@ header {
 }
 
 // トップページメイン
-.top-main {
+.top-article {
     display: flex;
     flex-grow: 1;
     flex-direction: row;
@@ -525,6 +525,12 @@ article {
     }
 }
 
+.favorite-title::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    padding-right: .5rem;
+}
+
 .content-about {
     width: 600px;
     margin: 0 auto;
@@ -565,17 +571,24 @@ article {
     content: "\f2f6";
 }
 
-.latest-recipe-wrap {
-    width: 100%;
+.recipe-rank-wrap {
+    display: flex;
 }
 
-.latest-recipe-container {
+@media (max-width:768px) {
+    .recipe-rank-wrap {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.recipe-rank-container {
     margin: 2rem auto;
-    text-align: center;
 }
 
 @media (max-width:576px) {
-    .latest-recipe-container {
+    .recipe-rank-container {
         width: 300px;
         margin: 1rem auto;
         padding: 0 .5rem 0;
@@ -583,24 +596,39 @@ article {
 }
 
 @media (max-width:480px) {
-    .latest-recipe-container {
+    .recipe-rank-container {
         width: 250px;
         margin: 1rem auto;
         padding: 0 .5rem 0;
     }
 }
 
-.latest-recipe-col {
-    margin: .5rem 0;
+.rank-wrap {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 @media (max-width:576px) {
-    .latest-recipe-col h2 {
+    .rank-wrap {
+        font-size: 1rem;
+    }
+}
+
+.recipe-rank-col {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+@media (max-width:576px) {
+    .recipe-rank-col h2 {
         font-size: 1.1rem;
     }
 }
 
 .nav-latest-img {
+    text-align: center;
     position: relative;
 }
 
@@ -608,19 +636,18 @@ article {
     position: relative;
     width: 300px;
     height: 300px;
-    margin: 0 auto;
     background-color: #ced4da;
     text-align: center;
 }
 
-@media (max-width:576px) {
+@media (max-width:1000px) {
     .top-not-img-wrap {
-        width: 240px;
-        height: 249px;
+        width: 250px;
+        height: 250px;
     }
 }
 
-@media (max-width:300px) {
+@media (max-width:480px) {
     .top-not-img-wrap {
         width: 200px;
         height: 200px;
@@ -645,47 +672,40 @@ article {
     }
 }
 
-.latest-recipe-img {
+.recipe-rank-img {
     width: 300px;
     height: 300px;
-    border-radius: 5px;
-
+    border-radius: 1px solid #fff;
+    position: relative;
     object-fit: cover;
 }
 
-.latest-recipe-img:hover {
+.recipe-rank-img:hover {
     opacity: .9;
 }
 
-@media (max-width:576px) {
-    .latest-recipe-img {
+@media (max-width:1000px) {
+    .recipe-rank-img {
         width: 250px;
         height: 250px;
     }
 }
 
 @media (max-width:480px) {
-    .latest-recipe-img {
+    .recipe-rank-img {
         width: 200px;
         height: 200px;
     }
 }
 
-@media (max-width:300px) {
-    .latest-recipe-img {
-        width: 150px;
-        height: 150px;
-    }
+.nav-img-time {
+    position: absolute;
+    bottom: 7%;
+    left: 38%;
+    font-size: 1.2rem;
 }
 
-.latest-time-wrap {
-    padding: .2rem .3rem;
-    border-radius: 5px;
-    background-color: #ada391;
-    color: #ffffff;
-}
-
-.nav-latest-time {
+.nav-no-img-time {
     position: absolute;
     bottom: 15px;
     left: 33%;
@@ -693,19 +713,19 @@ article {
 }
 
 @media (max-width:576px) {
-    .nav-latest-time {
+    .nav-no-img-time {
         font-size: 1rem;
     }
 }
 
-.latest-name {
+.rank-name {
     margin-top: .5rem;
-    color: #dc954e;
     font-size: 1.2rem;
     text-align: center;
+    color: #dc954e;
 }
 
-.latest-name:hover {
+.rank-name:hover {
     color: #d5802b;
 }
 
@@ -2040,7 +2060,7 @@ label {
 }
 
 #no-food {
-    padding: 5rem 2rem;
+    padding: 7rem 2rem;
     border: 1px solid #ced4da;
     border-radius: 5px;
     background-color: #f5f5f5;
@@ -2151,7 +2171,7 @@ label {
 
 .w-100 {
     width: 100%;
-
+    vertical-align: top;
     object-fit: cover;
 }
 
