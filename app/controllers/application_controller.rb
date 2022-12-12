@@ -32,11 +32,8 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    # キーワード検索
     @user = current_user
-    @search = Recipe.ransack(params[:q])
-    @results = @search.result.order("created_at DESC").page(params[:page]).per(10)
-    @counts = @results.all.count
-    @search = Recipe.ransack
+    @search = Recipe.search(params[:keyword]).page(params[:page]).per(10)
+    @counts = @search.all.count
   end
 end

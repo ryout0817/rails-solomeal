@@ -10,4 +10,12 @@ class Recipe < ApplicationRecord
     validates :time
     validates :price
   end
+
+  def self.search(search)
+    if search != ""
+      Recipe.where(['recipe_name LIKE(?) OR main_food LIKE(?)', "%#{search}%", "%#{search}%"]).order('created_at DESC')
+    else
+      redirect_to serach_recipes_path
+    end
+  end
 end

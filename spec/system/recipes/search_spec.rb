@@ -16,9 +16,9 @@ RSpec.describe "Recipes" do
         visit recipes_path
       end
 
-      it "レシピ一覧ページから該当するキーワード検索後の表示確認" do
+      it "レシピ一覧ページの入力フォームにレシピ名検索後の表示確認" do
         within (".search-wrap") do
-          fill_in "q[recipe_name_cont]", with: "オ"
+          fill_in "keyword", with: "オ"
           click_on "検索"
         end
         expect(current_path).to eq search_recipes_path
@@ -26,9 +26,19 @@ RSpec.describe "Recipes" do
         expect(page).to have_content "検索結果：#{recipes.count}件"
       end
 
-      it "該当しないキーワードを検索後、表示されないことを確認" do
+      it "レシピ一覧ページの入力フォームにメインの材料検索後の表示確認" do
         within (".search-wrap") do
-          fill_in "q[recipe_name_cont]", with: "肉"
+          fill_in "keyword", with: "卵"
+          click_on "検索"
+        end
+        expect(current_path).to eq search_recipes_path
+        expect(page).to have_content recipes[1].recipe_name
+        expect(page).to have_content "検索結果：#{recipes.count}件"
+      end
+
+      it "該当しないレシピ名を検索後、表示されないことを確認" do
+        within (".search-wrap") do
+          fill_in "keyword", with: "肉"
           click_on "検索"
         end
         expect(page).not_to have_content recipes[1].recipe_name

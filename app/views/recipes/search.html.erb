@@ -12,12 +12,12 @@
       <p class="order-title-comment center"></p>
     </div>
     <div class="search-wrap center">
-      <%= search_form_for @search,url: search_recipes_path do |f| %>
-        <%= f.search_field :recipe_name_cont, class: 'recipe-name-search', placeholder: 'キーワードで検索' %>
+      <%= form_with(url: search_recipes_path, local: true, method: :get ) do |f| %>
+        <%= f.search_field :keyword, class: 'recipe-name-search', placeholder: 'キーワードで検索' %>
         <%= f.submit '検索', class: "submit-search"%>
       <% end %>
     </div>
-    <% @results.each do |recipe| %>
+    <% @search.each do |recipe| %>
       <div class="recipe-preview">
         <% if recipe.food? %>
           <%= link_to release_recipe_path(recipe.id) do %>
@@ -73,7 +73,7 @@
       </div>
     <% end %>
     <div class="pagination-wrapper">
-      <%= paginate @results %>
+      <%= paginate @search %>
     </div>
   </div>
 </div>
