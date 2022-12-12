@@ -1,50 +1,39 @@
-version: 2.1
-jobs:
-  rspec:
-    working_directory: ~/solomeal
-    docker:
-      - image: cimg/ruby:2.7.3
-    resource_class: small
-    steps:
-      - checkout
-      # Docker関連コマンドが、この環境で安全に実行できるようにする
-      - setup_remote_docker:
-          version: 20.10.14
-      - run:
-          name: docker-compose up -d
-          command: |
-            docker-compose up -d
-      - run:
-          name: Run rspec
-          command: |
-            docker-compose exec solomeal rspec
-  rubocop:
-    working_directory: ~/solomeal
-    docker:
-      - image: cimg/ruby:2.7.3
-    resource_class: small
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - gemfiles-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - gemfiles-{{ .Branch }}-
-            - gemfiles-master-
-      - run: bundle config --local path vendor/bundle
-      - run:
-          name: bundle install
-          command: bundle check || bundle install --jobs=8 --clean
-      - run:
-          name: Run rubocop
-          command: bundle exec rubocop --parallel
-      - save_cache:
-          key: gemfiles-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+version: 2
 
-# 実行する順番を記述
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.7.1-node
+        environment:
+          RAILS_ENV: test
+          DATABASE_HOST: 127.0.0.1 
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_DATABASE: circleci_parctice_test
+    working_directory: ~/circleci_parctice
+    steps:
+      - checkout
+      - run:
+          name: "bundle install"
+          command: bundle install --path vendor/bundle
+      # MySQLと接続できるまで待ちます
+      - run:
+          name: "waiting DB start"
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: "initialize DB"
+          command: |
+            bundle exec rake db:create
+            bundle exec rake db:migrate
+      - run:
+          name: RSpec
+          command: bundle exec rspec
+
+
 workflows:
-  version: 2.1
-  build:
+  version: 2
+  workflows:
     jobs:
-      - rspec
+      - test
