@@ -828,6 +828,7 @@ footer {
 
 .user-form {
     width: 60%;
+    margin: 0 auto;
 }
 
 @media  (max-width: 1020px) and (min-width: 768px) {
@@ -1068,7 +1069,7 @@ label {
 }
 
 .introduction-label {
-    width: 80px;
+    width: 145px;
     font-weight: bold;
 }
 
@@ -1143,8 +1144,14 @@ label {
     }
 }
 
+.no-introduction {
+    width: 300px;
+    padding: 0.5rem 0.25rem;
+    font-size: 1.2rem;
+}
+
 .myrecipe-label {
-    width: 80px;
+    width: 145px;
     font-weight: bold;
 }
 
@@ -1227,7 +1234,7 @@ label {
 }
 
 .release-user-introduction {
-    width: 50%;
+    width: 300px;
 }
 
 .return-link {

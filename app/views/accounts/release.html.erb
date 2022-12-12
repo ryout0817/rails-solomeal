@@ -34,9 +34,12 @@
               <%= safe_join(@release_user.introduction.split("\n"),tag(:br))%>
             </div>
             <% else %>
-            登録されていません。
+            <div class="no-introduction">
+              登録されていません。
+            </div>
           <% end %>
         </div>
+        <% unless @release_user.name == "ゲスト" %>
         <div class="myrecipe-list-wrap">
           <div class="myrecipe-label">公開しているレシピ</div>
           <div class="myrecipe-name-wrap">
@@ -49,6 +52,7 @@
             <% end %>
           </div>
         </div>
+        <% end %>
         <div class="edit-mypage-btn-wrap">
           <%= link_to '一覧ページへ', recipes_path, class: "return-recipe-list-btn" %>
         </div>
