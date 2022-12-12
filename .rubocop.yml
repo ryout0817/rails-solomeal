@@ -17,6 +17,7 @@ AllCops:
     - Gemfile
     - features/**/*
     - spec/**/*
+    - app/models/favorite.rb
 
 Rails:
   Enabled: true
