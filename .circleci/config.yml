@@ -16,10 +16,13 @@ jobs:
           docker_layer_caching: true
       - run:
           name: rails db:migrate
-          command: docker-compose build
+          command: |
+            set -x
+            docker-compose up -d
+            docker exec solomeal_app curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
       - run:
           name: Database setup
-          command: docker-compose up -d
+          command: docker-compose exec solomeal bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
       - run:
           name: run rspec
-          command: rspec
+          command: docker-compose exec solomeal rspec
