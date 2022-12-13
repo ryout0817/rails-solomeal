@@ -11,5 +11,8 @@ jobs:
       - setup_remote_docker:
           version: 20.10.14
       - run:
-          name: set docker
+          name: docker-compose up -d
           command: docker-compose build
+      - run:
+          name: rspec
+          command: docker-compose exec solomeal rspec -fd
