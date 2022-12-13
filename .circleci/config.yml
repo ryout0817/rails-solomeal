@@ -6,6 +6,6 @@ jobs:
     resource_class: small
     working_directory: ~/solomeal
   steps:
-    - checkout
+    - checkout:
         path: ~/solomeal
     - ruby/install-deps
