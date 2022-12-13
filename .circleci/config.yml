@@ -8,3 +8,6 @@ jobs:
     steps:
       - checkout:
           path: ~/solomeal
+      - run:
+          name: set docker
+          command: docker-compose up -d
