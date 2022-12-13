@@ -16,10 +16,10 @@ jobs:
           docker_layer_caching: true
       - run:
           name: rails db:migrate
-          command: bundle exec rails db:migrate
+          command: docker-compose build
       - run:
           name: Database setup
-          command: bundle exec rails db:schema:load --trace
+          command: docker-compose up -d
       - run:
           name: run rspec
-          command: docker-compose exec solomeal rspec -fd
+          command: rspec
