@@ -1,11 +1,14 @@
 version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.2
+  heroku: circleci/heroku@1.2.3
+
 jobs:
-  rspec:
+  build:
     docker:
-      - image: circleci/ruby:2.7.6
-    resource_class: small
+      - image: circleci/ruby:2.7
     working_directory: ~/solomeal
-  steps:
-    - checkout:
-        path: ~/solomeal
-    - ruby/install-deps
+    steps:
+      - checkout:
+          path: ~/solomeal
+      - ruby/install-deps
