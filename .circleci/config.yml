@@ -13,8 +13,8 @@ jobs:
       - run:
           name: "サービスの開始および実行チェック"
           command: |
-            docker run -d --name my-app my-app
-            docker exec my-app curl --retry 10 --retry-connrefused http://localhost:8080
+            docker run -d --solomeal my-app my-app
+            docker exec solomeal curl --retry 10 --retry-connrefused http://localhost:8080
       - run:
           name: docker-compose up -d
           command: docker-compose build
