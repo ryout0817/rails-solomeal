@@ -2,6 +2,10 @@ version: 2.1
 jobs:
   rspec:
     docker:
-      - image: mysql:8.0.29
+      - image: circleci/ruby:2.7.6
+    resource_class: small
+    working_directory: ~/solomeal
   steps:
     - checkout
+        path: ~/solomeal
+    - ruby/install-deps
