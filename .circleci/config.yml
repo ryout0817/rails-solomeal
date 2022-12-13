@@ -10,4 +10,4 @@ jobs:
           path: ~/solomeal
       - run:
           name: set docker
-          command: docker-compose up -d
+          command: docker-compose build
