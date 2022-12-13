@@ -5,16 +5,20 @@ jobs:
     working_directory: ~/solomeal
     docker:
       - image: cimg/ruby:2.7.6
+    auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout:
           path: ~/solomeal
       - setup_remote_docker:
           version: 20.10.14
-      - run:
-          name: "サービスの開始および実行チェック"
-          command: |
-            docker run -d --name my-app my-app
-            docker exec solomeal curl --retry 10 --retry-connrefused http://localhost:8080
+          docker_layer_caching: true
+      - run: |
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker build -t CircleCI-Public/circleci-demo-docker:$TAG .
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker push CircleCI-Public/circleci-demo-docker:$TAG
       - run:
           name: docker-compose up -d
           command: |
