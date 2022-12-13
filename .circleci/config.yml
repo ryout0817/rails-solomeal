@@ -1,13 +1,10 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@1.1.2
-  heroku: circleci/heroku@1.2.3
 
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.7.6
     working_directory: ~/solomeal
+    docker:
+      - image: cimg/ruby:2.7.6
     steps:
       - checkout:
           path: ~/solomeal
