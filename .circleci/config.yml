@@ -8,6 +8,8 @@ jobs:
     steps:
       - checkout:
           path: ~/solomeal
+      - setup_remote_docker:
+          version: 20.10.14
       - run:
           name: set docker
           command: docker-compose build
