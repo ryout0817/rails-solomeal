@@ -33,25 +33,26 @@
             <div class="release-user-introduction">
               <%= safe_join(@release_user.introduction.split("\n"),tag(:br))%>
             </div>
-            <% else %>
+          <% else %>
             <div class="no-introduction">
               登録されていません。
             </div>
           <% end %>
         </div>
         <% unless @release_user.name == "ゲスト" %>
-        <div class="myrecipe-list-wrap">
-          <div class="myrecipe-label">公開しているレシピ</div>
-          <div class="myrecipe-name-wrap">
-            <% @recipes.each do |recipe| %>
-              <div>
-                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name flex" do %>
-                  <p>・</p><%= recipe.recipe_name%>
-                <% end %>
-              </div>
-            <% end %>
+          <div class="myrecipe-list-wrap">
+            <div class="myrecipe-label">公開しているレシピ
+            </div>
+            <div class="myrecipe-name-wrap">
+              <% @recipes.each do |recipe| %>
+                <div>
+                  <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name flex" do %>
+                    <p>・</p><%= recipe.recipe_name%>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
         <% end %>
         <div class="edit-mypage-btn-wrap">
           <%= link_to '一覧ページへ', recipes_path, class: "return-recipe-list-btn" %>
