@@ -12,7 +12,6 @@ RSpec.describe "Tops" do
       it "非ログイン時の文字列のテスト" do
         expect(page).to have_content('ゲストログイン')
         expect(page).to have_content('ひとり飯')
-        expect(page).to have_content recipe.recipe_name
       end
 
       it "ゲストログイン押下後ゲストログインしてトップページに遷移すること" do

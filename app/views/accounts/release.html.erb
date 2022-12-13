@@ -1,6 +1,10 @@
 <% provide(:title, '公開プロフィール')%>
 <div class="main">
-  <%= render 'shared/in_sidebar.html.erb'%>
+  <% if user_signed_in? %>
+    <%= render 'shared/in_sidebar.html.erb'%>
+  <% else %>
+    <%= render 'shared/out_sidebar.html.erb'%>
+  <% end %>
   <div class="content-wrapper">
     <div class="page-title">
       <h1 class="signup-icon title-font"><%= @release_user.name%>さんのプロフィール</h1>
@@ -25,24 +29,30 @@
         </div>
         <div class="user-introduction-wrap">
           <div class="introduction-label">自己紹介</div>
-          <div class="user-content-item">
-            <%= form_with model: @release_user, url: account_path(@user), local: true do |f| %>
-              <%= f.text_area :introduction, rows: 2, class: "no-edit-form", readonly: true %>
-            <% end %>
-          </div>
+          <% if @release_user.introduction? %>
+            <div class="release-user-introduction">
+              <%= safe_join(@release_user.introduction.split("\n"),tag(:br))%>
+            </div>
+            <% else %>
+            <div class="no-introduction">
+              登録されていません。
+            </div>
+          <% end %>
         </div>
+        <% unless @release_user.name == "ゲスト" %>
         <div class="myrecipe-list-wrap">
           <div class="myrecipe-label">公開しているレシピ</div>
           <div class="myrecipe-name-wrap">
             <% @recipes.each do |recipe| %>
               <div>
-                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name" do %>
-                  <%= recipe.recipe_name%>
+                <%= link_to release_recipe_path(recipe.id), class: "myrecipe-name flex" do %>
+                  <p>・</p><%= recipe.recipe_name%>
                 <% end %>
               </div>
             <% end %>
           </div>
         </div>
+        <% end %>
         <div class="edit-mypage-btn-wrap">
           <%= link_to '一覧ページへ', recipes_path, class: "return-recipe-list-btn" %>
         </div>

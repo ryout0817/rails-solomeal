@@ -1,4 +1,4 @@
-<% provide(:title, 'レシピ新着一覧')%>
+<% provide(:title, '検索結果')%>
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
   <% if user_signed_in? %>
@@ -8,8 +8,8 @@
   <% end %>
   <div class="preview-page-wrapper">
     <div class="order-title-wrap">
-      <h2 class="order-title gray-color center">新着順</h2>
-      <p class="order-title-comment center">最近投稿されたレシピを試してみよう！</p>
+      <h2 class="order-title gray-color center">検索結果：<%= @counts%>件</h2>
+      <p class="order-title-comment center"></p>
     </div>
     <div class="search-wrap center">
       <%= form_with(url: search_recipes_path, local: true, method: :get ) do |f| %>
@@ -17,7 +17,7 @@
         <%= f.submit '検索', class: "submit-search"%>
       <% end %>
     </div>
-    <% @recipes.each do |recipe| %>
+    <% @search.each do |recipe| %>
       <div class="recipe-preview">
         <% if recipe.food? %>
           <%= link_to release_recipe_path(recipe.id) do %>
@@ -42,10 +42,6 @@
             <%= link_to release_recipe_path(recipe.id), class: "preview-name-path" do %>
               <%= recipe.recipe_name %>
             <% end %>
-            <div class="list-favorite" id="favorite_recipe_<%= recipe.id %>">
-              <i class="fas fa-thumbs-up"></i>
-              <%= recipe.favorites.size %>
-            </div>
           </div>
           <div class="preview-item-wrap">
             <div class="preview-price-title">
@@ -77,7 +73,7 @@
       </div>
     <% end %>
     <div class="pagination-wrapper">
-      <%= paginate @recipes %>
+      <%= paginate @search %>
     </div>
   </div>
 </div>

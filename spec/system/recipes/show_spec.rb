@@ -24,6 +24,12 @@ RSpec.describe "Recipes" do
         click_link "編集する"
         expect(current_path).to eq edit_recipe_path(recipe.id)
       end
+
+      it "戻るボタンリンクを押下" do
+        expect(page).to have_content "戻る"
+        click_link "戻る"
+        expect(current_path).to eq account_path(user.id)
+      end
     end
   end
 end

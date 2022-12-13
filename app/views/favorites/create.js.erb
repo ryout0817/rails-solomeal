@@ -1,0 +1,1 @@
+$('#favorite_recipe_<%= params[:recipe_id] %>').html('<%= link_to "いいね済", recipe_favorite_path(params[:resipe_id]), method: :delete, remote:true %> <%= @recipe.favorites.size %>');

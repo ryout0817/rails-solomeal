@@ -9,6 +9,7 @@
       <div class="container-content user-form">
         <div class="content-document-inner">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
             <div class="field">
               <%= f.label :メールアドレス %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control login-form form-space" %>

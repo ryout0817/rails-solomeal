@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # deviseのコントローラを使う前に呼ばれるアクション
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :search
   private
   def configure_sign_up_params
     edit_user_registration_path(@user.id)
@@ -29,5 +29,11 @@ class ApplicationController < ActionController::Base
     if email == 'guest@example.com'
       redirect_to "/", alert: "ゲストユーザーの編集・削除はできません。"
     end
+  end
+
+  def search
+    @user = current_user
+    @search = Recipe.search(params[:keyword]).page(params[:page]).per(10)
+    @counts = @search.all.count
   end
 end

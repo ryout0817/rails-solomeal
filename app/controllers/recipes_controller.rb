@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @user = current_user
-    @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(3).includes(:user)
+    @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user, :favorites)
   end
 
   def new
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(params.require(:recipe).permit(:recipe_name, :main_food, :food, :recipe_how, :material, :price, :time))
-      redirect_to recipes_path(@recipe.id)
+      redirect_to recipe_path(@recipe.id)
     else
       render 'edit'
     end

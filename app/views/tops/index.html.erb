@@ -1,83 +1,124 @@
 <% provide(:title, 'トップページ')%>
 <p class="flash" ><%= flash[:info]%></p>
 <p class="alert"><%= alert%></p>
-<div class="top-main">
+<div class="top-article">
   <% if user_signed_in? %>
     <%= render 'shared/in_sidebar.html.erb'%>
   <% else %>
     <%= render 'shared/out_sidebar.html.erb'%>
   <% end %>
-  <div class="top-main-wrap">
-    <div class="content">
-      <article>
+  <article>
+    <div>
+      <div class="content">
         <%= image_tag '24835789_m.jpg', class: "w-100" %>
         <% if user_signed_in? %>
           <div class="main-btn">
+            <nav class="nav-top-search">
+              <%= form_with(url: search_recipes_path, local: true, method: :get ) do |f| %>
+                <%= f.search_field :keyword, class: 'top-none top-recipe_name-search', placeholder: 'キーワードで検索' %>
+              <% end %>
+            </nav>
             <%= link_to "レシピ作成", new_recipe_path, class: "top-none top-btn recipe-font"%>
           </div>
         <% else %>
           <div class="main-btn">
+            <nav class="nav-top-search">
+              <%= form_with(url: search_recipes_path, local: true, method: :get ) do |f| %>
+                <%= f.search_field :keyword, class: 'top-none top-recipe_name-search', placeholder: 'キーワードで検索' %>
+              <% end %>
+            </nav>
             <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "top-none top-btn guest-font", method: :post %>
           </div>
         <% end %>
         <div class="title-container">
           <h1 class="top-title title-font fff">なにをつくろうか</h1>
         </div>
-      </article>  
-      <div class="latest-recipe-wrap">
-        <div class="latest-recipe-container">
-          <% @recipe.each do |recipe| %>
-            <div class="latest-recipe-col">
-              <h2 class="gray-color">最新簡単レシピ</h2>
-            </div>
-            <div class="latest-recipe-col2">
-              <% if recipe.food? %>
-                <%= link_to release_recipe_path(recipe.id) do %>
-                  <nav class="nav-latest-img">
-                    <%= image_tag recipe.food.url, alt: "最新のレシピ", class: "latest-recipe-img" %>
-                    <nav class="nav-latest-time">
-                      <div class="latest-time-wrap">
-                        <h3 class="latest-time"><%= l recipe.created_at, format: :short %></h3>
-                      </div>
-                    </nav>
-                  </nav>
-                  <nav class="nav-latest-item">
-                    <nav class="nav-latest-name">
-                      <div class="latest-name">
-                        <h3><%= recipe.recipe_name%></h3>
-                      </div>
-                    </nav>
-                  </nav>
-                <% end %>
-              <% else %>
-                <%= link_to release_recipe_path(recipe.id) do %>
-                  <div class="top-not-img-wrap">
-                    <div class="top-not-food-img-posi">
-                      <div>
-                        <i class="not-food-img fa-solid fa-utensils"></i>
-                      </div>
-                      <div class="not-found">
-                        <p>not-image</p>
-                      </div>
-                    </div>
-                    <nav class="nav-latest-time">
-                      <div class="latest-time-wrap">
-                        <h3 class="latest-time"><%= l recipe.created_at, format: :short %></h3>
-                      </div>
-                    </nav>
+      </div>
+    </div>
+  </article>
+</div>
+<div class="top-main-wrap">
+  <div class="recipe-rank-wrap">
+    <div class="recipe-rank-col">
+      <h2 class="favorite-title gray-color">いいねランキング</h2>
+    </div>
+    <div class="recipe-rank-flex">
+      <% @recipe_rank.each.with_index(1) do |recipe, i| %>
+        <div class="recipe-rank-container">
+          <div class="rank-wrap gray-color">
+            第<%= i %>位
+          </div>
+          <% if recipe.food? %>
+            <%= link_to release_recipe_path(recipe.id) do %>
+              <nav class="nav-rank-img">
+                <%= image_tag recipe.food.url, alt: "料理の写真", class: "recipe-rank-img" %>
+              </nav>
+              <nav class="nav-rank-item">
+                <div class="rank-name">
+                  <h3><%= recipe.recipe_name%></h3>
+                </div>
+              </nav>
+            <% end %>
+          <% else %>
+            <%= link_to release_recipe_path(recipe.id) do %>
+              <div class="top-not-img-wrap">
+                <div class="top-not-food-img-posi">
+                  <div>
+                    <i class="not-food-img fa-solid fa-utensils"></i>
                   </div>
-                  <nav class="nav-latest-name">
-                    <div class="latest-name">
-                      <h3><%= recipe.recipe_name%></h3>
-                    </div>
-                  </nav>
-                <% end %>
-              <% end %>
-            </div>
+                  <div class="not-found">
+                    <p>not-image</p>
+                  </div>
+                </div>
+              </div>
+              <div class="rank-name">
+                <h3><%= recipe.recipe_name%></h3>
+              </div>
+            <% end %>
           <% end %>
+        </div>
+      <% end%>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="top-concept-title">
+      <h1 class="document-icon title-font">Concept</h1>
+    </div>
+    <div class="content-about margin-4">
+      <div class="container-content">
+        <div class="content-document-inner", id="about">
+          <h4>こんな悩みありませんか？</h4>
+          <p>今日なに作ろうか、簡単に作れるものはないかな？<br>このようなことは日々の生活の中で必ずというほど<br>考える必要のある悩みの種ではありませんか？<br>そんな時に他の人がおすすめした簡単な料理を<br>検索したり使用してもらってみませんか？<br>簡単ですぐ作れる<span>ひとり飯</span>料理を投稿して<br>いただくことを推奨しています。
+          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div id="js-scroll-top" class="scroll-top"></div>
+
+<script>
+scrollTop('js-scroll-top', 150); // 遅すぎるとガクガクになるので注意
+
+function scrollTop(el, duration) {
+  const target = document.getElementById(el);
+  target.addEventListener('click', function() {
+    let currentY = window.pageYOffset; // 現在のスクロール位置を取得
+    let step = duration/currentY > 1 ? 10 : 100; // 三項演算子
+    let timeStep = duration/currentY * step; // スクロール時間
+    let intervalId = setInterval(scrollUp, timeStep);
+    // timeStepの間隔でscrollUpを繰り返す。
+    // clearItervalのために返り値intervalIDを定義する。
+
+    function scrollUp(){
+      currentY = window.pageYOffset;
+      if(currentY === 0) {
+          clearInterval(intervalId); // ページ最上部に来たら終了
+      } else {
+          scrollBy( 0, -step ); // step分上へスクロール
+      }
+    }
+  });
+}
+</script>

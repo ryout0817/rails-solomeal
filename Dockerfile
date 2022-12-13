@@ -1,6 +1,6 @@
 FROM ruby:2.7.6
 
-WORKDIR /eatcapsule
+WORKDIR /solomeal
 
 RUN apt-get update \
   && apt-get install -y \
@@ -11,8 +11,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \ 
   && apt-get clean
 
-COPY Gemfile /eatcapsule//Gemfile
-COPY Gemfile.lock /eatcapsule//Gemfile.lock
+COPY Gemfile /solomeal//Gemfile
+COPY Gemfile.lock /solomeal//Gemfile.lock
 RUN bundle install
 
 # Add a script to be executed every time the container starts.
