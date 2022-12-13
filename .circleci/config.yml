@@ -1,28 +1,58 @@
 version: 2.1
 
+orbs:
+  ruby: circleci/ruby@1.1.2
+  node: circleci/node@2
+
+# setup
+commands:
+  setup:
+    steps:
+      - checkout
+      - ruby/install-deps
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
+
 jobs:
   build:
-    working_directory: ~/solomeal
     docker:
-      - image: cimg/ruby:2.7.6
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD
+      - image: circleci/ruby:2.7-node
     steps:
-      - checkout:
-          path: ~/solomeal
-      - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
+      - setup
+  test:
+    docker:
+      - image: circleci/ruby:2.7-node
+      - image: circleci/postgres:11.6-alpine
+        name: "db"
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: myapp_test
+          POSTGRES_PASSWORD: ""
+    environment:
+      BUNDLE_JOBS: "4"
+      BUNDLE_RETRY: "3"
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: ""
+      RAILS_ENV: test
+    steps:
+      - setup
       - run:
           name: rails db:migrate
-          command: |
-            set -x
-            docker-compose up -d
-            docker exec solomeal curl -4 --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
+          command: bundle exec rails db:migrate
       - run:
           name: Database setup
-          command: docker-compose exec solomeal bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
+          command: bundle exec rails db:schema:load --trace
       - run:
-          name: run rspec
-          command: docker-compose exec solomeal rspec
+          name: Rspec
+          command: bundle exec rspec
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
