@@ -5,9 +5,9 @@ jobs:
     working_directory: ~/solomeal
     docker:
       - image: cimg/ruby:2.7.6
-    auth:
-      username: mydockerhub-user
-      password: $DOCKERHUB_PASSWORD
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout:
           path: ~/solomeal
