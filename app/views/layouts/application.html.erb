@@ -8,44 +8,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/45b4a2fcd8.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <%= render 'shared/header.html.erb' %>
     <%= yield %>
     <%= render 'shared/footer.html.erb' %>
     <%= javascript_pack_tag 'application' %>
-    <script>
-      document.getElementById("nav-none").style.display = "none";
-      function clickBtn1() {
-        const p1 = document.getElementById("nav-none");
-        if(p1.style.display == "block") {
-          p1.style.display = "none";
-        }else{
-          p1.style.display = "block"
-          document.addEventListener('click', (e) => {
-            if(!e.target.closest('.menu-list')) {
-              p1.style.display = "none";
-            }
-          }
-          )
-        }
-      }
-
-      document.getElementById("nav-none2").style.display = "none";
-      function clickBtn2() {
-        const p1 = document.getElementById("nav-none2");
-        if(p1.style.display == "block") {
-          p1.style.display = "none";
-        }else{
-          p1.style.display = "block"
-          document.addEventListener('click', (e) => {
-            if(!e.target.closest('.menu-list')) {
-              p1.style.display = "none";
-            }
-          }
-          )
-        }
-      }
-    </script>
   </body>
 </html>
