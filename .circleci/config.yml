@@ -1,13 +1,7 @@
 version: 2.1
 jobs:
-  docker:
-    - image: mysql:8.0.29
+  rspec:
+    docker:
+      - image: mysql:8.0.29
   steps:
     - checkout
-    - run:
-      name: say hello
-      command: echo "hello!"
-workflows:
-  run-jobs:
-    jobs:
-      - build
