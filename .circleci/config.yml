@@ -14,5 +14,5 @@ jobs:
           name: docker-compose up -d
           command: docker-compose build
       - run:
-          name: rspec
+          name: run rspec
           command: docker-compose exec solomeal rspec -fd
