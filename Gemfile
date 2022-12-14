@@ -82,5 +82,5 @@ gem 'kaminari'
 gem 'ransack'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '1.2.3'
 end
