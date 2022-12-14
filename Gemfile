@@ -80,7 +80,3 @@ gem 'devise-i18n'
 gem 'kaminari'
 
 gem 'ransack'
-
-group :production do
-  gem 'pg', '1.2.3'
-end
