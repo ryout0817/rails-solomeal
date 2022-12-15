@@ -36,11 +36,17 @@
         <div class="myrecipe-list-wrap">
           <div class="myrecipe-label">マイレシピ</div>
           <div class="myrecipe-name-wrap">
-            <% @recipes.each do |recipe| %>
-              <div>
-                <%= link_to recipe_path(recipe.id), class: "myrecipe-name" do %>
-                  <%= recipe.recipe_name%>
-                <% end %>
+            <% if @recipe.present? %>
+              <% @recipes.each do |recipe| %>
+                <div>
+                  <%= link_to recipe_path(recipe.id), class: "myrecipe-name" do %>
+                    <%= recipe.recipe_name%>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="no-myrecipe-name-wrap">
+                <p>レシピはまだ作成されていません</p>
               </div>
             <% end %>
           </div>
