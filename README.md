@@ -2,6 +2,7 @@
   料理投稿サイトです。</br>
   ひとり暮らしの方が投稿しやすいような簡単な料理を共有できます。</br>
  ![スクリーンショット 2022-12-16 15 46 42](https://user-images.githubusercontent.com/106238399/208042801-34d7370a-c0a0-4838-874d-451c1f8f9278.jpg)
+ ![スクリーンショット 2022-12-16 16 13 41](https://user-images.githubusercontent.com/106238399/208043995-422e659f-fad8-406d-a97b-2165e0164e5f.jpg)
 
 # URL
 http://18.182.183.4/ </br>
