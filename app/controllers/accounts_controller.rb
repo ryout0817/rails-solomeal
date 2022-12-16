@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
 
   def update
     @user = current_user
-    if !(@user.name == "ゲスト") && @user.update(params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar))
+    if !(@user.name == "ゲスト") && @user.update(account_update)
       redirect_to account_path(@user)
     else
       redirect_to "/", flash: { info: "ゲストユーザーは編集することができません。"}
@@ -21,10 +21,15 @@ class AccountsController < ApplicationController
   def withdrawal
     @user = current_user
   end
-
   def release
     @user = current_user
     @release_user = User.find(params[:id])
     @recipes = @release_user.recipes.order(created_at: :desc)
+  end
+
+  private
+
+  def account_update
+    params.require(:user).permit(:name, :introduction, :recommended_dishes, :avatar)
   end
 end

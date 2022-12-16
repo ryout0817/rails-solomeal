@@ -33,7 +33,16 @@ class ApplicationController < ActionController::Base
 
   def search
     @user = current_user
-    @search = Recipe.search(params[:keyword]).page(params[:page]).per(10)
+    @search = Recipe.search(search_keyword_params).page(page_params).per(10)
     @counts = @search.all.count
+  end
+
+  private
+  def search_keyword_params
+    params[:keyword]
+  end
+
+  def page_params
+    params[:page]
   end
 end
