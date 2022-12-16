@@ -36,7 +36,7 @@
         <div class="myrecipe-list-wrap">
           <div class="myrecipe-label">マイレシピ</div>
           <div class="myrecipe-name-wrap">
-            <% if @recipe.present? %>
+            <% if @user.recipes.present? %>
               <% @recipes.each do |recipe| %>
                 <div>
                   <%= link_to recipe_path(recipe.id), class: "myrecipe-name" do %>
