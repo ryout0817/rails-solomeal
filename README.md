@@ -1,7 +1,7 @@
 # The-View
   料理投稿サイトです。</br>
   ひとり暮らしの方が投稿しやすいような簡単な料理を共有できます。</br>
- ![Test Image 1](app/assets/images/スクリーンショット 2022-12-16 15.46.42)
+ ![スクリーンショット 2022-12-16 15 46 42](https://user-images.githubusercontent.com/106238399/208042801-34d7370a-c0a0-4838-874d-451c1f8f9278.jpg)
 
 # URL
 http://18.182.183.4/ </br>
