@@ -23,6 +23,9 @@ https://www.hitori-meshi-app.net/ </br>
 - Docker/Docker-compose
 - RSpec
 
+#ER図
+![スクリーンショット 2022-12-20 15 39 56](https://user-images.githubusercontent.com/106238399/208600741-27b5222c-7752-4861-9a0e-8349205fa1e4.jpg)
+
 # 機能一覧
 - ユーザー登録、ログイン機能、ゲストログイン機能(devise)
 - 投稿機能
