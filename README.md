@@ -5,7 +5,7 @@
  ![スクリーンショット 2022-12-16 16 13 41](https://user-images.githubusercontent.com/106238399/208043995-422e659f-fad8-406d-a97b-2165e0164e5f.jpg)
 
 # URL
-http://18.182.183.4/ </br>
+https://www.hitori-meshi-app.net/ </br>
 画面右上のゲストログインボタンから、メールアドレスとパスワードを入力せずにログインでき、</br>
 料理の投稿ができます。
 
