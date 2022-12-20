@@ -24,7 +24,12 @@ https://www.hitori-meshi-app.net/ </br>
 - RSpec
 
 # ER図
+
 <img src="https://user-images.githubusercontent.com/106238399/208600741-27b5222c-7752-4861-9a0e-8349205fa1e4.jpg" width="50%">
+
+# AWS構成図
+
+<img src="https://user-images.githubusercontent.com/106238399/208605623-18b11565-fc47-4772-8fb7-599c0243316f.jpg)" width="50%">
 
 # 機能一覧
 - ユーザー登録、ログイン機能、ゲストログイン機能(devise)
