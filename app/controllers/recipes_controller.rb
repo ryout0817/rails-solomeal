@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(params.require(:recipe).permit(:recipe_name, :main_food, :food, :recipe_how, :material, :price, :time, :user_id))
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to recipes_path
     else
@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.update(params.require(:recipe).permit(:recipe_name, :main_food, :food, :recipe_how, :material, :price, :time))
+    if @recipe.update(recipe_update)
       redirect_to recipe_path(@recipe.id)
     else
       render 'edit'
@@ -47,5 +47,15 @@ class RecipesController < ApplicationController
   def release
     @user = current_user
     @recipe = Recipe.find(params[:id])
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:recipe_name, :main_food, :food, :recipe_how, :material, :price, :time, :user_id)
+  end
+
+  def recipe_update
+    params.require(:recipe).permit(:recipe_name, :main_food, :food, :recipe_how, :material, :price, :time)
   end
 end
