@@ -29,7 +29,7 @@ https://www.hitori-meshi-app.net/ </br>
 
 # AWS構成図
 
-<img src="https://user-images.githubusercontent.com/106238399/208605623-18b11565-fc47-4772-8fb7-599c0243316f.jpg)" width="50%">
+<img src="https://user-images.githubusercontent.com/106238399/208605623-18b11565-fc47-4772-8fb7-599c0243316f.jpg" width="50%">
 
 # 機能一覧
 - ユーザー登録、ログイン機能、ゲストログイン機能(devise)
