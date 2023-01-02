@@ -15,7 +15,9 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipes_path
     else
-      redirect_to new_recipe_path, flash: { info: "入力ミスがあります。"}
+      @recipe = Recipe.new(recipe_params)
+      flash.now[:info] = '入力ミスがありますs'
+      render 'new'
     end
   end
 
