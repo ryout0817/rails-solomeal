@@ -578,7 +578,7 @@ article {
 
 @media (max-width: 480px) {
     .recipe-rank-wrap {
-        height: 1000px;
+        height: 1100px;
     }
 }
 
@@ -2457,4 +2457,8 @@ span {
 
 .no-myrecipe-name-wrap p {
     width: 300px;
+}
+
+.inline {
+    display: inline-block;
 }

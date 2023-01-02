@@ -14,11 +14,19 @@
                 <i class="fa-solid fa-house push-right"></i>Home
               <% end %>
             </li>
+            <% if current_page?("/")  %>
+              <li>
+                <%= link_to anchor: "concept-anchor" do %>
+                  <p class="fa-solid fa-book push-right list-item inline"></p><p class="list-item inline">Concept</p>
+                <% end %>
+              </li>
+            <% else %>
             <li>
               <%= link_to about_path, class: "list-item" do %>
                 <i class="fa-solid fa-book push-right"></i>Concept
               <% end %>
             </li>
+            <% end %>
             <li>
               <button class="btn-menu list-item", id= "menu-btn menu-event", onclick="clickBtn1()">
                 <i class="fa-solid fa-user push-right"></i>User
