@@ -14,11 +14,19 @@
                 <i class="fa-solid fa-house push-right"></i>Home
               <% end %>
             </li>
+            <% if current_page?("/")  %>
+              <li>
+                <%= link_to anchor: "concept-anchor" do %>
+                  <p class="fa-solid fa-book push-right list-item inline"></p><p class="list-item inline">Concept</p>
+                <% end %>
+              </li>
+            <% else %>
             <li>
               <%= link_to about_path, class: "list-item" do %>
                 <i class="fa-solid fa-book push-right"></i>Concept
               <% end %>
             </li>
+            <% end %>
             <% unless current_page?(user_session_path)%>
               <li>
                 <%= link_to user_session_path, class: "list-item" do %>
