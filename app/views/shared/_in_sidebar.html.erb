@@ -17,7 +17,9 @@
             <% if current_page?("/")  %>
               <li>
                 <%= link_to anchor: "concept-anchor" do %>
-                  <p class="fa-solid fa-book push-right list-item inline"></p><p class="list-item inline">Concept</p>
+                  <div class="flex">
+                    <p class="fa-solid fa-book push-right list-item inline"></p><p class="list-item inline">Concept</p>
+                  </div>
                 <% end %>
               </li>
             <% else %>
