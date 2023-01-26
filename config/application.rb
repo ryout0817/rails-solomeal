@@ -22,9 +22,9 @@ module RailsEatcapsule
       g.helper false
       g.assets false
       g.test_framework :rspec,
-        controller_specs: false,
-        view_specs: false,
-        routing_specs: false 
+      controller_specs: false,
+      view_specs: false,
+      routing_specs: false
     end
   end
 end
