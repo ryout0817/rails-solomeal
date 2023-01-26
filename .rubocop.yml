@@ -39,14 +39,20 @@ Style/FrozenStringLiteralComment:
 Documentation:
   Enabled: false
 
-RSpec/MultipleExpectations:
-  Max: 2
-
 RSpec/ContextWording:
   Enabled: false
 
-RSpec/ExampleLength:
-  Max: 5
-
 RSpec/NestedGroups:
+  Enabled: false
+
+Rails/RootPathnameMethods:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false
