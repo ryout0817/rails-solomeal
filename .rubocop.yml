@@ -1,47 +1,39 @@
 inherit_from: .rubocop_todo.yml
 
 require:
+  - rubocop-performance
   - rubocop-rails
-  - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.5
+  SuggestExtensions: false
+  NewCops: enable
+  DisplayCopNames: true
   Exclude:
-    - app/controllers/application_controller.rb
-    - bin/*
-    - db/schema.rb
-    - db/migrate/*
-    - vendor/**/*
-    - config/**/*
-    - lib/tasks/*
-    - Gemfile
-    - features/**/*
-    - spec/**/*
-    - app/models/favorite.rb
+    - "Gemfile"
+    - "bin/**/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/environments/*"
+    - "config/initializers/*"
+    - "config/puma.rb"
 
-Rails:
-  Enabled: true
+Metrics:
+  Enabled: false
 
-Style/Documentation:
+Layout/LineLength:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/StringLiterals:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/AsciiComments:
+Documentation:
   Enabled: false
-
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Metrics/MethodLength:
-  Enabled: false
-
-Metrics/ClassLength:
-  Enabled: false
-
-Metrics/ModuleLength:
-  Enabled: false
-
-Metrics/AbcSize:
-  Max: 20
