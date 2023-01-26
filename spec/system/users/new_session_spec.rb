@@ -11,7 +11,7 @@ RSpec.describe "Users" do
       within (".content-document-inner") do
         expect(page).to have_content "アカウント登録"
         click_link "アカウント登録"
-        expect(current_path).to eq new_user_registration_path
+        expect(page).to have_current_path new_user_registration_path
       end
     end
 
@@ -20,7 +20,7 @@ RSpec.describe "Users" do
       fill_in "user[password]", with: user.password
 
       click_button "ログイン"
-      expect(current_path).to eq account_path(user.id)
+      expect(page).to have_current_path account_path(user.id)
     end
 
     it "ログイン失敗" do
@@ -28,7 +28,7 @@ RSpec.describe "Users" do
       fill_in "user[password]", with: ""
 
       click_button "ログイン"
-      expect(current_path).to eq user_session_path
+      expect(page).to have_current_path user_session_path
     end
   end
 end
