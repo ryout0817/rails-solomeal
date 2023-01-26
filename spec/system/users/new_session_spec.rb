@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Users" do
-  context "ログイン" do
-    let!(:user) {FactoryBot.create(:user)}
+  context "ログインしたとき" do
+    let!(:user) { create(:user) }
+
     before do
       visit user_session_path
     end
