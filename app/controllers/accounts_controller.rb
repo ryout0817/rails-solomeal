@@ -21,6 +21,7 @@ class AccountsController < ApplicationController
   def withdrawal
     @user = current_user
   end
+
   def release
     @user = current_user
     @release_user = User.find(params[:id])

@@ -37,7 +37,6 @@ class ApplicationController < ActionController::Base
     @counts = @search.all.count
   end
 
-  private
   def search_keyword_params
     params[:keyword]
   end

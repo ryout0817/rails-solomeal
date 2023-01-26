@@ -10,12 +10,12 @@ RSpec.describe "Accounts" do
     context "コンテンツ" do
       it "退会手続き押下後、トップページに戻る" do
         click_link "退会する"
-        expect(current_path).to eq "/"
+        expect(page).to have_current_path "/"
       end
 
       it "戻るボタンを押下" do
         click_link "戻る"
-        expect(current_path).to eq account_path(user.id)
+        expect(page).to have_current_path account_path(user.id), ignore_query: true
       end
     end
   end

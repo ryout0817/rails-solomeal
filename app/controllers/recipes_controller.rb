@@ -4,10 +4,20 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user, :favorites)
   end
 
+  def show
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+  end
+
   def new
     @user = current_user
     @recipe = Recipe.new
     @private = Recipe.order(created_at: :desc).first
+  end
+
+  def edit
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
@@ -19,16 +29,6 @@ class RecipesController < ApplicationController
       flash.now[:info] = '入力ミスがありますs'
       render 'new'
     end
-  end
-
-  def show
-    @user = current_user
-    @recipe = Recipe.find(params[:id])
-  end
-
-  def edit
-    @user = current_user
-    @recipe = Recipe.find(params[:id])
   end
 
   def update

@@ -9,7 +9,7 @@ RSpec.describe "Recipes" do
     end
     }
 
-    context "非ログイン時 " do
+    context "非ログイン時" do
       before do
         visit recipes_path
       end
@@ -27,7 +27,7 @@ RSpec.describe "Recipes" do
 
       it "レシピの名前をクリック後のページ遷移" do
         click_link recipes[1].recipe_name
-        expect(current_path).to eq release_recipe_path(recipes[1].id)
+        expect(page).to have_current_path release_recipe_path(recipes[1].id), ignore_query: true
       end
     end
   end

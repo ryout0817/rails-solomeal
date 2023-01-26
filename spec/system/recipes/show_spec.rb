@@ -22,13 +22,13 @@ RSpec.describe "Recipes" do
       it "編集するリンク押下後の遷移をテスト" do
         expect(page).to have_content "編集する"
         click_link "編集する"
-        expect(current_path).to eq edit_recipe_path(recipe.id)
+        expect(page).to have_current_path edit_recipe_path(recipe.id), ignore_query: true
       end
 
       it "戻るボタンリンクを押下" do
         expect(page).to have_content "戻る"
         click_link "戻る"
-        expect(current_path).to eq account_path(user.id)
+        expect(page).to have_current_path account_path(user.id), ignore_query: true
       end
     end
   end

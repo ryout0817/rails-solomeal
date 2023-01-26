@@ -23,7 +23,7 @@ RSpec.describe "Recipes" do
       it "戻るリンク押下後の遷移をテスト" do
         expect(page).to have_content "戻る"
         click_link "戻る"
-        expect(current_path).to eq recipes_path
+        expect(page).to have_current_path recipes_path, ignore_query: true
       end
     end
   end

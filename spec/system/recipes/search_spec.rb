@@ -21,7 +21,7 @@ RSpec.describe "Recipes" do
           fill_in "keyword", with: "オ"
           click_on "検索"
         end
-        expect(current_path).to eq search_recipes_path
+        expect(page).to have_current_path search_recipes_path, ignore_query: true
         expect(page).to have_content recipes[1].recipe_name
         expect(page).to have_content "検索結果：#{recipes.count}件"
       end
@@ -31,7 +31,7 @@ RSpec.describe "Recipes" do
           fill_in "keyword", with: "卵"
           click_on "検索"
         end
-        expect(current_path).to eq search_recipes_path
+        expect(page).to have_current_path search_recipes_path, ignore_query: true
         expect(page).to have_content recipes[1].recipe_name
         expect(page).to have_content "検索結果：#{recipes.count}件"
       end
@@ -54,7 +54,7 @@ RSpec.describe "Recipes" do
 
       it "レシピ名の遷移を確認" do
         click_on recipes[0].recipe_name
-        expect(current_path).to eq release_recipe_path(recipes[0].id)
+        expect(page).to have_current_path release_recipe_path(recipes[0].id), ignore_query: true
       end
     end
   end

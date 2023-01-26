@@ -12,10 +12,10 @@ class Recipe < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
-      Recipe.where(['recipe_name LIKE(?) OR main_food LIKE(?)', "%#{search}%", "%#{search}%"]).order('created_at DESC')
-    else
+    if search == ""
       redirect_to serach_recipes_path
+    else
+      Recipe.where(['recipe_name LIKE(?) OR main_food LIKE(?)', "%#{search}%", "%#{search}%"]).order('created_at DESC')
     end
   end
 end

@@ -26,7 +26,7 @@ RSpec.describe "Recipes" do
         recipe.food = nil
         attach_file 'recipe[food]', File.join(Rails.root, 'spec/fixtures/24942924_m.jpg')
         click_button "更新"
-        expect(current_path).to eq recipe_path(recipe.id)
+        expect(page).to have_current_path recipe_path(recipe.id), ignore_query: true
       end
     end
   end
