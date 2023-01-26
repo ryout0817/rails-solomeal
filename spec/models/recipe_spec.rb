@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Recipe, type: :model do
+RSpec.describe Recipe do
   describe "Recipe" do
     let!(:user) { FactoryBot.create(:user) }
 
