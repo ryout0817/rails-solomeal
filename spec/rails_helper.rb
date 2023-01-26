@@ -6,7 +6,7 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rspec'
-require'devise'
+require 'devise'
 require File.expand_path("spec/support/controller_macros.rb")
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -71,6 +71,6 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Warden::Test::Helpers
-  config.extend ControllerMacros, :type => :controller
+  config.extend ControllerMacros, type: :controller
   config.include FactoryBot::Syntax::Methods
 end

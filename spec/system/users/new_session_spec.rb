@@ -9,7 +9,7 @@ RSpec.describe "Users" do
     end
 
     it "アカウント登録押下後の遷移を確認" do
-      within (".content-document-inner") do
+      within(".content-document-inner") do
         expect(page).to have_content "アカウント登録"
         click_link "アカウント登録"
         expect(page).to have_current_path new_user_registration_path

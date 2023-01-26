@@ -29,7 +29,7 @@ RSpec.describe "Accounts" do
       end
 
       it "レスポンシブで下の画面に発生するリンクの遷移を確認" do
-        within (".mypage-list") do
+        within(".mypage-list") do
           click_link "マイページ編集"
           expect(page).to have_current_path edit_account_path(user.id), ignore_query: true
           visit account_path(user.id)

@@ -2,7 +2,7 @@ RSpec.describe "Recipes" do
   describe "レシピ検索" do
     let!(:user) { create(:user) }
     let!(:recipes) { create_list(:recipe, 6, user: user).each_with_index do |r, i|
-      user_name = user.name + i.to_s
+      i.user_name = i.user.name + i.to_s
       r.recipe_name = r.recipe_name + i.to_s
       r.id = i
       r.price = i
@@ -17,7 +17,7 @@ RSpec.describe "Recipes" do
       end
 
       it "レシピ一覧ページの入力フォームにレシピ名検索後の表示確認" do
-        within (".search-wrap") do
+        within(".search-wrap") do
           fill_in "keyword", with: "オ"
           click_on "検索"
         end
@@ -27,7 +27,7 @@ RSpec.describe "Recipes" do
       end
 
       it "レシピ一覧ページの入力フォームにメインの材料検索後の表示確認" do
-        within (".search-wrap") do
+        within(".search-wrap") do
           fill_in "keyword", with: "卵"
           click_on "検索"
         end
@@ -37,7 +37,7 @@ RSpec.describe "Recipes" do
       end
 
       it "該当しないレシピ名を検索後、表示されないことを確認" do
-        within (".search-wrap") do
+        within(".search-wrap") do
           fill_in "keyword", with: "肉"
           click_on "検索"
         end
