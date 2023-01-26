@@ -3,9 +3,9 @@
 <p class="alert"><%= alert%></p>
 <div class="top-article">
   <% if user_signed_in? %>
-    <%= render 'shared/in_sidebar.html.erb'%>
+    <%= render 'shared/in_sidebar'%>
   <% else %>
-    <%= render 'shared/out_sidebar.html.erb'%>
+    <%= render 'shared/out_sidebar'%>
   <% end %>
   <article>
     <div>

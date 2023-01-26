@@ -17,7 +17,7 @@
               </nav>
               <%= link_to "レシピ作成", new_recipe_path(@user), class: "size recipe-btn"%>
             </div>
-            <%= render 'shared/hamburger_menu.html.erb' %>
+            <%= render 'shared/hamburger_menu' %>
           <% else %>
             <div class="recipe-create">
               <nav class="nav-header-top-search">
@@ -26,7 +26,7 @@
                 <% end %>
               </nav>
               <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "size recipe-btn", method: :post %>
-              <%= render 'shared/hamburger_menu.html.erb' %>
+              <%= render 'shared/hamburger_menu' %>
             </div>
           <% end %>
         </div>
