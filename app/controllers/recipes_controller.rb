@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
       redirect_to recipes_path
     else
       @recipe = Recipe.new(recipe_params)
-      flash.now[:info] = '入力ミスがありますs'
+      flash.now[:info] = '入力ミスがあります'
       render 'new'
     end
   end
