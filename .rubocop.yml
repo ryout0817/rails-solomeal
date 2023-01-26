@@ -39,6 +39,11 @@ Style/FrozenStringLiteralComment:
 Documentation:
   Enabled: false
 
+# Rails関連
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+# RSPEC関連
 RSpec/ContextWording:
   Enabled: false
 
