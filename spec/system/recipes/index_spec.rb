@@ -1,7 +1,7 @@
 RSpec.describe "Recipes" do
   describe "レシピ一覧" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipes) { FactoryBot.create_list(:recipe, 6, user: user).each_with_index do |r, i|
+    let!(:user) { create(:user) }
+    let!(:recipes) { create_list(:recipe, 6, user: user).each_with_index do |r, i|
       r.recipe_name = r.recipe_name + i.to_s
       r.id = i
       r.price = i

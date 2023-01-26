@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Accounts" do
   context "マイページ" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipe) { FactoryBot.create(:recipe, user: user) }
+    let!(:user) { create(:user) }
+    let!(:recipe) { create(:recipe, user: user) }
 
     before do
       sign_in user

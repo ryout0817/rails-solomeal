@@ -1,6 +1,6 @@
 RSpec.describe "Accounts" do
   describe "マイページ編集" do
-    let!(:user) {FactoryBot.create(:user)}
+    let!(:user) { create(:user) }
 
     before do
       sign_in user

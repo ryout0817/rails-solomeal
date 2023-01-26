@@ -1,6 +1,6 @@
 RSpec.describe "Accounts" do
   describe "退会手続き" do
-    let!(:user) {FactoryBot.create(:user)}
+    let!(:user) { create(:user) }
 
     before do
       sign_in user
