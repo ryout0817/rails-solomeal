@@ -40,6 +40,9 @@ Style/FrozenStringLiteralComment:
 Documentation:
   Enabled: false
 
+ClassAndModuleChildren:
+  EnforcedStyle: nested
+
 # Rails関連
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
