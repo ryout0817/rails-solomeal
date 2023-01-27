@@ -38,7 +38,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
+  Enabled: false
 
 Style/BlockDelimiters:
   Enabled: false
