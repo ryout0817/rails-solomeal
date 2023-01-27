@@ -49,6 +49,9 @@ Naming/HeredocDelimiterNaming:
 Documentation:
   Enabled: false
 
+Lint/AssignmentInCondition:
+  Enabled: false
+
 # Rails関連
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
