@@ -34,7 +34,7 @@
                 <i class="fa-solid fa-user push-right"></i>User
               </button>
               <nav id="nav-none">
-                <ul class="user-list">
+                <ul class="user-list user-list-spec">
                   <li><%= link_to "マイページ", account_path(@user), class: "user-list-item" %></li>
                   <li><%= link_to "アカウント編集", edit_user_registration_path, class: "user-list-item" %></li>
                   <li><%= link_to '退会手続き', withdrawal_accounts_path, class: "user-list-item" %></li>
@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-utensils push-right"></i>Recipe
               </button>
               <nav id="nav-none2">
-                <ul class="user-list">
+                <ul class="user-list user-list-spec-second">
                   <li><%= link_to "新規レシピ一覧", recipes_path, class: "user-list-item" %></li>
                   <li><%= link_to "レシピ作成", new_recipe_path, class: "user-list-item" %></li>
                 </ul>

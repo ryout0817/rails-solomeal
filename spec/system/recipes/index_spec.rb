@@ -1,15 +1,16 @@
 RSpec.describe "Recipes" do
   describe "レシピ一覧" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipes) { FactoryBot.create_list(:recipe, 6, user: user).each_with_index do |r, i|
-      r.recipe_name = r.recipe_name + i.to_s
-      r.id = i
-      r.price = i
-      r.save!
-    end
+    let!(:user) { create(:user) }
+    let!(:recipes) {
+      create_list(:recipe, 6, user: user).each_with_index do |r, i|
+        r.recipe_name = r.recipe_name + i.to_s
+        r.id = i
+        r.price = i
+        r.save!
+      end
     }
 
-    context "非ログイン時 " do
+    context "非ログイン時" do
       before do
         visit recipes_path
       end
@@ -27,7 +28,7 @@ RSpec.describe "Recipes" do
 
       it "レシピの名前をクリック後のページ遷移" do
         click_link recipes[1].recipe_name
-        expect(current_path).to eq release_recipe_path(recipes[1].id)
+        expect(page).to have_current_path release_recipe_path(recipes[1].id), ignore_query: true
       end
     end
   end

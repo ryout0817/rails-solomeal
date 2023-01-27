@@ -2,9 +2,9 @@
 <p class="flash" ><%= flash[:info]%></p>
 <div class="main">
   <% if user_signed_in? %>
-    <%= render 'shared/in_sidebar.html.erb'%>
+    <%= render 'shared/in_sidebar'%>
   <% else %>
-    <%= render 'shared/out_sidebar.html.erb'%>
+    <%= render 'shared/out_sidebar'%>
   <% end %>
   <div class="content-wrapper">
     <div class="show-recipe-wrapper">

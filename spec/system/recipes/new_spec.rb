@@ -1,12 +1,13 @@
 RSpec.describe "Recipes" do
   describe "レシピ作成" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipe) { FactoryBot.create(:recipe, user: user) }
+    let!(:user) { create(:user) }
+    let!(:recipe) { create(:recipe, user: user) }
 
     before do
       sign_in user
       visit new_recipe_path
     end
+
     context "コンテンツ" do
       it "登録するボタン" do
         expect(page).to have_button "登録する"
@@ -23,7 +24,7 @@ RSpec.describe "Recipes" do
         fill_in "recipe[material]", with: recipe.material
         attach_file 'recipe[food]', File.join(Rails.root, 'spec/fixtures/24942924_m.jpg')
         click_button "登録する"
-        expect(current_path).to eq recipes_path
+        expect(page).to have_current_path recipes_path, ignore_query: true
       end
 
       it "必須の部分を記入せずに登録後失敗" do
@@ -35,8 +36,8 @@ RSpec.describe "Recipes" do
         fill_in "recipe[material]", with: recipe.material
         attach_file 'recipe[food]', File.join(Rails.root, 'spec/fixtures/24942924_m.jpg')
         click_button "登録する"
-        expect(current_path).not_to eq recipes_path
-        expect(current_path).to eq new_recipe_path
+        expect(page).not_to have_current_path recipes_path, ignore_query: true
+        expect(page).to have_current_path new_recipe_path, ignore_query: true
       end
 
       it "バリデーションの確認" do
@@ -48,8 +49,8 @@ RSpec.describe "Recipes" do
         fill_in "recipe[material]", with: recipe.material
         attach_file 'recipe[food]', File.join(Rails.root, 'spec/fixtures/24942924_m.jpg')
         click_button "登録する"
-        expect(current_path).not_to eq recipes_path
-        expect(current_path).to eq new_recipe_path
+        expect(page).not_to have_current_path recipes_path, ignore_query: true
+        expect(page).to have_current_path new_recipe_path, ignore_query: true
       end
     end
   end

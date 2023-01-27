@@ -14,6 +14,7 @@ class FavoritesController < ApplicationController
   end
 
   private
+
   def favorite_params
     { recipe_id: params[:recipe_id], user_id: current_user.id }
   end

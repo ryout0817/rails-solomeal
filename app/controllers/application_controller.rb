@@ -2,33 +2,35 @@ class ApplicationController < ActionController::Base
   # deviseのコントローラを使う前に呼ばれるアクション
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :search
+
   private
+
   def configure_sign_up_params
     edit_user_registration_path(@user.id)
   end
 
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(*)
     edit_user_registration_path(@user.id)
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(*)
     account_path(@user.id)
   end
 
   def configure_permitted_parameters
     # 新規登録時にnameの取得を許可
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name avatar])
     # ログイン時にnemeを取得を許可
     devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
     # 情報更新時にnameの取得許可
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name avatar])
   end
 
   def check_guest
     email = resource&.email || params[:user][:email].downcase
-    if email == 'guest@example.com'
-      redirect_to "/", alert: "ゲストユーザーの編集・削除はできません。"
-    end
+    return unless email == 'guest@example.com'
+
+    redirect_to "/", alert: "ゲストユーザーの編集・削除はできません。"
   end
 
   def search
@@ -37,7 +39,6 @@ class ApplicationController < ActionController::Base
     @counts = @search.all.count
   end
 
-  private
   def search_keyword_params
     params[:keyword]
   end

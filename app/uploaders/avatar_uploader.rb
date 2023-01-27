@@ -9,7 +9,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  #アップロードしたファイルの保存先を指定する。
+  # アップロードしたファイルの保存先を指定する。
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -31,14 +31,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-    process resize_to_fit: [100, 100]
+  process resize_to_fit: [100, 100]
   # end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  #アップロードを許可するファイル種類を指定する。
+  # アップロードを許可するファイル種類を指定する。
   def extension_allowlist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
   # Override the filename of the uploaded files:

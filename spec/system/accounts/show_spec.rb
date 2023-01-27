@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Accounts" do
   context "マイページ" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipe) { FactoryBot.create(:recipe, user: user) }
+    let!(:user) { create(:user) }
+    let!(:recipe) { create(:recipe, user: user) }
 
     before do
       sign_in user
@@ -14,7 +14,7 @@ RSpec.describe "Accounts" do
       it "編集リンク押下後の遷移を確認" do
         expect(page).to have_content "編集する"
         click_link "編集する"
-        expect(current_path).to eq edit_account_path(user.id)
+        expect(page).to have_current_path edit_account_path(user.id), ignore_query: true
       end
 
       it "ユーザー情報が表示されるか" do
@@ -25,16 +25,16 @@ RSpec.describe "Accounts" do
 
       it "マイレシピの遷移の確認" do
         click_link recipe.recipe_name
-        expect(current_path).to eq recipe_path(recipe.id)
+        expect(page).to have_current_path recipe_path(recipe.id), ignore_query: true
       end
 
       it "レスポンシブで下の画面に発生するリンクの遷移を確認" do
-        within (".mypage-list") do
+        within(".mypage-list") do
           click_link "マイページ編集"
-          expect(current_path).to eq edit_account_path(user.id)
+          expect(page).to have_current_path edit_account_path(user.id), ignore_query: true
           visit account_path(user.id)
           click_link "退会手続き"
-          expect(current_path).to eq withdrawal_accounts_path
+          expect(page).to have_current_path withdrawal_accounts_path, ignore_query: true
         end
       end
     end
