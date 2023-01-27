@@ -1,6 +1,6 @@
 RSpec.describe "Accounts" do
   describe "マイページ編集" do
-    let!(:user) {FactoryBot.create(:user)}
+    let!(:user) { create(:user) }
 
     before do
       sign_in user
@@ -14,14 +14,14 @@ RSpec.describe "Accounts" do
         fill_in "user[name]",	with: user.name
         fill_in "user[introduction]", with: "こんにちは"
         click_button "更新"
-        expect(current_path).to eq account_path(user.id)
+        expect(page).to have_current_path account_path(user.id), ignore_query: true
       end
     end
 
     context "リンク" do
       it "戻るリンク押下後の遷移" do
         click_link "戻る"
-        expect(current_path).to eq account_path(user.id)
+        expect(page).to have_current_path account_path(user.id), ignore_query: true
       end
     end
   end

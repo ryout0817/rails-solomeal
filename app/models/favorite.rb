@@ -4,6 +4,6 @@ class Favorite < ApplicationRecord
   validates :recipe_id, uniqueness: { scope: :user_id }
 
   def liked_by?(recipe_id)
-    resipes.where(recipe_id: recipe_id).exists?
+    resipes.exists?(recipe_id: recipe_id)
   end
 end

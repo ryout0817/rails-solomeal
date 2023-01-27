@@ -4,10 +4,20 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.page(params[:page]).order(created_at: :desc).per(5).includes(:user, :favorites)
   end
 
+  def show
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+  end
+
   def new
     @user = current_user
     @recipe = Recipe.new
     @private = Recipe.order(created_at: :desc).first
+  end
+
+  def edit
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
@@ -16,19 +26,9 @@ class RecipesController < ApplicationController
       redirect_to recipes_path
     else
       @recipe = Recipe.new(recipe_params)
-      flash.now[:info] = '入力ミスがありますs'
+      flash.now[:info] = '入力ミスがあります'
       render 'new'
     end
-  end
-
-  def show
-    @user = current_user
-    @recipe = Recipe.find(params[:id])
-  end
-
-  def edit
-    @user = current_user
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to account_path(current_user), flash: { info: "レシピを削除しました。"}
+    redirect_to account_path(current_user), flash: { info: "レシピを削除しました。" }
   end
 
   def release

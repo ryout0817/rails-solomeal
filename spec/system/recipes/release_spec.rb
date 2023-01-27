@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Recipes" do
   context "レシピ詳細" do
-    let!(:user) {FactoryBot.create(:user)}
-    let!(:recipe) { FactoryBot.create(:recipe, user: user) }
+    let!(:user) { create(:user) }
+    let!(:recipe) { create(:recipe, user: user) }
 
     before do
       sign_in user
@@ -23,7 +23,7 @@ RSpec.describe "Recipes" do
       it "戻るリンク押下後の遷移をテスト" do
         expect(page).to have_content "戻る"
         click_link "戻る"
-        expect(current_path).to eq recipes_path
+        expect(page).to have_current_path recipes_path, ignore_query: true
       end
     end
   end
