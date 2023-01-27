@@ -1,13 +1,14 @@
 RSpec.describe "Recipes" do
   describe "レシピ検索" do
     let!(:user) { create(:user) }
-    let!(:recipes) { create_list(:recipe, 6, user: user).each_with_index do |r, i|
-      i.user_name = i.user.name + i.to_s
-      r.recipe_name = r.recipe_name + i.to_s
-      r.id = i
-      r.price = i
-      r.save!
-    end
+    let!(:recipes) {
+      create_list(:recipe, 6, user: user).each_with_index do |r, i|
+        i.user_name = i.user.name + i.to_s
+        r.recipe_name = r.recipe_name + i.to_s
+        r.id = i
+        r.price = i
+        r.save!
+      end
     }
 
     context "レシピ検索" do

@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   end
 
   resources :recipes, only: %i[index new create show edit update destroy] do
-
     resource :favorite, only: %i[create destroy]
 
     member do

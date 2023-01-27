@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :password, presence: true, on: :configure_sign_up_params
 
   def self.guest
-    user = User.find_or_create_by!(name: 'ゲスト', email: 'guest@example.com') do |user|
+    user = User.find_or_create_by!(name: 'ゲスト', email: 'guest@example.com') do
       user.password = SecureRandom.urlsafe_base64
     end
   end

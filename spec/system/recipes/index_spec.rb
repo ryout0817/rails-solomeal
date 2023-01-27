@@ -1,12 +1,13 @@
 RSpec.describe "Recipes" do
   describe "レシピ一覧" do
     let!(:user) { create(:user) }
-    let!(:recipes) { create_list(:recipe, 6, user: user).each_with_index do |r, i|
-      r.recipe_name = r.recipe_name + i.to_s
-      r.id = i
-      r.price = i
-      r.save!
-    end
+    let!(:recipes) {
+      create_list(:recipe, 6, user: user).each_with_index do |r, i|
+        r.recipe_name = r.recipe_name + i.to_s
+        r.id = i
+        r.price = i
+        r.save!
+      end
     }
 
     context "非ログイン時" do
