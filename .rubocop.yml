@@ -38,7 +38,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/ClassAndModuleChildren:
-  Enabled: false
+  EnforcedStyle: compact
 
 Style/BlockDelimiters:
   Enabled: false
@@ -48,9 +48,6 @@ Naming/HeredocDelimiterNaming:
 
 Documentation:
   Enabled: false
-
-ClassAndModuleChildren:
-  EnforcedStyle: nested
 
 # Rails関連
 Rails/UniqueValidationWithoutIndex:
