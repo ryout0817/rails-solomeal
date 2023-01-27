@@ -72,7 +72,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def soft_delete(user)
     # 同じメールアドレスでも登録できるように、
     # メールアドレスを“hoge@example.com_deleted_**********”に変更する
-    deleted_email = user.email + '_deleted_' + Time.current.to_i.to_s
+    deleted_email = "#{user.email} _deleted_ #{Time.current.to_i}"
     user.assign_attributes(email: deleted_email, deleted_at: Time.current)
     # 通常メールアドレスが変更されると通知メールが飛ぶので、
     # その通知メールをキャンセルする
