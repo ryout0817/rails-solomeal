@@ -11,10 +11,10 @@ class AccountsController < ApplicationController
 
   def update
     @user = current_user
-    if !(@user.name == "ゲスト") && @user.update(account_update)
+    if @user.name != "ゲスト" && @user.update(account_update)
       redirect_to account_path(@user)
     else
-      redirect_to "/", flash: { info: "ゲストユーザーは編集することができません。"}
+      redirect_to "/", flash: { info: "ゲストユーザーは編集することができません。" }
     end
   end
 

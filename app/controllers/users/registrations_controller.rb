@@ -26,15 +26,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   def destroy
-      # 論理削除処理
-      soft_delete(current_user)
-      # Deviceの論理削除後の後処理
-      respond_with_navigational do
-        # 強制ログアウト
-        sign_out current_user
-        # ログアウト後のページ遷移
-        redirect_to "/"
-      end
+    # 論理削除処理
+    soft_delete(current_user)
+    # Deviceの論理削除後の後処理
+    respond_with_navigational do
+      # 強制ログアウト
+      sign_out current_user
+      # ログアウト後のページ遷移
+      redirect_to "/"
+    end
   end
 
   # GET /resource/cancel

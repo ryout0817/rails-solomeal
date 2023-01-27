@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to account_path(current_user), flash: { info: "レシピを削除しました。"}
+    redirect_to account_path(current_user), flash: { info: "レシピを削除しました。" }
   end
 
   def release
