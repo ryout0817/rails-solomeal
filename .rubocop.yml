@@ -43,6 +43,9 @@ Style/ClassAndModuleChildren:
 Style/BlockDelimiters:
   Enabled: false
 
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
 Documentation:
   Enabled: false
 
