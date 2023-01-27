@@ -37,6 +37,12 @@ Style/StringLiterals:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
 Documentation:
   Enabled: false
 
